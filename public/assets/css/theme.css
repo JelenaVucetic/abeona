@@ -1440,9 +1440,11 @@ input[type=checkbox] {
   line-height: 50px;
 }
 .is-sticky .logo img {
-  max-width: none;
-  height: 40px;
+    margin-top: -10px;
+    max-width: none;
+    height: 60px;
 }
+
 .full-screen-map .logo {
   width: 140px;
   height: 50px;
