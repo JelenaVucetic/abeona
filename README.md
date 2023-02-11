@@ -11,7 +11,10 @@ Abeona
 
 TODO:
 
-- [] Car factory
+- [] Car 
+    - [] Images table
+    - [] Prices table
+        has Season and prices: default, 1-3, 4-7, 8-15, 16-22, 23 +
 - [] Image storage
 - [] Contacts
 - [] Bookings

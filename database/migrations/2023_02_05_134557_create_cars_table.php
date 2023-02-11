@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('year');
             $table->string('motor');
             $table->integer('doors');
-            $table->integer('passanger');
+            $table->integer('passenger');
             $table->string('transmission');
             $table->timestamps();
         });

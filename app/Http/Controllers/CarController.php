@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -15,7 +16,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        Car::all();
     }
 
     /**
@@ -23,9 +24,9 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(StoreCarRequest $carRequest)
     {
-        //
+        
     }
 
     /**
