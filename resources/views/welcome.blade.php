@@ -11,7 +11,9 @@
                                 <div class="caption-content">
                                     <!-- Search form -->
                                     <div class="form-search light">
-                                        <form action="#">
+                                        <form id="find-car" action="#">
+                                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+
                                             <div class="form-title">
                                                 <i class="fa fa-globe"></i>
                                                 <h2>Search for Cheap Rental Cars Wherever Your Are</h2>
@@ -21,22 +23,45 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchUpLocation3">Picking Up
+                                                            <label for="pick-up">Picking Up
                                                                 Location</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="formSearchUpLocation3"
-                                                                   placeholder="Airport or Anywhere">
+                                                            <select name="pick-up-location" id="pick-up" class="form-control"  >
+                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat">Tivat</option>
+                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica">Podgorica</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="bar">Bar</option>
+                                                                <option value="ulcinj">Ulcinj</option>
+                                                                <option value="petrovac">Petrovac</option>
+                                                                <option value="budva">Budva</option>
+                                                                <option value="kotor">Kotor</option>
+                                                                <option value="herceg novi">Herceg Novi</option>
+                                                                <option value="niksic">Niksic</option>
+                                                            </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchOffLocation3">Picking Off
+                                                            <label for="pick-off-location">Picking Off
                                                                 Location</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="formSearchOffLocation3"
-                                                                   placeholder="Airport or Anywhere">
+                                                            <select name="pick-off-location" id="pick-off-location"
+                                                                    class="form-control"  >
+                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat">Tivat</option>
+                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica">Podgorica</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="bar">Bar</option>
+                                                                <option value="ulcinj">Ulcinj</option>
+                                                                <option value="petrovac">Petrovac</option>
+                                                                <option value="budva">Budva</option>
+                                                                <option value="kotor">Kotor</option>
+                                                                <option value="herceg novi">Herceg Novi</option>
+                                                                <option value="niksic">Niksic</option>
+                                                            </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
                                                         </div>
@@ -48,21 +73,25 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchUpDate3">Picking Up Date</label>
+                                                            <label for="pick-up-date">Picking Up Date</label>
                                                             <input type="text" class="form-control datepicker"
-                                                                   id="formSearchUpDate3" placeholder="dd/mm/yyyy">
+                                                                   name="pick-up-date"
+                                                                   id="pick-up-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchUpHour3">Picking Up Hour</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="formSearchUpHour3"
-                                                                   placeholder="20:00 AM">
-                                                            <span class="form-control-icon"><i
-                                                                    class="fa fa-clock-o"></i></span>
+                                                            <label for="pick-up-time">Picking Up Time</label>
+                                                            <div class='input-group date' id='pick-up-time'>
+                                                                <input type='text'
+                                                                       value="20:00"
+                                                                       name="pick-up-time" class="form-control" />
+                                                                <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-time"></span>
+                                                               </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -72,35 +101,34 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchOffDate3">Picking Off Date</label>
+                                                            <label for="pick-off-date">Picking Off Date</label>
                                                             <input type="text" class="form-control datepicker"
-                                                                   id="formSearchOffDate3" placeholder="dd/mm/yyyy">
+                                                                   name="pick-off-date"
+                                                                   id="pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="formSearchOffHour3">Picking Up Hour</label>
-                                                            <input type="text" class="form-control"
-                                                                   id="formSearchOffHour3"
-                                                                   placeholder="20:00 AM">
-                                                            <span class="form-control-icon"><i
-                                                                    class="fa fa-clock-o"></i></span>
+                                                            <label for="pick-off-time">Picking Off Time</label>
+                                                            <div class='input-group date' id='pick-off-time'>
+                                                                <input type='text'
+                                                                       value="20:00"
+                                                                       name="pick-off-time" class="form-control" />
+                                                                <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-time"></span>
+                                                               </span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="row row-submit">
-                                                <div class="container-fluid">
-                                                    <div class="inner">
-                                                        <i class="fa fa-plus-circle"></i> <a href="#">Advanced
-                                                            Search</a>
-                                                        <button type="submit" id="formSearchSubmit3"
-                                                                class="btn btn-submit btn-theme pull-right">Find Car
-                                                        </button>
-                                                    </div>
+                                                <div style="display: flex;justify-content: center;">
+                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">Find Car
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -560,4 +588,48 @@
         </div>
     </section>
     <!-- /PAGE -->
+@endsection
+
+@section('js')
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('#token').val()
+            }
+        });
+
+        $('#find-car').submit(function(e){
+
+            e.preventDefault();
+
+            var pickUpLocation = $("input[name=pick-up-location]").val();
+            var pickOffLocation = $("input[name=pick-off-location]").val();
+            var pickUpDate = $("input[name=pick-up-date]").val();
+            var pickOffDate = $("input[name=pick-off-date]").val();
+            var pickUpTime = $("input[name=pick-up-time]").val();
+            var pickOffTime = $("input[name=pick-off-time]").val();
+
+
+            $.ajax({
+                type:'POST',
+                url:"{{ route('cars.find') }}",
+                data:{
+                    pickUpLocation: pickUpLocation,
+                    pickOffLocation: pickOffLocation,
+                    pickUpDate: pickUpDate,
+                    pickOffDate: pickOffDate,
+                    pickUpTime: pickUpTime,
+                    pickOffTime: pickOffTime,
+                },
+                success:function(data){
+                    alert('success');
+                }
+            });
+
+        });
+
+
+    </script>
+
+
 @endsection

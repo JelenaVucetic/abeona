@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Models\Car;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
@@ -17,6 +19,8 @@ class CarController extends Controller
     public function index()
     {
         Car::all();
+
+        return view('admin.cars.index');
     }
 
     /**
@@ -26,7 +30,7 @@ class CarController extends Controller
      */
     public function create(StoreCarRequest $carRequest)
     {
-        
+
     }
 
     /**
@@ -83,5 +87,15 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         //
+    }
+
+    public function find(Request $request)
+    {
+        $input = $request->all();
+
+        Log::info($input);
+
+        return response()->json($input);
+       // return view('fleet');
     }
 }

@@ -1313,8 +1313,21 @@ function updater() {
     // refresh owl carousels/sliders
     //owlCarouselSelector.trigger('refresh');
     //owlCarouselSelector.trigger('refresh.owl.carousel');
-    
-    $('.datepicker').datetimepicker();
+
+    $('.datepicker').datepicker({
+        format: 'dd mm yyyy',
+    }).datepicker("setDate",'now');
+
+    $(function () {
+        $('#pick-up-time').datetimepicker({
+            format: 'HH:mm  '
+        });
+    });
+    $(function () {
+        $('#pick-off-time').datetimepicker({
+            format: 'HH:mm'
+        });
+    });
 
 }
 

@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
     <!-- CSS Global -->
+    <link rel="stylesheet" href="{{asset('assets/plugins/jquery-ui/jquery-ui.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-select/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/font-awesome.min.css')}}">
@@ -75,6 +76,7 @@
 
 <!-- JS Global -->
 <script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="assets/plugins/superfish/js/superfish.min.js"></script>
@@ -83,7 +85,7 @@
 <script src="assets/plugins/jquery.sticky.min.js"></script>
 <script src="assets/plugins/jquery.easing.min.js"></script>
 <script src="assets/plugins/jquery.smoothscroll.min.js"></script>
-<!--<script src="assets/plugins/smooth-scrollbar.min.js"></script>-->
+<script src="assets/plugins/smooth-scrollbar.min.js"></script>
 <script src="assets/plugins/swiper/js/swiper.jquery.min.js"></script>
 <script src="assets/plugins/datetimepicker/js/moment-with-locales.min.js"></script>
 <script src="assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
@@ -92,6 +94,7 @@
 <script src="assets/js/theme-ajax-mail.js"></script>
 <script src="assets/js/theme.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+@yield('js')
 
 </body>
 </html>

@@ -40,18 +40,46 @@
                         <!-- navigation menu -->
                         <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                         <ul class="nav sf-menu">
-                            <li class="active">
-                                <a href="{{ route('welcome') }}">Home</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('fleet') }}">Fleet</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('about-us') }}">About Us</a>
-                            </li>
-                            <li>
-                                <a href="{{route('contact')}}">Contact</a>
-                            </li>
+                            @if (auth()->check())
+                                <li class="active">
+                                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('profile.edit') }}">Profile</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('cars.index') }}">Cars</a>
+                                </li>
+
+                                <li>
+                                    <!-- Authentication -->
+                                    <form method="POST" action="{{ route('logout') }}" style="padding: 27px 10px;">
+                                        @csrf
+
+                                        <x-dropdown-link :href="route('logout')"
+                                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                            {{ __('Log Out') }}
+                                        </x-dropdown-link>
+                                    </form>
+                                </li>
+
+                            @else
+                                <li class="active">
+                                    <a href="{{ route('welcome') }}">Home</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('fleet') }}">Fleet</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('about-us') }}">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('contact')}}">Contact</a>
+                                </li>
+                            @endif
+
                             <li>
                                 <ul class="social-icons">
                                     <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,14 +23,19 @@ Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/booking', [PagesController::class, 'booking'])->name('booking');
 
 
+Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.reservations.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 });
 
 require __DIR__.'/auth.php';
