@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model
+class Car extends CustomModel
 {
     use HasFactory;
 
@@ -16,30 +15,33 @@ class Car extends Model
      */
     protected $with = ['image', 'price'];
 
-     /**
+    /**
      * 
      * Get the User that created Car
      * 
      */
-    protected function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    protected function images() {
+    public function images()
+    {
         return $this->hasMany(Image::class);
     }
 
-    protected function prices() {
+    public function prices()
+    {
         return $this->hasMany(Price::class);
     }
 
-     /**
+    /**
      * 
      * Calculates prices depending of the season and number of days ordered
      * 
      */
-    public function calculatePrice(int $days) : int {
-        $
+    public function calculatePrice(int $days): int
+    {
         return 10;
     }
 }

@@ -20,10 +20,11 @@ class CarFactory extends Factory
         return [
             'name' => 'bmw' . fake()->name(5),
             'year' => fake()->year(),
-            'string' => 'motor' . fake()->name(5),
+            'motor' => 'motor' . fake()->name(5),
             'doors' => 5,
             'passenger' => 5,
-            'transmission' => fake()->boolval ? "Automatic" : "Manual"
+            'transmission' => fake()->boolean() ? "Automatic" : "Manual",
+            'user_id' => User::factory()->create()
         ];
     }
 }
