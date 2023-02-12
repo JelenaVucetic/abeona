@@ -41,7 +41,7 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        //
+        dd($request);
     }
 
     /**

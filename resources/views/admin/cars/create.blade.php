@@ -6,7 +6,8 @@
            <!-- Start Card Body -->
            <div class="card-body">
                <!-- Start Form -->
-               <form id="bookingForm" action="#" method="" class="needs-validation" novalidate autocomplete="off">
+               <form id="create-car" class="needs-validation" novalidate autocomplete="off">
+                   <input type="hidden" name="_token" id="create_token" value="{{ csrf_token() }}">
                    <div class="form-row">
                        <div class="form-group col-md-6">
                            <label for="inputName">Car Name</label>
@@ -173,6 +174,25 @@
                        </div>
                    </div>
                    <hr />
+
+                   <div class="container">
+                       <div class="form-group">
+                           <div class="upload__box">
+                               <div class="upload__btn-box">
+                                   <label class="upload__btn">
+                                       <p>Upload images</p>
+                                       <input type="file" id="images" name="images[]" multiple="" data-max_length="20" class="upload__inputfile">
+                                   </label>
+
+                               </div>
+                               <div class="upload__img-wrap"></div>
+                           </div>
+                       </div>
+
+                   </div>
+
+
+
                    <!-- Start Submit Button -->
                    <button class="btn btn-primary btn-block col-lg-2" type="submit">Submit</button>
                    <!-- End Submit Button -->
@@ -182,4 +202,49 @@
            <!-- End Card Body -->
        </div>
    </div>
+@endsection
+
+
+@section('js')
+    <script>
+        jQuery(document).ready(function () {
+            ImgUpload();
+        });
+
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('#create_token').val()
+            }
+        });
+
+        $('#create-car').submit(function(e){
+
+            e.preventDefault();
+            let formData = new FormData();
+
+            const totalImages = $("#images")[0].files.length;
+            console.log(totalImages)
+            let images = $("#images")[0];
+
+            for (let i = 0; i < totalImages; i++) {
+                console.log(images.files[i])
+                formData.append('images' + i, images.files[i]);
+            }
+
+            formData.append('totalImages', totalImages);
+
+            $.ajax({
+                processData: false,
+                type:'POST',
+                url:"{{ route('cars.store') }}",
+                data: formData,
+                success:function(data){
+                    alert('success');
+                }
+            });
+
+        });
+    </script>
 @endsection
