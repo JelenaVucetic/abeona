@@ -14,28 +14,34 @@
                             <div class="col-md-8">
                                 <div class="owl-carousel img-carousel">
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/img/preview/cars/car-600x426x1.jpg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/img/preview/cars/car-600x426x1.jpg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/img/preview/cars/car-600x426x1.jpg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="assets/car-images/image0.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="assets/car-images/image0.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image0.jpeg" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/img/preview/cars/car-600x426x2.jpg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/img/preview/cars/car-600x426x2.jpg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/img/preview/cars/car-600x426x2.jpg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="assets/car-images/image1.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="assets/car-images/image1.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image1.jpeg" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/img/preview/cars/car-600x426x1.jpg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/img/preview/cars/car-600x426x1.jpg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/img/preview/cars/car-600x426x1.jpg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="assets/car-images/image2.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="assets/car-images/image2.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image2.jpeg" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/img/preview/cars/car-600x426x2.jpg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/img/preview/cars/car-600x426x2.jpg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/img/preview/cars/car-600x426x2.jpg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="assets/car-images/image3.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="assets/car-images/image3.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image3.jpeg" alt=""/></a>
+                                    </div>
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="assets/car-images/image4.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="assets/car-images/image4.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image4.jpeg" alt=""/></a>
                                     </div>
                                 </div>
                                 <div class="row car-thumbnails">
-                                    <div class="col-xs-2 col-sm-2 col-md-3"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img src="assets/img/preview/cars/car-70x70x1.jpg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-3"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img src="assets/img/preview/cars/car-70x70x2.jpg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-3"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img src="assets/img/preview/cars/car-70x70x1.jpg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-3"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img src="assets/img/preview/cars/car-70x70x2.jpg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="assets/car-images/image0.jpeg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="assets/car-images/image1.jpeg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="assets/car-images/image2.jpeg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="assets/car-images/image3.jpeg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="assets/car-images/image4.jpeg" alt=""/></a></div>
                                 </div>
+
                             </div>
                             <div class="col-md-4">
                                 <div class="car-details">

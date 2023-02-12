@@ -1601,6 +1601,8 @@ input[type=checkbox] {
   width: 100%;
   background-color: #f8981d;
 }
+
+
 .sf-menu.nav > li > a,
 .sf-menu ul li > a {
   padding: 28px 15px 28px 15px;
@@ -1629,6 +1631,7 @@ input[type=checkbox] {
 .sf-menu li.sfHover > a,
 .sf-menu li.active {
   color: #14181c;
+    /*border-top: 5px solid #f8981d*/;
 }
 .sf-menu li.active > a {
   color: #14181c;

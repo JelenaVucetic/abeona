@@ -15,8 +15,8 @@
 
     </div>
     <div style="display:flex; margin: 0px 10px">
-        <p><img style="width: 20px;" src="assets/img/montenegro.png"></p>
-        <p style="margin-left: 10px"><img style="width: 20px;" src="assets/img/united-states-of-america.png"></p>
+        <p><img style="width: 20px;" src="{{ asset('assets/img/montenegro.png') }}"></p>
+        <p style="margin-left: 10px"><img style="width: 20px;" src="{{ asset('assets/img/united-states-of-america.png') }}"></p>
     </div>
 </nav>
 <header class="header fixed">
@@ -25,7 +25,7 @@
 
             <!-- Logo -->
             <div class="logo">
-                <a href="index.html"><img style="width: 200px;" src="assets/img/abeona.png" alt="Rent It"/></a>
+                <a href="{{ route('welcome') }}"><img style="width: 200px;" src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
             </div>
             <!-- /Logo -->
 
@@ -41,16 +41,20 @@
                         <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
                         <ul class="nav sf-menu">
                             @if (auth()->check())
-                                <li class="active">
+                                <li class="{{ Route::currentRouteName() == 'dashboard'? 'active' : '' }}">
                                     <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </li>
-                                <li>
+                                <li class="{{ Route::currentRouteName() == 'profile.edit' ? 'active' : '' }}">
                                     <a href="{{ route('profile.edit') }}">Profile</a>
                                 </li>
 
-                                <li>
+                                <li class="{{ Route::currentRouteName() == 'cars.index' ? 'active' : '' }}">
                                     <a href="{{ route('cars.index') }}">Cars</a>
                                 </li>
+
+                               {{-- <li class="{{ (strpos(Route::currentRouteName(), 'car-images.index') == 0) ? 'active' : '' }}">
+                                    <a href="{{ route('car-images.index') }}">Car Images</a>
+                                </li>--}}
 
                                 <li>
                                     <!-- Authentication -->
@@ -66,16 +70,16 @@
                                 </li>
 
                             @else
-                                <li class="active">
+                                <li class="{{ Route::currentRouteName() == 'welcome' ? 'active' : '' }}">
                                     <a href="{{ route('welcome') }}">Home</a>
                                 </li>
-                                <li>
+                                <li class="{{ Route::currentRouteName() == 'fleet' ? 'active' : '' }}">
                                     <a href="{{ route('fleet') }}">Fleet</a>
                                 </li>
-                                <li>
+                                <li class="{{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}">
                                     <a href="{{ route('about-us') }}">About Us</a>
                                 </li>
-                                <li>
+                                <li class="{{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">
                                     <a href="{{route('contact')}}">Contact</a>
                                 </li>
                             @endif

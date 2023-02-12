@@ -28,9 +28,9 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(StoreCarRequest $carRequest)
+    public function create()
     {
-
+        return view('admin.cars.create');
     }
 
     /**

@@ -20,10 +20,10 @@ Route::get('/', [PagesController::class, 'index'])->name('welcome');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
 Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-Route::get('/booking', [PagesController::class, 'booking'])->name('booking');
+Route::get('/car/{car}/booking', [PagesController::class, 'booking'])->name('booking');
 
 
-Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
+Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 
 
 Route::get('/dashboard', function () {
@@ -35,7 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/car-images', [CarController::class, 'index'])->name('car-images.index');
+
     Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+    Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('cars.edit');
 });
 
 require __DIR__.'/auth.php';

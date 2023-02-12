@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
+
 class PagesController extends Controller
 {
     public function index()
@@ -24,9 +26,8 @@ class PagesController extends Controller
         return view('contact');
     }
 
-    public function booking()
+    public function booking(Car $car)
     {
         return view('booking');
     }
-
 }

@@ -612,7 +612,7 @@
 
             $.ajax({
                 type:'POST',
-                url:"{{ route('cars.find') }}",
+                url:"{{ route('car-images.find') }}",
                 data:{
                     pickUpLocation: pickUpLocation,
                     pickOffLocation: pickOffLocation,
