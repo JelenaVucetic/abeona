@@ -23,7 +23,7 @@ Route::get('/', [PagesController::class, 'index'])->name('welcome');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
 Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-Route::get('/car/{car}/booking', [PagesController::class, 'booking'])->name('booking');
+Route::get('booking', [PagesController::class, 'booking'])->name('booking');
 
 
 Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
