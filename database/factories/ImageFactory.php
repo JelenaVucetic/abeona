@@ -16,11 +16,12 @@ class ImageFactory extends Factory
      */
     public function definition()
     {
+        $image_name = $this->faker->image(storage_path('app/public/images/'),640,480, null, false);
+
         return [
-            'name' => fake()->name(),
-            'path' => asset('/storage/images/' . 
-                $this->faker->image(storage_path('app/public/images/'),640,480, null, false)),
-            'type' => fake()->name()
+            'name' => $image_name,
+            'path' => asset('/storage/images/' . $image_name),
+            'type' => fake()->word()
         ];
     }
 }

@@ -24,7 +24,10 @@ class CarFactory extends Factory
             'doors' => 5,
             'passenger' => 5,
             'transmission' => fake()->boolean() ? "Automatic" : "Manual",
-            'user_id' => User::factory()->create()
+            'user_id' => User::factory()->create(),
+            'insurance_price' => fake()->numberBetween(5000, 10000),
+            'participation_damage' => fake()->numberBetween(5000, 10000),
+            'deposit' => fake()->numberBetween(5000, 10000),
         ];
     }
 }

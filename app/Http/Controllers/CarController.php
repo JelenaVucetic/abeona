@@ -4,13 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
+use App\Http\Services\CarService;
 use App\Models\Car;
+use App\Models\Image;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
+    protected $carService;
+
+    public function __construct(CarService $carService)
+    {
+        $this->carService = $carService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +28,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        Car::all();
-
-        return view('admin.cars.index');
+        $cars = Car::all();
+        return $cars;
     }
 
     /**
@@ -28,9 +37,9 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(StoreCarRequest $carRequest)
+    public function create()
     {
-
+        //
     }
 
     /**
@@ -39,9 +48,18 @@ class CarController extends Controller
      * @param  \App\Http\Requests\StoreCarRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCarRequest $request)
+    public function store(StoreCarRequest $carRequest)
     {
-        //
+        $car = $this->carService->storeCar($carRequest->input('car'));
+
+        $this->carService->storeImages($car, $carRequest);
+
+        $car->prices()->createMany(
+            $carRequest->input('prices')
+        );
+
+
+        return $car->fresh();
     }
 
     /**
@@ -96,6 +114,6 @@ class CarController extends Controller
         Log::info($input);
 
         return response()->json($input);
-       // return view('fleet');
+        // return view('fleet');
     }
 }

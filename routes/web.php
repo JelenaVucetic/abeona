@@ -16,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('cars', CarController::class);
+
+
+
 Route::get('/', [PagesController::class, 'index'])->name('welcome');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
 Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('/booking', [PagesController::class, 'booking'])->name('booking');
-
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
 
@@ -34,8 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    // todo move to AdminController
+    //Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 });
 
 require __DIR__.'/auth.php';

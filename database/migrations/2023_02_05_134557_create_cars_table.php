@@ -22,6 +22,9 @@ return new class extends Migration
             $table->integer('doors');
             $table->integer('passenger');
             $table->string('transmission');
+            $table->integer('insurance_price');
+            $table->integer('participation_damage');
+            $table->integer('deposit');
             $table->timestamps();
         });
     }

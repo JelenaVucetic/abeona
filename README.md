@@ -11,10 +11,20 @@ Abeona
 
 TODO:
 
-- [] Car 
-    - [] Images table
-    - [] Prices table
+- [x] Car 
+    - [x] Images table
+    - [x] Prices table
         has Season and prices: default, 1-3, 4-7, 8-15, 16-22, 23 +
-- [] Image storage
+- [x] Image storage
+- [x] Car seeder works?
+- [x] Add missing fields
+- [] Store Car
+    What car request object should contain?
+        - car object
+        - array of image objects
+        - array of price objects
+
+- [] Edit Car
+- [] Delete Car
 - [] Contacts
 - [] Bookings
