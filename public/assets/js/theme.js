@@ -1328,6 +1328,16 @@ function updater() {
             format: 'HH:mm'
         });
     });
+    $(function () {
+        $('#update-pick-up-time').datetimepicker({
+            format: 'HH:mm  '
+        });
+    });
+    $(function () {
+        $('#update-pick-off-time').datetimepicker({
+            format: 'HH:mm'
+        });
+    });
 
 }
 

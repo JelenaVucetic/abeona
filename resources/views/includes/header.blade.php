@@ -3,14 +3,17 @@
         <div>
             <p class="name">DANKO</p>
             <p class="telephone">+382 69 414 413</p>
+            <img src="{{ asset('assets/img/social.png') }}" alt="viber-and-whatsapp.png" style="width: 40px;height: 30px;margin-top: 5px;">
         </div>
         <div>
             <p class="name">BRANKO</p>
             <p class="telephone">+382 67 544 058</p>
+            <img src="{{ asset('assets/img/social.png') }}" alt="viber-and-whatsapp.png" style="width: 40px;height: 30px;margin-top: 5px;">
         </div>
         <div>
             <p class="name">FILIP</p>
             <p class="telephone">+382 67 974 281</p>
+            <img src="{{ asset('assets/img/social.png') }}" alt="viber-and-whatsapp.png" style="width: 40px;height: 30px;margin-top: 5px;">
         </div>
 
     </div>

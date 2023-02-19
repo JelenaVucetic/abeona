@@ -14,41 +14,23 @@
 
                         <div class="media-list">
                             <div class="media">
-                                <i class="pull-left fa fa-home"></i>
-                                <div class="media-body">
-                                    <strong>Address:</strong><br>
-                                    987 Main st. New York, NY, 00001, U.S.A
-                                </div>
-                            </div>
-                            <div class="media">
                                 <i class="pull-left fa fa-phone"></i>
                                 <div class="media-body">
                                     <strong>Telephone:</strong><br>
-                                    (012) 345-7689
-                                </div>
-                            </div>
-                            <div class="media">
-                                <i class="pull-left fa fa-envelope-o"></i>
-                                <div class="media-body">
-                                    <strong>Fax:</strong><br>
-                                    0123456789
+                                    +382 69 414 413 <br>
+                                    +382 67 544 058 <br>
+                                    +382 67 974 281
                                 </div>
                             </div>
                             <div class="media">
                                 <div class="media-body">
-                                    Phasellus pellentesque purus in massa aenean in pede phasellus libero ac tellus pellentesque semper.
+                                    Feel free to contact us on Viber and WhatsApp at any time for prompt and convenient customer support.
                                 </div>
                             </div>
                             <div class="media">
                                 <div class="media-body">
                                     <strong>Customer Service:</strong><br>
-                                    <a href="mailto:hello@rentit.com">hello@rentit.com</a>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="media-body">
-                                    <strong>Returns and Refunds:</strong><br>
-                                    <a href="mailto:hello@rentit.com">hello@rentit.com</a>
+                                    <a href="mailto:hello@rentit.com">abeonarentacar@gmail.com</a>
                                 </div>
                             </div>
                         </div>

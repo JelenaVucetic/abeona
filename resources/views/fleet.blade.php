@@ -5,7 +5,9 @@
     <section class="page-section color">
         <div class="container">
 
-            <p class="text-center lead"><strong>Our Fleet</strong> dolor sit amet, consectetur adipiscing elit. Morbi fermentum justo vitae convallis varius. Nulla tristique risus ut justo pulvinar mattis. Phasellus aliquet egestas mauris in venenatis. Nulla tristique risus ut justo pulvinar mattis. Phasellus aliquet egestas mauris in venenatis.</p>
+            <p class="text-left lead">With flexible rental options and affordable pricing, renting a car has never been easier or more accessible.
+                <br>
+                Our online reservation system makes it easy to book your rental car in just a few clicks, so you can focus on planning your trip.</p>
             <hr class="page-divider"/>
                 <div class="container">
                     <div class="row">
