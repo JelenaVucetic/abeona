@@ -448,7 +448,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider1x1 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -457,7 +457,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider1x2 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -466,7 +466,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider1x3 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -475,7 +475,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider1x4 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -484,7 +484,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider1x5 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -494,7 +494,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider2x1 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -503,7 +503,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider2x2 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -512,7 +512,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider2x3 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -521,7 +521,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider2x4 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -530,7 +530,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider2x5 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -540,7 +540,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider3x1 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -549,7 +549,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider3x2 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -558,7 +558,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider3x3 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -567,7 +567,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider3x4 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -576,7 +576,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider3x5 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -586,7 +586,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider4x1 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -595,7 +595,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider4x2 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -604,7 +604,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider4x3 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -613,7 +613,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider4x4 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -622,7 +622,7 @@ jQuery(document).ready(function () {
                 pagination: '#swiperSlider4x5 .row.car-thumbnails',
                 paginationClickable: true,
                 paginationBulletRender: function (index, className) {
-                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/cars/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
+                    return '<div class="col-xs-2 col-sm-2 col-md-3 ' + className + '"><a href="#"><img src="assets/img/preview/car-images/car-70x70x' + (index + 1) + '.jpg" alt=""/></a></div>';
                 }
             });
         }
@@ -652,7 +652,7 @@ jQuery(document).ready(function () {
                     '<div class="thumbnail no-border no-padding thumbnail-car-card">' +
                     '<div class="media">' +
                     '<a class="media-link" href="#">' +
-                    '<img src="assets/img/preview/cars/car-270x220x1.jpg" alt=""/>' +
+                    '<img src="assets/img/preview/car-images/car-270x220x1.jpg" alt=""/>' +
                     '<span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>' +
                     '</a>' +
                     '</div>' +
@@ -834,7 +834,7 @@ jQuery(document).ready(function () {
                     '<div class="thumbnail no-border no-padding thumbnail-car-card">' +
                     '<div class="media">' +
                     '<a class="media-link" href="#">' +
-                    '<img src="assets/img/preview/cars/car-270x220x1.jpg" alt=""/>' +
+                    '<img src="assets/img/preview/car-images/car-270x220x1.jpg" alt=""/>' +
                     '<span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>' +
                     '</a>' +
                     '</div>' +
@@ -1343,4 +1343,87 @@ jQuery(window).scroll(function () {
     if ($().sticky) {
         $('.header.fixed').sticky('update');
     }
+});
+
+function ImgUpload() {
+    var imgWrap = "";
+    var imgArray = [];
+
+    $('.upload__inputfile').each(function () {
+        $(this).on('change', function (e) {
+            imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
+            var maxLength = $(this).attr('data-max_length');
+
+            var files = e.target.files;
+            var filesArr = Array.prototype.slice.call(files);
+            console.log(filesArr)
+            var iterator = 0;
+            filesArr.forEach(function (f, index) {
+
+                if (!f.type.match('image.*')) {
+                    return;
+                }
+
+                if (imgArray.length > maxLength) {
+                    return false
+                } else {
+                    var len = 0;
+                    for (var i = 0; i < imgArray.length; i++) {
+                        if (imgArray[i] !== undefined) {
+                            len++;
+                        }
+                    }
+                    if (len > maxLength) {
+                        return false;
+                    } else {
+                        imgArray.push(f);
+
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var html =
+                                "<div class='upload__img-box'>" +
+                                "<p>Select main image</p>" +
+                                "<div style='background-image: url(" + e.target.result + ")' " +
+                                "data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'>" +
+                                "<div class='upload__img-close'></div>" +
+                                "<div class=''> <input name='main-image' type='radio'></div>" +
+                                "</div>" +
+                                "</div>";
+                            imgWrap.append(html);
+                            iterator++;
+                        }
+                        reader.readAsDataURL(f);
+                    }
+                }
+            });
+        });
+    });
+
+    $('body').on('click', ".upload__img-close", function (e) {
+        var file = $(this).parent().data("file");
+        for (var i = 0; i < imgArray.length; i++) {
+            if (imgArray[i].name === file) {
+                imgArray.splice(i, 1);
+                break;
+            }
+        }
+        $(this).parent().parent().remove();
+    });
+}
+
+
+$("input[name=pick-up-date]").focus(function() {
+    $("input[name=pick-up-date]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-off-date]").focus(function() {
+    $("input[name=pick-off-date]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-up-time]").change(function() {
+    $("input[name=pick-up-time]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-off-time]").change(function() {
+    $("input[name=pick-off-time]").tooltip().tooltip('hide');
 });

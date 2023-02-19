@@ -8,8 +8,8 @@
     <title>Abeona</title>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('assets/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="shortcut icon" href="{{asset('assets/ico/favicon.ico')}}">
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-ui/jquery-ui.css')}}">
@@ -52,6 +52,9 @@
 
 <!-- WRAPPER -->
 <div class="wrapper">
+    <!-- Modal -->
+    @yield('modal')
+
 
     <!-- HEADER -->
         @include('includes.header')
@@ -75,24 +78,24 @@
 <!-- /WRAPPER -->
 
 <!-- JS Global -->
-<script src="assets/plugins/jquery/jquery-1.11.1.min.js"></script>
-<script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="assets/plugins/superfish/js/superfish.min.js"></script>
-<script src="assets/plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
-<script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
-<script src="assets/plugins/jquery.sticky.min.js"></script>
-<script src="assets/plugins/jquery.easing.min.js"></script>
-<script src="assets/plugins/jquery.smoothscroll.min.js"></script>
-<script src="assets/plugins/smooth-scrollbar.min.js"></script>
-<script src="assets/plugins/swiper/js/swiper.jquery.min.js"></script>
-<script src="assets/plugins/datetimepicker/js/moment-with-locales.min.js"></script>
-<script src="assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ asset('assets/plugins/jquery/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/superfish/js/superfish.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/prettyphoto/js/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('assets/plugins/owl-carousel2/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery.sticky.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery.smoothscroll.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/smooth-scrollbar.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/swiper/js/swiper.jquery.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datetimepicker/js/moment-with-locales.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
 
 <!-- JS Page Level -->
-<script src="assets/js/theme-ajax-mail.js"></script>
-<script src="assets/js/theme.js"></script>
+<script src="{{ asset('assets/js/theme-ajax-mail.js') }}"></script>
+<script src="{{ asset('assets/js/theme.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 @yield('js')
 

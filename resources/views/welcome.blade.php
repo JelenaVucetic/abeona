@@ -25,7 +25,8 @@
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-up">Picking Up
                                                                 Location</label>
-                                                            <select name="pick-up-location" id="pick-up" class="form-control"  >
+                                                            <select name="pick-up-location" id="pick-up" class="form-control"
+                                                                    title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
                                                                 <option value="tivat">Tivat</option>
                                                                 <option value="podgorica aerodrom">Podgorica Aerodrom</option>
@@ -48,7 +49,7 @@
                                                             <label for="pick-off-location">Picking Off
                                                                 Location</label>
                                                             <select name="pick-off-location" id="pick-off-location"
-                                                                    class="form-control"  >
+                                                                    class="form-control" title="Pick off location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
                                                                 <option value="tivat">Tivat</option>
                                                                 <option value="podgorica aerodrom">Podgorica Aerodrom</option>
@@ -76,7 +77,9 @@
                                                             <label for="pick-up-date">Picking Up Date</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-up-date"
-                                                                   id="pick-up-date" placeholder="dd/mm/yyyy">
+                                                                   id="pick-up-date"
+                                                                   title="Pick up date is required" data-toggle="tooltip"
+                                                                   placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
                                                         </div>
@@ -87,6 +90,7 @@
                                                             <div class='input-group date' id='pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
+                                                                       title="Pick up time is required" data-toggle="tooltip"
                                                                        name="pick-up-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -104,6 +108,7 @@
                                                             <label for="pick-off-date">Picking Off Date</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-off-date"
+                                                                   title="Pick off date is required" data-toggle="tooltip"
                                                                    id="pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
@@ -115,6 +120,7 @@
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
+                                                                       title="Pick off time is required" data-toggle="tooltip"
                                                                        name="pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -602,24 +608,58 @@
 
             e.preventDefault();
 
-            var pickUpLocation = $("input[name=pick-up-location]").val();
-            var pickOffLocation = $("input[name=pick-off-location]").val();
-            var pickUpDate = $("input[name=pick-up-date]").val();
-            var pickOffDate = $("input[name=pick-off-date]").val();
-            var pickUpTime = $("input[name=pick-up-time]").val();
-            var pickOffTime = $("input[name=pick-off-time]").val();
+            var pickUpLocation = $("input[name=pick-up-location]");
+            var pickOffLocation = $("input[name=pick-off-location]");
+            var pickUpDate = $("input[name=pick-up-date]");
+            var pickOffDate = $("input[name=pick-off-date]");
+            var pickUpTime = $("input[name=pick-up-time]");
+            var pickOffTime = $("input[name=pick-off-time]");
 
+            if (pickUpLocation.val() === "") {
+                pickUpLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                pickUpLocation.focus();
+                return false;
+            }
+
+            if (pickOffLocation.val() === "") {
+                pickOffLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                pickOffLocation.focus();
+                return false;
+            }
+
+            if (pickUpDate.val() === "") {
+                pickUpDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+               // pickUpDate.focus();
+                return false;
+            }
+
+            if (pickOffDate.val() === "") {
+                pickOffDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+              //  pickOffDate.focus();
+                return false;
+            }
+
+            if (pickUpTime.val() === "") {
+                pickUpTime.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                return false;
+            }
+
+            if (pickOffTime.val() === "") {
+                pickOffTime.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                pickOffTime.focus();
+                return false;
+            }
 
             $.ajax({
                 type:'POST',
-                url:"{{ route('cars.find') }}",
+                url:"{{ route('booking', 1) }}",
                 data:{
-                    pickUpLocation: pickUpLocation,
-                    pickOffLocation: pickOffLocation,
-                    pickUpDate: pickUpDate,
-                    pickOffDate: pickOffDate,
-                    pickUpTime: pickUpTime,
-                    pickOffTime: pickOffTime,
+                    pickUpLocation: pickUpLocation.val(),
+                    pickOffLocation: pickOffLocation.val(),
+                    pickUpDate: pickUpDate.val(),
+                    pickOffDate: pickOffDate.val(),
+                    pickUpTime: pickUpTime.val(),
+                    pickOffTime: pickOffTime.val(),
                 },
                 success:function(data){
                     alert('success');
