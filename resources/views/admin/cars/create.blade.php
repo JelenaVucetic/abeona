@@ -191,8 +191,6 @@
 
                    </div>
 
-
-
                    <!-- Start Submit Button -->
                    <button class="btn btn-primary btn-block col-lg-2" type="submit">Submit</button>
                    <!-- End Submit Button -->
@@ -211,8 +209,6 @@
             ImgUpload();
         });
 
-
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('#create_token').val()
@@ -225,11 +221,20 @@
             let formData = new FormData();
 
             const totalImages = $("#images")[0].files.length;
-            console.log(totalImages)
+
             let images = $("#images")[0];
 
+            const mainImageName = $('input[name="main-image"]:checked')
+            if (!mainImageName.is(":checked")) {
+                $('input[name="main-image"]:first').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                return false;
+            }
             for (let i = 0; i < totalImages; i++) {
-                console.log(images.files[i])
+                if (images.files[i]['name'] === mainImageName.val()) {
+                    images.files[i]['isMain'] = true;
+                } else {
+                    images.files[i]['isMain'] = false;
+                }
                 formData.append('images' + i, images.files[i]);
             }
 
@@ -246,5 +251,6 @@
             });
 
         });
+
     </script>
 @endsection
