@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\User;
@@ -17,6 +18,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin')
+        ]);
+
+        $this->call([
+            CarSeeder::class
         ]);
     }
 }

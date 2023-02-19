@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('cars', CarController::class);
 
 
 
@@ -25,6 +26,8 @@ Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
 Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 Route::get('booking', [PagesController::class, 'booking'])->name('booking');
 
+
+Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
 
 Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 
@@ -37,12 +40,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // todo move to AdminController
+    //Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+
     Route::get('/car-images', [CarController::class, 'index'])->name('car-images.index');
 
-    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
-    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
-    Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
-    Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('cars.edit');
 });
 
 require __DIR__.'/auth.php';

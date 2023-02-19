@@ -13,7 +13,7 @@ class Car extends CustomModel
      *
      * @var array
      */
-    protected $with = ['image', 'price'];
+    protected $with = ['images', 'prices'];
 
     /**
      * 
@@ -27,7 +27,7 @@ class Car extends CustomModel
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class, );
     }
 
     public function prices()
