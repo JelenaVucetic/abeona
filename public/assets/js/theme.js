@@ -1410,3 +1410,20 @@ function ImgUpload() {
         $(this).parent().parent().remove();
     });
 }
+
+
+$("input[name=pick-up-date]").focus(function() {
+    $("input[name=pick-up-date]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-off-date]").focus(function() {
+    $("input[name=pick-off-date]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-up-time]").change(function() {
+    $("input[name=pick-up-time]").tooltip().tooltip('hide');
+});
+
+$("input[name=pick-off-time]").change(function() {
+    $("input[name=pick-off-time]").tooltip().tooltip('hide');
+});

@@ -52,6 +52,9 @@
 
 <!-- WRAPPER -->
 <div class="wrapper">
+    <!-- Modal -->
+    @yield('modal')
+
 
     <!-- HEADER -->
         @include('includes.header')

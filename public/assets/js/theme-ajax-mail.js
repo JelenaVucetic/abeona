@@ -104,7 +104,7 @@ $(function () {
     //$(window).load(function () {});
 
     // ON CLICK
-    $(".reservation-now .btn-reservation-now").click(function () {
+    /*$(".reservation-now .btn-reservation-now").click(function () {
         // validate and process form
         // first hide any error messages
         //$('.form-subscribe .error').hide();
@@ -188,5 +188,5 @@ $(function () {
             }
         });
         return false;
-    });
+    });*/
 });
