@@ -8,7 +8,8 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $cars = Car::all();
+        return view('welcome',  ['cars' => $cars]);
     }
 
     public function about()
