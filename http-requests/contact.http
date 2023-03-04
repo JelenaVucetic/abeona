@@ -1,7 +1,15 @@
 
-POST http://localhost:8000/contact
+POST http://localhost:8000/contacts
 content-type: application/json
 
 {
-    "test": "test"
+    "name": "name",
+    "email": "email",
+    "subject": "subject",
+    "message": "message",
 }
+
+###
+
+GET  http://localhost:8000/contacts
+content-type: application/json

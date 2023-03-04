@@ -11,8 +11,8 @@ Abeona
 
 TODO:
 - [] Contacts
-    - [] Get data from view
-    - [] Store to db
+    - [x] Get data from view
+    - [x] Store to db
     - [] Send text email
     - [] 
 

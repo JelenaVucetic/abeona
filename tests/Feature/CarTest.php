@@ -8,10 +8,9 @@ use App\Models\Car;
 use App\Models\Image;
 use App\Models\Price;
 use App\Enums\Season;
-use Arr;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use stdClass;
+
 
 class CarTest extends TestCase
 {

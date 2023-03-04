@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('cars', CarController::class);
-Route::post('contact', [ContactController::class, 'store']);
+Route::post('contacts', [ContactController::class, 'store']);
+Route::get('contacts', [ContactController::class, 'index']);
 
 
 Route::get('/', [PagesController::class, 'index'])->name('welcome');
