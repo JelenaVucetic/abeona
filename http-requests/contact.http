@@ -1,0 +1,7 @@
+
+POST http://localhost:8000/contact
+content-type: application/json
+
+{
+    "test": "test"
+}

@@ -10,6 +10,11 @@ Abeona
 - Dva jezika eng i mne
 
 TODO:
+- [] Contacts
+    - [] Get data from view
+    - [] Store to db
+    - [] Send text email
+    - [] 
 
 - [x] Car 
     - [x] Images table
@@ -18,7 +23,7 @@ TODO:
 - [x] Image storage
 - [x] Car seeder works?
 - [x] Add missing fields
-- [] Store Car
+- [x] Store Car
     What car request object should contain?
         - car object
         - array of image objects
@@ -26,5 +31,5 @@ TODO:
 
 - [] Edit Car
 - [] Delete Car
-- [] Contacts
+
 - [] Bookings

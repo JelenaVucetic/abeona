@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('cars', CarController::class);
-
+Route::post('contact', [ContactController::class, 'store']);
 
 
 Route::get('/', [PagesController::class, 'index'])->name('welcome');
