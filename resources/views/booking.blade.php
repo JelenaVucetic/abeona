@@ -223,7 +223,8 @@
                                 </div>
                             </div>
                             <div class="button">
-                                <a href="#" class="btn btn-block btn-theme btn-theme-dark">Update Reservation</a>
+                                <button href="#" class="btn btn-block btn-theme btn-theme-dark" data-toggle="modal"
+                                        data-target="#updateReservation">Update Reservation</button>
                             </div>
                         </div>
                     </div>
@@ -236,24 +237,35 @@
                                 <div class="testimonial">
                                     <div class="media">
                                         <div class="media-body">
-                                            <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
-                                            <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            <div class="testimonial-text">
+                                                It was excellent working with Fillip and renting a car from him in the beautiful Montenegro,
+                                                especially that it was my husband’s and my first time traveling from the US to there. We had so much fun and comfort with
+                                                the very nice and extremely-fuel-efficient car that he gave us. Communication with Philip was easy and
+                                                the points he made before signing the contract were very helpful. We highly recommend him.
+                                            </div>
+                                            <div class="testimonial-name">FAMILY MODIRI <span class="testimonial-position">USA</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="testimonial">
                                     <div class="media">
                                         <div class="media-body">
-                                            <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
-                                            <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            <div class="testimonial-text">
+                                                Abeona was a great rental car experience. We drove three of it cars during our trip and all three were excellent.
+                                                Filip’s service was first class. I highly recommend Abeona to anyone traveling to Montenegro.
+
+                                            </div>
+                                            <div class="testimonial-name">JOHN VUKMANOVIC <span class="testimonial-position">USA</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="testimonial">
                                     <div class="media">
                                         <div class="media-body">
-                                            <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</div>
-                                            <div class="testimonial-name">John Doe <span class="testimonial-position">Co- founder at Rent It</span></div>
+                                            <div class="testimonial-text">Everything works very cool! They quickly found a car, even drove to the apartment for free,
+                                                thanks to Philip for this! Quickly drawn up and quickly took the car!
+                                                I really enjoyed a good relationship! I advise everyone these guys they are great.</div>
+                                            <div class="testimonial-name">ИЛЬЯ ЛЕТОДИАНИ<span class="testimonial-position">RUSSIA</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -265,12 +277,8 @@
                     <div class="widget shadow widget-helping-center">
                         <h4 class="widget-title">Helping Center</h4>
                         <div class="widget-content">
-                            <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros.</p>
-                            <h5 class="widget-title-sub">+90 555 444 66 33</h5>
-                            <p><a href="mailto:support@supportcenter.com">support@supportcenter.com</a></p>
-                            <div class="button">
-                                <a href="#" class="btn btn-block btn-theme btn-theme-dark">Support Center</a>
-                            </div>
+                            <p>Don't hesitate to reach out to us via Email if you have any questions or concerns - we're here to help!</p>
+                            <p><a href="mailto:support@supportcenter.com">abeonarentacar@gmail.com</a></p>
                         </div>
                     </div>
                     <!-- /widget helping center -->
@@ -286,6 +294,157 @@
 @endsection
 
 @section('modal')
+
+    <!-- Modal -->
+    <div class="modal fade" id="updateReservation" tabindex="-1" role="dialog" aria-labelledby="updateReservation" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex;align-items: flex-end;justify-content: space-between;">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Reservation Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="div-table">
+                            <div class="div-cell">
+                                <div class="caption-content">
+                                    <!-- Search form -->
+                                    <div class="form-search light">
+                                        <form id="find-car" action="#">
+                                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+
+                                            <div class="row row-inputs">
+                                                <div class="container-fluid">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="pick-up">Picking Up
+                                                                Location</label>
+                                                            <select name="update-pick-up-location" id="update-pick-up" class="form-control"
+                                                                    title="Pick up location is required" data-toggle="tooltip" >
+                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat">Tivat</option>
+                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica">Podgorica</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="bar">Bar</option>
+                                                                <option value="ulcinj">Ulcinj</option>
+                                                                <option value="petrovac">Petrovac</option>
+                                                                <option value="budva">Budva</option>
+                                                                <option value="kotor">Kotor</option>
+                                                                <option value="herceg novi">Herceg Novi</option>
+                                                                <option value="niksic">Niksic</option>
+                                                            </select>
+                                                            <span class="form-control-icon"><i
+                                                                    class="fa fa-location-arrow"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="update-pick-off-location">Picking Off
+                                                                Location</label>
+                                                            <select name="update-pick-off-location" id="update-pick-off-location"
+                                                                    class="form-control" title="Pick off location is required" data-toggle="tooltip" >
+                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat">Tivat</option>
+                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica">Podgorica</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="bar">Bar</option>
+                                                                <option value="ulcinj">Ulcinj</option>
+                                                                <option value="petrovac">Petrovac</option>
+                                                                <option value="budva">Budva</option>
+                                                                <option value="kotor">Kotor</option>
+                                                                <option value="herceg novi">Herceg Novi</option>
+                                                                <option value="niksic">Niksic</option>
+                                                            </select>
+                                                            <span class="form-control-icon"><i
+                                                                    class="fa fa-location-arrow"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row row-inputs">
+                                                <div class="container-fluid">
+                                                    <div class="col-sm-7">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="update-pick-up-date">Picking Up Date</label>
+                                                            <input type="text" class="form-control datepicker"
+                                                                   name="update-pick-up-date"
+                                                                   id="update-pick-up-date"
+                                                                   title="Pick up date is required" data-toggle="tooltip"
+                                                                   placeholder="dd/mm/yyyy">
+                                                            <span class="form-control-icon"><i
+                                                                    class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="update-pick-up-time">Picking Up Time</label>
+                                                            <div class='input-group date' id='update-pick-up-time'>
+                                                                <input type='text'
+                                                                       value="20:00"
+                                                                       title="Pick up time is required" data-toggle="tooltip"
+                                                                       name="update-pick-up-time" class="form-control" />
+                                                                <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-time"></span>
+                                                               </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row row-inputs">
+                                                <div class="container-fluid">
+                                                    <div class="col-sm-7">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="update-pick-off-date">Picking Off Date</label>
+                                                            <input type="text" class="form-control datepicker"
+                                                                   name="update-pick-off-date"
+                                                                   title="Pick off date is required" data-toggle="tooltip"
+                                                                   id="update-pick-off-date" placeholder="dd/mm/yyyy">
+                                                            <span class="form-control-icon"><i
+                                                                    class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-group has-icon has-label">
+                                                            <label for="update-pick-off-time">Picking Off Time</label>
+                                                            <div class='input-group date' id='update-pick-off-time'>
+                                                                <input type='text'
+                                                                       value="20:00"
+                                                                       title="Pick off time is required" data-toggle="tooltip"
+                                                                       name="update-pick-off-time" class="form-control" />
+                                                                <span class="input-group-addon">
+                                                               <span class="glyphicon glyphicon-time"></span>
+                                                               </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row row-submit">
+                                                <div style="display: flex;justify-content: center;">
+                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">Update
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /Search form -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

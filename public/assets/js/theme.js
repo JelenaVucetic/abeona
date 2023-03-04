@@ -1328,6 +1328,16 @@ function updater() {
             format: 'HH:mm'
         });
     });
+    $(function () {
+        $('#update-pick-up-time').datetimepicker({
+            format: 'HH:mm  '
+        });
+    });
+    $(function () {
+        $('#update-pick-off-time').datetimepicker({
+            format: 'HH:mm'
+        });
+    });
 
 }
 
@@ -1353,7 +1363,7 @@ function ImgUpload() {
         $(this).on('change', function (e) {
             imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
             var maxLength = $(this).attr('data-max_length');
-
+            imgWrap.append("<div style='width: 100%;margin: 10px;'><h5>Select main image</h5></div>")
             var files = e.target.files;
             var filesArr = Array.prototype.slice.call(files);
             console.log(filesArr)
@@ -1382,20 +1392,24 @@ function ImgUpload() {
                         reader.onload = function (e) {
                             var html =
                                 "<div class='upload__img-box'>" +
-                                "<p>Select main image</p>" +
                                 "<div style='background-image: url(" + e.target.result + ")' " +
                                 "data-number='" + $(".upload__img-close").length + "' data-file='" + f.name + "' class='img-bg'>" +
                                 "<div class='upload__img-close'></div>" +
-                                "<div class=''> <input name='main-image' type='radio'></div>" +
+                                "<div class=''> " +
+                                    "<input checked  title='Select main image' data-toggle='tooltip'  name='main-image' type='radio' value='" + f.name + "'>" +
+                                "</div>" +
                                 "</div>" +
                                 "</div>";
                             imgWrap.append(html);
+
                             iterator++;
                         }
                         reader.readAsDataURL(f);
+
                     }
                 }
             });
+
         });
     });
 
@@ -1427,3 +1441,5 @@ $("input[name=pick-up-time]").change(function() {
 $("input[name=pick-off-time]").change(function() {
     $("input[name=pick-off-time]").tooltip().tooltip('hide');
 });
+
+

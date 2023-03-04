@@ -142,11 +142,8 @@
                                     <!-- /Search form -->
 
 
-                                    <h2 class="caption-title">For rental Cars</h2>
-                                    <h3 class="caption-subtitle">Best Deals</h3>
-                                    <p class="caption-text">
-                                        Sales Up %45 Off<br/>
-                                        All Rental Cars Start from 49$
+                                    <h2 class="caption-title">Rent Your Ride</h2>
+                                    <h3 class="caption-subtitle">Find Your Perfect Car Rental</h3>
                                     </p>
                                 </div>
                             </div>
@@ -341,76 +338,48 @@
 
 
     <!-- PAGE -->
-    <section class="page-section testimonials">
+    <section class="page-section testimonials" style="padding-top: 30px">
         <div class="container">
             <div class="testimonials-carousel">
                 <div class="owl-carousel" id="testimonials">
                     <div class="testimonial">
                         <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object testimonial-avatar"
-                                         src="assets/img/preview/avatars/testimonial-140x140x1.jpg"
-                                         alt="Testimonial avatar">
-                                </a>
-                            </div>
                             <div class="media-body">
-                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                                    facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                    ultrices posuere cubilia.
+                                <div class="testimonial-text">Everything works very cool! They quickly found a car, even drove to the apartment for free,
+                                    thanks to Philip for this! Quickly drawn up and quickly took the car!
+                                    I really enjoyed a good relationship! I advise everyone these guys they are great.
                                 </div>
-                                <div class="testimonial-name">John Anthony Gibson <span class="testimonial-position">Co- founder at Rent It</span>
+                                <div class="testimonial-name">ИЛЬЯ ЛЕТОДИАНИ <span class="testimonial-position">RUSSIA</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial">
                         <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object testimonial-avatar"
-                                         src="assets/img/preview/avatars/testimonial-140x140x1.jpg"
-                                         alt="Testimonial avatar">
-                                </a>
-                            </div>
                             <div class="media-body">
-                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                                    facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                    ultrices posuere cubilia.
+                                <div class="testimonial-text">It was excellent working with Fillip and renting a car from him in the beautiful Montenegro,
+                                    especially that it was my husband’s and my first time traveling from the US to there. We had so much fun and comfort with
+                                        the very nice and extremely-fuel-efficient car that he gave us. Communication with Philip was easy and
+                                    the points he made before signing the contract were very helpful. We highly recommend him.
                                 </div>
-                                <div class="testimonial-name">John Anthony Gibson <span class="testimonial-position">Co- founder at Rent It</span>
+                                <div class="testimonial-name">FAMILY MODIRI<span class="testimonial-position">USA</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial">
                         <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object testimonial-avatar"
-                                         src="assets/img/preview/avatars/testimonial-140x140x1.jpg"
-                                         alt="Testimonial avatar">
-                                </a>
-                            </div>
                             <div class="media-body">
-                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                                    facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                    ultrices posuere cubilia.
+                                <div class="testimonial-text">Abeona was a great rental car experience. We drove three of it cars during our trip and all three were excellent.
+                                    Filip’s service was first class. I highly recommend Abeona to anyone traveling to Montenegro.
                                 </div>
-                                <div class="testimonial-name">John Anthony Gibson <span class="testimonial-position">Co- founder at Rent It</span>
+                                <div class="testimonial-name">JOHN VUKMANOVIC<span class="testimonial-position">USA</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial">
                         <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object testimonial-avatar"
-                                         src="assets/img/preview/avatars/testimonial-140x140x1.jpg"
-                                         alt="Testimonial avatar">
-                                </a>
-                            </div>
                             <div class="media-body">
                                 <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
                                     facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et
@@ -427,59 +396,6 @@
     </section>
     <!-- /PAGE -->
 
-    <!-- PAGE -->
-    <section class="page-section find-car dark">
-        <div class="container">
-
-            <form action="#" class="form-find-car">
-                <div class="row">
-
-                    <div class="col-md-3">
-
-                        <h2 class="section-title text-left no-margin">
-                            <small>Great Rental Cars</small>
-                            <span>Find your car</span>
-                        </h2>
-
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group has-icon has-label">
-                            <label for="formFindCarLocation">Picking Up Location</label>
-                            <input type="text" class="form-control" id="formFindCarLocation"
-                                   placeholder="Airport or Anywhere">
-                            <span class="form-control-icon"><i class="fa fa-location-arrow"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group has-icon has-label">
-                            <label for="formFindCarDate">Picking Up Date</label>
-                            <input type="text" class="form-control datepicker" id="formFindCarDate"
-                                   placeholder="dd/mm/yyyy">
-                            <span class="form-control-icon"><i class="fa fa-calendar"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group has-icon has-label">
-                            <label for="formFindCarCategory">Price Category</label>
-                            <input type="text" class="form-control" id="formFindCarCategory"
-                                   placeholder="Select Car Group">
-                            <span class="form-control-icon"><i class="fa fa-bars"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <button type="submit" id="formFindCarSubmit" class="btn btn-block btn-submit btn-theme">Find
-                                Car
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-            </form>
-
-        </div>
-    </section>
-    <!-- /PAGE -->
 
     <!-- PAGE -->
     <section class="page-section no-padding no-bottom-space-off">
