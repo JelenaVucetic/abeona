@@ -21,6 +21,8 @@ Route::resource('cars', CarController::class);
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
 
+Route::get('findCar', [PagesController::class, 'findCar']);
+
 
 Route::get('/', [PagesController::class, 'index'])->name('welcome');
 Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');

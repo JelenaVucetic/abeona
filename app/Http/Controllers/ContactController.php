@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
+use App\Providers\ContactMailStored;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -13,10 +14,13 @@ class ContactController extends Controller
         return "Ping";
     }
 
-    public function store(ContactRequest $contact) {
-        Contact::create(
-            $contact->all()
+    public function store(ContactRequest $contactRequest) {
+        $contact = Contact::create(
+            $contactRequest->all()
         );
-        return  "success";
+
+        ContactMailStored::dispatch($contact);
+
+        return  $contact;
     }
 }

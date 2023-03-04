@@ -10,11 +10,16 @@ Abeona
 - Dva jezika eng i mne
 
 TODO:
-- [] Contacts
+- [x] Contacts
     - [x] Get data from view
     - [x] Store to db
-    - [] Send text email
-    - [] 
+    - [x] Create event
+    - [x] Send text email
+    - [] Mailgun add domain certs
+    - [] Connect to mailgun
+- [x] Find Cars endpoint
+- [] Refactor car find endpoint
+- [] Extract prices functions to Price model or something
 
 - [x] Car 
     - [x] Images table
