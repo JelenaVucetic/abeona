@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PagesController;
@@ -18,8 +19,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('cars', CarController::class);
+Route::resource('bookings', BookingController::class);
+
+Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
+
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
+
+Route::get('findCar', [PagesController::class, 'findCar']);
 
 
 Route::get('/', [PagesController::class, 'index'])->name('welcome');

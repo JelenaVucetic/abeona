@@ -22,7 +22,8 @@ return new class extends Migration
             $table->integer('doors');
             $table->integer('passenger');
             $table->string('transmission');
-            $table->integer('insurance_price');
+            $table->integer('basic_insurance');
+            $table->integer('full_insurance');
             $table->integer('participation_damage');
             $table->integer('deposit');
             $table->timestamps();
