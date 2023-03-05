@@ -11,7 +11,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return "Ping";
+        return Contact::all();
     }
 
     public function store(ContactRequest $contactRequest) {

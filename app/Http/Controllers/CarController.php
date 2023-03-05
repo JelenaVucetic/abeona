@@ -6,11 +6,8 @@ use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Services\CarService;
 use App\Models\Car;
-use App\Models\Image;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -34,7 +31,7 @@ class CarController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     *use Illuminate\Support\Facades\Storage;
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -104,7 +101,7 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        return $car->delete();
     }
 
     public function find(Request $request)

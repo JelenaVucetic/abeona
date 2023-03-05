@@ -10,6 +10,9 @@ Abeona
 - Dva jezika eng i mne
 
 TODO:
+- [ ] Booking
+    - [x] List
+    - [X] Create
 - [x] Contacts
     - [x] Get data from view
     - [x] Store to db
