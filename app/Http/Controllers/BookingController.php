@@ -85,4 +85,9 @@ class BookingController extends Controller
     {
         return $booking->delete();
     }
+
+    public function confirm(Booking $booking) 
+    {
+        return $booking->update(['confirmed' => true]);
+    }
 }
