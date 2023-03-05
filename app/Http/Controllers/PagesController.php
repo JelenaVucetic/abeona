@@ -76,13 +76,13 @@ class PagesController extends Controller
         $month = $date->month;
 
         if ($month >= 3 && $month <= 5) {
-            return 'proljeće';
+            return 'spring';
         } elseif ($month >= 6 && $month <= 8) {
-            return 'ljeto';
+            return 'summer';
         } elseif ($month >= 9 && $month <= 11) {
-            return 'jesen';
+            return 'autumn';
         } else {
-            return 'zima';
+            return 'winter';
         }
     }
 

@@ -53,11 +53,28 @@
 
                        <div class="form-row">
                            <div class="form-group col-md-6">
+                               <label for="basic_insurance">Basic Insurance</label>
+                               <input type="number" class="form-control" id="basic_insurance" name="car[basic_insurance]" required />
+                               <small class="form-text text-muted">Please fill price for basic insuranec</small>
+                           </div>
+                           <div class="form-group col-md-6">
+                               <label for="full_insurance">Full Insurance</label>
+                               <input type="number" class="form-control" id="full_insurance" name="car[full_insurance]" required />
+                               <small class="form-text text-muted">Please fill price for full insuranec</small>
+                           </div>
+                       </div>
+
+                       <div class="form-row">
+                           <div class="form-group col-md-6">
                                <label for="participation_damage">Participation Damage</label>
                                <input type="number" class="form-control" id="participation_damage" name="car[participation_damage]" required />
                                <small class="form-text text-muted">Please fill Participation Damage</small>
                            </div>
                            <div class="form-group col-md-6">
+                               <label for="deposit">Deposit</label>
+                               <input type="number" class="form-control" id="participation_damage" name="car[deposit]" required />
+                               <small class="form-text text-muted">Please fill deposit price</small>
+
                            </div>
                        </div>
                    </div>
@@ -278,7 +295,7 @@
                 if (images.files[i]['name'] === mainImageName.val()) {
                     formData.append('images['+i+'][type]', 'main');
                 } else {
-                    formData.append('images['+i +'][type]', 'basic');
+                    formData.append('images['+i +'][type]', 'details');
                 }
                 formData.append('images['+i+'][name]', 'image'+i+'.jpg')
             }
@@ -292,28 +309,6 @@
             })
         });
 
-
-        /*formData.append('prices[0][season]', 'ljeto')
-        $('input.summer').each(function() {
-            formData.append('prices[0]['+$(this).attr('id')+']', $(this).val())
-        })
-
-        formData.append('prices[1][season]', 'jesen')
-        $('input.autumn').each(function() {
-            formData.append('prices[1]['+$(this).attr('id')+']', $(this).val())
-        })
-
-        formData.append('prices[2][season]', 'zima')
-        $('input.winter').each(function() {
-            formData.append('prices[2]['+$(this).attr('id')+']', $(this).val())
-        })
-
-        formData.append('prices[3][season]', 'zima')
-        $('input.spring').each(function() {
-            formData.append('prices[3]['+$(this).attr('id')+']', $(this).val())
-        })*/
-
-
         $.ajax({
             processData: false,
             type: 'POST',
@@ -326,59 +321,7 @@
         })
     });
 
-    /*    $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('#create_token').val()
-            }
-        });
 
-        $('#create-car').submit(function(e){
-
-            e.preventDefault();
-
-            var name = $("input[name=name]");
-            var engine = $("input[name=engine]");
-            var passengers = $("input[name=passengers]");
-            var doors = $("input[name=doors]");
-
-            const formData = new FormData();
-
-            formData.append('name', name.val())
-            formData.append('engine', engine.val())
-            formData.append('passengers', passengers.val())
-            formData.append('doors', doors.val())
-            formData.append('user_id', 1)
-
-            const totalImages = $("#images")[0].files.length;
-
-            if (totalImages > 0) {
-                let images = $("#images")[0];
-
-                const mainImageName = $('input[name="main-image"]:checked')
-                if (!mainImageName.is(":checked")) {
-                    $('input[name="main-image"]:first').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
-                    return false;
-                }
-
-                for (let i = 0; i < totalImages; i++) {
-                    images.files[i]['isMain'] = images.files[i]['name'] === mainImageName.val();
-                    formData.append('images' + i, images.files[i]);
-                }
-
-            }
-            /!*formData.append('totalImages', totalImages);*!/
-            $.ajax({
-                processData: false,
-                type:'POST',
-                url:"{{ route('cars.store') }}",
-                data: dataString,
-                contentType: false,
-                success:function(data){
-                    alert('success');
-                }
-            });
-
-        });*/
 
     </script>
 @endsection
