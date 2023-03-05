@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('car_id')->constrained();
 
-            $table->enum('season', ['zima', 'proljeće', 'ljeto', 'jesen']);
+            $table->enum('season', ['winter', 'spring', 'summer', 'autumn']);
             // all prices are in cents
             $table->integer('default');
             $table->integer('1-3');

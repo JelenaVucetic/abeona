@@ -3,8 +3,8 @@
 namespace App\Enums;
 
 enum Season: string {
-    case Winter = 'zima';
-    case Spring = 'proljeće';
-    case Summer = 'ljeto';
-    case Autumn = 'jesen';
+    case Winter = 'winter';
+    case Spring = 'spring';
+    case Summer = 'summer';
+    case Autumn = 'autum';
 }

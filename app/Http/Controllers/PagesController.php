@@ -14,12 +14,14 @@ class PagesController extends Controller
 
     public function about()
     {
-        return view('about-us');
+        $cars = Car::all();
+        return view('about-us', ['cars' => $cars]);
     }
 
     public function fleet()
     {
-        return view('fleet');
+        $cars = Car::all();
+        return view('fleet',  ['cars' => $cars]);
     }
 
     public function contact()

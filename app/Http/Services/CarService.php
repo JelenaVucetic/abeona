@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Models\Car;
 use Auth;
+use function League\Flysystem\toArray;
 
 class CarService
 {
@@ -16,7 +17,7 @@ class CarService
             )
         );
     }
-    
+
     public function storeImages($car, $carRequest)
     {
         $files = $carRequest->file('files');
@@ -27,7 +28,6 @@ class CarService
         }
 
         $carImages = $carRequest->input('images');
-
         foreach ($carImages as $index => &$image) {
             $image['path'] = $paths[$index];
         }
