@@ -1366,7 +1366,6 @@ function ImgUpload() {
             imgWrap.append("<div style='width: 100%;margin: 10px;'><h5>Select main image</h5></div>")
             var files = e.target.files;
             var filesArr = Array.prototype.slice.call(files);
-            console.log(filesArr)
             var iterator = 0;
             filesArr.forEach(function (f, index) {
 

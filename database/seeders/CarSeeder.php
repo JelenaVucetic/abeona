@@ -25,6 +25,7 @@ class CarSeeder extends Seeder
                 ['season' => Season::Summer],
                 ['season' => Season::Autumn],
             ))
+            ->count(10)
             ->create();
     }
 }

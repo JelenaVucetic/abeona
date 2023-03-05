@@ -10,6 +10,19 @@ Abeona
 - Dva jezika eng i mne
 
 TODO:
+- [ ] Booking
+    - [x] List
+    - [X] Create
+- [x] Contacts
+    - [x] Get data from view
+    - [x] Store to db
+    - [x] Create event
+    - [x] Send text email
+    - [] Mailgun add domain certs
+    - [] Connect to mailgun
+- [x] Find Cars endpoint
+- [] Refactor car find endpoint
+- [] Extract prices functions to Price model or something
 
 - [x] Car 
     - [x] Images table
@@ -18,7 +31,7 @@ TODO:
 - [x] Image storage
 - [x] Car seeder works?
 - [x] Add missing fields
-- [] Store Car
+- [x] Store Car
     What car request object should contain?
         - car object
         - array of image objects
@@ -26,5 +39,5 @@ TODO:
 
 - [] Edit Car
 - [] Delete Car
-- [] Contacts
+
 - [] Bookings

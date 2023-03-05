@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('car-images', function (Blueprint $table) {
+        Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('name');
@@ -22,7 +22,8 @@ return new class extends Migration
             $table->integer('doors');
             $table->integer('passenger');
             $table->string('transmission');
-            $table->integer('insurance_price');
+            $table->integer('basic_insurance');
+            $table->integer('full_insurance');
             $table->integer('participation_damage');
             $table->integer('deposit');
             $table->timestamps();
