@@ -69,8 +69,8 @@
   color: #fff;
 }
 .checkbox-danger input[type="checkbox"]:checked + label::before {
-  background-color: #d9534f;
-  border-color: #d9534f;
+  background-color: #f8981d;
+  border-color: #f8981d;
 }
 .checkbox-danger input[type="checkbox"]:checked + label::after {
   color: #fff;

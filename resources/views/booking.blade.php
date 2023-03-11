@@ -75,28 +75,28 @@
                             <div class="col-md-6">
                                 <div class="left">
                                     <div class="checkbox checkbox-danger">
-                                        <input id="second-driver" name="second-driver" type="checkbox" class="car-extras" value="20">
-                                        <label for="second-driver">Second Driver<span class="pull-right">20 $ /Total</span></label>
+                                        <input id="second-driver" name="second_driver" type="checkbox" class="car-extras" value="20">
+                                        <label for="second_driver">Second Driver<span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="unlimited-mileage" name="unlimited-mileage" type="checkbox" class="car-extras" value="20">
-                                        <label for="unlimited-mileage">Unlimited Mileage<span class="pull-right">20 $ /Total</span></label>
+                                        <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox" class="car-extras" value="20">
+                                        <label for="unlimited_mileage">Unlimited Mileage<span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="border-crossing" name="border-crossing" type="checkbox" class="car-extras" value="20">
-                                        <label for="border-crossing">Border Crossing <span class="pull-right">20 $ /Total</span></label>
+                                        <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
+                                        <label for="border_crossing">Border Crossing <span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-small" name="baby-seat-small" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby-seat-small">Baby Seat Small <span class="pull-right">Free</span></label>
+                                        <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras" value="0">
+                                        <label for="baby_seat_small">Baby Seat Small <span class="pull-right">Free</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-big" name="baby-seat-big" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby-seat-big">Baby Seat Big <span class="pull-right">Free</span></label>
+                                        <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras" value="0">
+                                        <label for="baby_seat_big">Baby Seat Big <span class="pull-right">Free</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-booster" name="baby-seat-booster" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby-seat-booster">Baby Seat Booster <span class="pull-right">Free</span></label>
+                                        <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras" value="0">
+                                        <label for="baby_seat_booster">Baby Seat Booster <span class="pull-right">Free</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -104,24 +104,24 @@
                             <div class="col-md-6">
                                 <div class="right">
                                     <div class="checkbox checkbox-danger">
-                                        <input id="insurance" name="insurance" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="insurance">Ful Rent a Car Insures <span class="pull-right" >12 $ /for a day</span></label>
+                                        <input id="full-insurance" name="full_insurance" type="checkbox" checked="" class="car-extras" value="12">
+                                        <label for="full_insurance">Ful Rent a Car Insures <span class="pull-right" >12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="participation-in-the-demage" name="participation-in-the-demage" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="participation-in-the-demage">Participation in the damage<span class="pull-right">12 $ /for a day</span></label>
+                                        <input id="basic-insurance" name="basic_insurance" type="checkbox" checked="" class="car-extras" value="12">
+                                        <label for="basic_insurance">Basic Rent a Car Insures <span class="pull-right" >12 $ /for a day</span></label>
+                                    </div>
+                                    <div class="checkbox checkbox-danger">
+                                        <input id="participation-in-the-demage" name="participation_in_the_damage" type="checkbox" checked="" class="car-extras" value="12">
+                                        <label for="participation_in_the_demage">Participation in the damage<span class="pull-right">12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12">
                                         <label for="deposit">Deposit<span class="pull-right">12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="gps" name="gps" type="checkbox" checked="" class="car-extras" value="0">
-                                        <label for="gps">Gps<span class="pull-right">Free</span></label>
-                                    </div>
-                                    <div class="checkbox checkbox-danger">
-                                        <input id="green-card" name="green-card" type="checkbox" checked="" class="car-extras" value="0">
-                                        <label for="green-card">Green Card <span class="pull-right">Included</span></label>
+                                        <input id="green-card" name="green_card" type="checkbox" checked="" class="car-extras" value="0">
+                                        <label for="green_card">Green Card <span class="pull-right">Included</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                             <div class="button">
-                                <button href="#" class="btn btn-block btn-theme btn-theme-dark" data-toggle="modal"
+                                <button href="#" class="btn btn-block btn-theme" data-toggle="modal"
                                         data-target="#updateReservation">Update Reservation</button>
                             </div>
                         </div>
@@ -299,8 +299,8 @@
     <div class="modal fade" id="updateReservation" tabindex="-1" role="dialog" aria-labelledby="updateReservation" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="display: flex;align-items: flex-end;justify-content: space-between;">
-                    <h5 class="modal-title" id="exampleModalLabel">Update Reservation Details</h5>
+                <div class="modal-header" style="display: flex;align-items: flex-end;justify-content: space-between;border-bottom: 0px">
+                    <h4 class="modal-title" id="exampleModalLabel">Update Reservation Details</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -448,61 +448,55 @@
     <div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header" style="border-bottom: none">
+                    <div style="display: flex; align-items: baseline; flex-wrap: wrap;padding: 0px 20px;">
+                        <div>
+                            <h3 style="margin-top: 10px">Volkswagen Golf</h3>
+                        </div>
+
+                        <div class="price" style="padding-left: 20px">
+                            <strong>220.0</strong> <span>$/for 8 day(s)</span>
+                        </div>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -30px">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="car-details">
-                        <div style="display: flex; align-items: baseline; flex-wrap: wrap">
-                            <div>
-                                <h4>Volkswagen Golf</h4>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px">
+                        <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
+                            <h5 class="widget-title-sub">Picking Up Location</h5>
+                            <div class="media" style="display: flex">
+                                <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+                                <div class="" style="width: fit-content;display: flex;flex-direction: column;">
+                                    <input name="pick-up-date" class="reservation-info" disabled value="15 January 2015">
+                                    <input name="pick-up-time" class="reservation-info"  disabled value="08:00 am">
+                                </div>
                             </div>
-
-                            <div class="price" style="padding-left: 20px">
-                                <strong>220.0</strong> <span>$/for 8 day(s)</span>
+                            <div class="media" style="display:flex;" >
+                                <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+                                <div class="" style="width: fit-content;">
+                                    <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
+                                </div>
                             </div>
                         </div>
-
+                        <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
+                            <h5 class="widget-title-sub">Droping Off Location</h5>
+                            <div class="media" style="display:flex;">
+                                <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
+                                <div class="" style="width: fit-content;display: flex;flex-direction: column;">
+                                    <input name="pick-off-date" class="reservation-info" disabled value="15 January 2015">
+                                    <input name="pick-off-time" class="reservation-info"  disabled value="08:00 am">
+                                </div>
+                            </div>
+                            <div class="media" style="display: flex">
+                                <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
+                                <div class="" style="width: fit-content;">
+                                    <input name="pick-off-location"  class="reservation-info" disabled value="From SkyLine AirPort">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                   <div class="container">
-                       <div class=" ow widget-content" style="display: flex; flex-wrap: wrap">
-                           <div class="col-6">
-                               <h5 class="widget-title-sub">Picking Up Location</h5>
-                               <div class="media" style="display: flex">
-                                   <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
-                                   <div class="" style="width: fit-content;display: flex;flex-direction: column;">
-                                       <input name="pick-up-date" class="reservation-info" disabled value="15 January 2015">
-                                       <input name="pick-up-time" class="reservation-info"  disabled value="08:00 am">
-                                   </div>
-                               </div>
-                               <div class="media" style="display:flex;" >
-                                   <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
-                                   <div class="" style="width: fit-content;">
-                                       <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="col-6">
-                               <h5 class="widget-title-sub">Droping Off Location</h5>
-                               <div class="media" style="display:flex;">
-                                   <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
-                                   <div class="" style="width: fit-content;display: flex;flex-direction: column;">
-                                       <input name="pick-off-date" class="reservation-info" disabled value="15 January 2015">
-                                       <input name="pick-off-time" class="reservation-info"  disabled value="08:00 am">
-                                   </div>
-                               </div>
-                               <div class="media" style="display: flex">
-                                   <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
-                                   <div class="" style="width: fit-content;">
-                                       <input name="pick-off-location"  class="reservation-info" disabled value="From SkyLine AirPort">
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
                     <div class="container">
                         <h5 class="widget-title-sub">Additional Equipment</h5>
                         <div class="list">
@@ -539,6 +533,8 @@
             let total = 220 // car price
 
             $('#reservation-btn').on('click', function (event) {
+                $(".append").empty()
+                $(".total-price").empty()
 
                 $('.car-extras:checkbox:checked').map(function() {
                     carExtras[$(this).attr("name")] = this.value
@@ -546,20 +542,20 @@
                 console.log(carExtras)
 
                 $.each(carExtras, function(index, value) {
-                    let feeName = index.replace(/-+/g, ' ').toLowerCase().replace(/\b[a-z]/g, function(letter) {
+                    let feeName = index.replace(/_+/g, ' ').toLowerCase().replace(/\b[a-z]/g, function(letter) {
                         return letter.toUpperCase();
                     });
                     total += parseFloat(value)
 
                     $(".append").append(
-                        '<li>' +
-                            feeName + ' <span>' + value + '$ </span>' +
+                        '<li class="fee-list">' +
+                           '<p>'+ feeName + '</p> <span>' + value + '$ </span>' +
                         '</li>');
 
                 });
 
                 $(".total-price").append(
-                    ' <span>' + total + '$ </span>'
+                    ' <span class="total">Total: ' + total + '$ </span>'
                     );
 
                 $('input.customer-info').map(function() {

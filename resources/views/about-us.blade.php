@@ -45,7 +45,7 @@
                                             <tr>
                                                 <td><i class="fa fa-dashboard"></i> {{ $car->motor }}</td>
                                                 <td><i class="fa fa-cog"></i> {{ $car->transmission }}</td>
-                                                <td><img style="width: 15px" src="assets/img/car.png" alt=""> {{ $car->doors }}</td>
+                                                <td><img style="width: 15px" src="assets/img/door.jpg" alt=""> {{ $car->doors }}</td>
                                                 <td><i class="fa fa-users"></i> {{ $car->passenger }}</td>
                                             </tr>
                                         </table>

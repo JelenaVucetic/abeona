@@ -185,7 +185,7 @@
                                         <tr>
                                             <td><i class="fa fa-dashboard"></i> {{ $car->motor }}</td>
                                             <td><i class="fa fa-cog"></i> {{ $car->transmission }}</td>
-                                            <td><img style="width: 15px" src="assets/img/car.png" alt=""> {{ $car->doors }}</td>
+                                            <td><img style="width: 15px" src="assets/img/door.jpg" alt=""> {{ $car->doors }}</td>
                                             <td><i class="fa fa-users"></i> {{ $car->passenger }}</td>
                                         </tr>
                                     </table>
@@ -438,8 +438,8 @@
             }
 
             $.ajax({
-                type:'POST',
-                url:"{{ route('booking', 1) }}",
+                type:'GET',
+                url:"{{ route('findCar') }}",
                 data:{
                     pick_up_location: pickUpLocation.val(),
                     pick_off_location: pickOffLocation.val(),
@@ -448,8 +448,9 @@
                     pick_up_time: pickUpTime.val(),
                     pick_off_time: pickOffTime.val(),
                 },
-                success:function(data){
-                    alert('success');
+                success:function(response){
+                    console.log(response)
+                    window.location.replace(response);
                 }
             });
 

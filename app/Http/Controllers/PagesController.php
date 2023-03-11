@@ -18,10 +18,10 @@ class PagesController extends Controller
     {
 
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
-        $startTime = Carbon::createFromFormat('d-m-Y H:i', $startTimeString);
+        $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);
 
         $endTimeString = $request->input("pick_off_date") . $request->input("pick_off_time");
-        $endTime = Carbon::createFromFormat('d-m-Y H:i', $endTimeString);
+        $endTime = Carbon::createFromFormat('d/m/Y H:i', $endTimeString);
 
 
         $differenceInDays = $startTime->diffInDays($endTime);
@@ -46,7 +46,7 @@ class PagesController extends Controller
             return $car;
         });
 
-        return $cars;
+        return route('fleet', ['cars' => $cars]);
     }
 
     public function about()

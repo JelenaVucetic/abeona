@@ -26,7 +26,7 @@ Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
 
-Route::get('findCar', [PagesController::class, 'findCar']);
+Route::get('findCar', [PagesController::class, 'findCar'])->name('findCar');
 
 
 Route::get('/', [PagesController::class, 'index'])->name('welcome');

@@ -28,7 +28,7 @@
 
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ route('welcome') }}"><img style="width: 200px;" src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
+                <a href="{{ route('welcome') }}"><img src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
             </div>
             <!-- /Logo -->
 
