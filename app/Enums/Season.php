@@ -6,5 +6,5 @@ enum Season: string {
     case Winter = 'winter';
     case Spring = 'spring';
     case Summer = 'summer';
-    case Autumn = 'autum';
+    case Autumn = 'autumn';
 }
