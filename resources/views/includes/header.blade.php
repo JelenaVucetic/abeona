@@ -18,8 +18,11 @@
 
     </div>
     <div style="display:flex; margin: 0px 10px">
-        <p><img style="width: 20px;" src="{{ asset('assets/img/montenegro.png') }}"></p>
-        <p style="margin-left: 10px"><img style="width: 20px;" src="{{ asset('assets/img/united-states-of-america.png') }}"></p>
+        @foreach(config('app.available_locales') as $locale)
+            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])" :active="app()->getLocale() == $locale">
+                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">
+            </x-nav-link>
+        @endforeach
     </div>
 </nav>
 <header class="header fixed">
@@ -28,7 +31,7 @@
 
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ route('welcome') }}"><img src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
+                <a href="{{ route('welcome', app()->getLocale()) }}"><img src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
             </div>
             <!-- /Logo -->
 
@@ -45,14 +48,14 @@
                         <ul class="nav sf-menu">
                             @if (auth()->check())
                                 <li class="{{ Route::currentRouteName() == 'dashboard'? 'active' : '' }}">
-                                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a href="{{ route('dashboard', app()->getLocale()) }}">Dashboard</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'profile.edit' ? 'active' : '' }}">
-                                    <a href="{{ route('profile.edit') }}">Profile</a>
+                                    <a href="{{ route('profile.edit', app()->getLocale()) }}"> {{ __('Profile') }}</a>
                                 </li>
 
                                 <li class="{{ Route::currentRouteName() == 'cars.index' ? 'active' : '' }}">
-                                    <a href="{{ route('cars.index') }}">Cars</a>
+                                    <a href="{{ route('cars.index', app()->getLocale()) }}">{{ __('Cars') }}</a>
                                 </li>
 
                                {{-- <li class="{{ (strpos(Route::currentRouteName(), 'car-images.index') == 0) ? 'active' : '' }}">
@@ -61,7 +64,7 @@
 
                                 <li>
                                     <!-- Authentication -->
-                                    <form method="POST" action="{{ route('logout') }}" style="padding: 27px 10px;">
+                                    <form method="POST" action="{{ route('logout', app()->getLocale()) }}" style="padding: 27px 10px;">
                                         @csrf
 
                                         <x-dropdown-link :href="route('logout')"
@@ -74,16 +77,16 @@
 
                             @else
                                 <li class="{{ Route::currentRouteName() == 'welcome' ? 'active' : '' }}">
-                                    <a href="{{ route('welcome') }}">Home</a>
+                                    <a href="{{ route('welcome', app()->getLocale()) }}">{{ __('Home') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'fleet' ? 'active' : '' }}">
-                                    <a href="{{ route('fleet') }}">Fleet</a>
+                                    <a href="{{ route('fleet', app()->getLocale()) }}">{{ __('Fleet') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}">
-                                    <a href="{{ route('about-us') }}">About Us</a>
+                                    <a href="{{ route('about-us', app()->getLocale()) }}">{{ __('About Us') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">
-                                    <a href="{{route('contact')}}">Contact</a>
+                                    <a href="{{route('contact', app()->getLocale())}}">{{ __('Concat') }}</a>
                                 </li>
                             @endif
 

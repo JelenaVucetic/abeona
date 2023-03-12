@@ -29,11 +29,24 @@ Route::get('contacts', [ContactController::class, 'index']);
 Route::get('findCar', [PagesController::class, 'findCar'])->name('findCar');
 
 
-Route::get('/', [PagesController::class, 'index'])->name('welcome');
-Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
-Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
-Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-Route::get('booking', [PagesController::class, 'booking'])->name('booking');
+// Redirect home with default language yourdomain.com/en/
+Route::get('/', function () {
+    return redirect(app()->getLocale());
+});
+
+Route::group(
+    [
+        'prefix' => '{locale}',
+        'middleware' => 'setlocale'
+    ], function () {
+    Route::get('/', [PagesController::class, 'index'])->name('welcome');
+    Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
+    Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
+    Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+    Route::get('booking', [PagesController::class, 'booking'])->name('booking');
+
+});
+
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
@@ -56,4 +69,4 @@ Route::middleware('auth')->group(function () {
 
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

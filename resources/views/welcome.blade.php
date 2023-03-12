@@ -16,15 +16,14 @@
 
                                             <div class="form-title">
                                                 <i class="fa fa-globe"></i>
-                                                <h2>Search for Cheap Rental Cars Wherever Your Are</h2>
+                                                <h2>{{ __('Search for Cheap Rental Cars Wherever Your Are') }}</h2>
                                             </div>
 
                                             <div class="row row-inputs">
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up">Picking Up
-                                                                Location</label>
+                                                            <label for="pick-up">{{ __('Picking Up Location') }}</label>
                                                             <select name="pick-up-location" id="pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -46,8 +45,7 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-location">Picking Off
-                                                                Location</label>
+                                                            <label for="pick-off-location">{{ __('Picking Off Location') }}</label>
                                                             <select name="pick-off-location" id="pick-off-location"
                                                                     class="form-control" title="Pick off location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -74,7 +72,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up-date">Picking Up Date</label>
+                                                            <label for="pick-up-date">{{ __('Picking Up Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
@@ -86,7 +84,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up-time">Picking Up Time</label>
+                                                            <label for="pick-up-time">{{ __('Picking Up Time') }}</label>
                                                             <div class='input-group date' id='pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -105,7 +103,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-date">Picking Off Date</label>
+                                                            <label for="pick-off-date">{{ __('Picking Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
@@ -116,7 +114,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-time">Picking Off Time</label>
+                                                            <label for="pick-off-time">{{ __('Picking Off Time') }}</label>
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -133,7 +131,8 @@
 
                                             <div class="row row-submit">
                                                 <div style="display: flex;justify-content: center;">
-                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">Find Car
+                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">
+                                                        {{ __('Find Car') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -142,8 +141,8 @@
                                     <!-- /Search form -->
 
 
-                                    <h2 class="caption-title">Rent Your Ride</h2>
-                                    <h3 class="caption-subtitle">Find Your Perfect Car Rental</h3>
+                                    <h2 class="caption-title">{{ __('Rent Your Ride') }}</h2>
+                                    <h3 class="caption-subtitle">{{ __('Find Your Perfect Car Rental') }}</h3>
                                     </p>
                                 </div>
                             </div>
@@ -159,8 +158,8 @@
         <div class="container">
 
             <h2 class="section-title">
-                <small>Great Rental Offers for You</small>
-                <span>Our Fleet</span>
+                <small>{{ __('Great Rental Offers for You') }}</small>
+                <span>{{ __('Our Fleet') }}</span>
             </h2>
 
             @foreach ($cars->chunk(3) as $cars_set)
@@ -177,15 +176,15 @@
                                 </div>
                                 <div class="caption text-center">
                                     <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
-                                    <div class="caption-text">Start from 39$/per a day</div>
+                                    <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
                                     <div class="buttons">
-                                        <a class="btn btn-theme" href="#">Rent It</a>
+                                        <a class="btn btn-theme" href="#">{{ __('Rent It') }}</a>
                                     </div>
                                     <table class="table">
                                         <tr>
                                             <td><i class="fa fa-dashboard"></i> {{ $car->motor }}</td>
                                             <td><i class="fa fa-cog"></i> {{ $car->transmission }}</td>
-                                            <td><img style="width: 15px" src="assets/img/door.jpg" alt=""> {{ $car->doors }}</td>
+                                            <td><img style="width: 15px" src="{{ asset('assets/img/door.jpg') }}" alt=""> {{ $car->doors }}</td>
                                             <td><i class="fa fa-users"></i> {{ $car->passenger }}</td>
                                         </tr>
                                     </table>
@@ -281,8 +280,8 @@
             <!-- Get in touch -->
 
             <h2 class="section-title">
-                <small>Feel Free to Say Hello!</small>
-                <span>Get in Touch With Us</span>
+                <small>{{ __('Feel Free to Say Hello!') }}</small>
+                <span>{{ __('Get in Touch With Us') }}</span>
             </h2>
 
             <div class="row">

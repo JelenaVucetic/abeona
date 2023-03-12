@@ -55,7 +55,6 @@
     <!-- Modal -->
     @yield('modal')
 
-
     <!-- HEADER -->
         @include('includes.header')
     <!-- /HEADER -->

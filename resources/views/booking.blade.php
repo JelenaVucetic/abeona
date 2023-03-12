@@ -8,45 +8,45 @@
                 <!-- CONTENT -->
                 <div class="col-md-9 content" id="content">
 
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Car Information</h3>
+                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Car Information') }}</h3>
                     <div class="car-big-card alt">
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="owl-carousel img-carousel">
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/car-images/image0.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/car-images/image0.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image0.jpeg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image0.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ asset('assets/car-images') }}/image0.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image0.jpeg') }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/car-images/image1.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/car-images/image1.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image1.jpeg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image1.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ asset('assets/car-images/image1.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image1.jpeg') }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/car-images/image2.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/car-images/image2.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image2.jpeg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image2.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ asset('assets/car-images/image2.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image2.jpeg') }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/car-images/image3.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/car-images/image3.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image3.jpeg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image3.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ asset('assets/car-images/image3.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image3.jpeg') }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="assets/car-images/image4.jpeg" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="assets/car-images/image4.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="assets/car-images/image4.jpeg" alt=""/></a>
+                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image4.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ asset('assets/car-images/image4.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image4.jpeg') }}" alt=""/></a>
                                     </div>
                                 </div>
                                 <div class="row car-thumbnails">
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="assets/car-images/image0.jpeg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="assets/car-images/image1.jpeg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="assets/car-images/image2.jpeg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="assets/car-images/image3.jpeg" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="assets/car-images/image4.jpeg" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image0.jpeg') }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image1.jpeg') }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image2.jpeg') }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image3.jpeg') }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image4.jpeg') }}" alt=""/></a></div>
                                 </div>
 
                             </div>
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
-                                        <strong>220.0</strong> <span>$/for 8 day(s)</span> <i class="fa fa-info-circle"></i>
+                                        <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span> <i class="fa fa-info-circle"></i>
                                     </div>
 
                                     <div class="list">
@@ -56,8 +56,8 @@
                                             </li>
                                             <li>Fuel Diesel</li>
                                             <li>Transmission Manual</li>
-                                            <li>5 Doors</li>
-                                            <li>4 Persons</li>
+                                            <li>5 {{ __('Doors') }}</li>
+                                            <li>4 {{ __('Passengers') }}</li>
                                         </ul>
                                     </div>
 
@@ -67,7 +67,7 @@
                     </div>
                     <hr class="page-divider half transparent"/>
 
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Extras & Frees</h3>
+                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Extras & Frees') }}</h3>
                     <form role="form" class="form-extras">
 
                         <div class="row">
@@ -76,27 +76,27 @@
                                 <div class="left">
                                     <div class="checkbox checkbox-danger">
                                         <input id="second-driver" name="second_driver" type="checkbox" class="car-extras" value="20">
-                                        <label for="second_driver">Second Driver<span class="pull-right">20 $ /Total</span></label>
+                                        <label for="second_driver">{{ __('Second Driver') }}<span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox" class="car-extras" value="20">
-                                        <label for="unlimited_mileage">Unlimited Mileage<span class="pull-right">20 $ /Total</span></label>
+                                        <label for="unlimited_mileage">{{ __('Unlimited Mileage') }}<span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
-                                        <label for="border_crossing">Border Crossing <span class="pull-right">20 $ /Total</span></label>
+                                        <label for="border_crossing">{{ __('Border Crossing') }}<span class="pull-right">20 $ /Total</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_small">Baby Seat Small <span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_small">{{ __('Baby Seat Small') }}<span class="pull-right">Free</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_big">Baby Seat Big <span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_big">{{ __('Baby Seat Big') }} <span class="pull-right">Free</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_booster">Baby Seat Booster <span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_booster">{{ __('Baby Seat Booster') }} <span class="pull-right">Free</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -105,23 +105,23 @@
                                 <div class="right">
                                     <div class="checkbox checkbox-danger">
                                         <input id="full-insurance" name="full_insurance" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="full_insurance">Ful Rent a Car Insures <span class="pull-right" >12 $ /for a day</span></label>
+                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }} <span class="pull-right" >12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="basic-insurance" name="basic_insurance" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="basic_insurance">Basic Rent a Car Insures <span class="pull-right" >12 $ /for a day</span></label>
+                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right" >12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="participation-in-the-demage" name="participation_in_the_damage" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="participation_in_the_demage">Participation in the damage<span class="pull-right">12 $ /for a day</span></label>
+                                        <label for="participation_in_the_demage">{{ __('Participation in the damage') }}<span class="pull-right">12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="deposit">Deposit<span class="pull-right">12 $ /for a day</span></label>
+                                        <label for="deposit">{{ __('Deposit') }}<span class="pull-right">12 $ /for a day</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="green-card" name="green_card" type="checkbox" checked="" class="car-extras" value="0">
-                                        <label for="green_card">Green Card <span class="pull-right">Included</span></label>
+                                        <label for="green_card">{{ __('Green Card') }}<span class="pull-right">Included</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -130,47 +130,47 @@
 
                     </form>
 
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Customer Information</h3>
+                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __("Customer Information") }}</h3>
                     <form action="#" class="form-delivery">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input name="first-name" id="first-name" title="First Name is required" data-toggle="tooltip"
-                                           class="form-control alt customer-info" type="text" placeholder="First Name:*" required>
+                                    <input name="first-name" id="first-name" title="{{__('First Name is required')}}" data-toggle="tooltip"
+                                           class="form-control alt customer-info" type="text" placeholder="{{ __("First Name:*") }}" required>
                                     <span class="error">This field is required</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input name="last-name" id="last-name" title="Last Name is required" data-toggle="tooltip"
-                                           class="form-control alt customer-info" type="text" placeholder="Last Name:*" required>
+                                    <input name="last-name" id="last-name" title="{{ __('Last Name is required') }}" data-toggle="tooltip"
+                                           class="form-control alt customer-info" type="text" placeholder="{{ __('Last Name:*') }}" required>
                                     <span class="error">This field is required</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input name="email" id="email" title="Email is required" data-toggle="tooltip"
-                                           class="form-control alt customer-info" type="text" placeholder="Your Email Address:*" required>
+                                    <input name="email" id="email" title="{{ __("Email is required") }}" data-toggle="tooltip"
+                                           class="form-control alt customer-info" type="text" placeholder="{{ __('Your Email Address:*') }}" required>
                                     <span class="error">This field is required</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input name="phone-number" id="phone-number" title="Phone Number is required" data-toggle="tooltip"
-                                        class="form-control alt customer-info" type="text" placeholder="Phone Number:*" required>
+                                    <input name="phone-number" id="phone-number" title="{{ __("Phone Number is required") }}" data-toggle="tooltip"
+                                        class="form-control alt customer-info" type="text" placeholder="{{ __('Phone Number:*') }}" required>
                                     <span class="error">This field is required</span>
                                 </div>
                             </div>
                         </div>
                     </form>
 
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Additional Information</h3>
+                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Additional Information') }}</h3>
                     <form action="#" class="form-additional">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                        <textarea name="additional-info" id="additional-info" title="Addition information" data-toggle="tooltip"
-                                                  class="form-control alt customer-info" placeholder="Additional Information" cols="30" rows="5"></textarea>
+                                        <textarea name="additional-info" id="additional-info" title="{{ __('Additional Information') }}" data-toggle="tooltip"
+                                                  class="form-control alt customer-info" placeholder="{{ __('Message') }}" cols="30" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +179,9 @@
                     <div class="overflowed reservation-now">
                         <div class="checkbox pull-left">
                             <input id="accept" type="checkbox" name="fd-name" title="Please accept" data-toggle="tooltip">
-                            <label for="accept">I accept all information and Payments etc</label>
+                            <label for="accept">{{ __('I accept terms and conditions') }}</label>
                         </div>
-                        <button id="reservation-btn" class="btn btn-theme pull-right btn-reservation-now">Make a Reservation</button>
+                        <button id="reservation-btn" class="btn btn-theme pull-right btn-reservation-now">{{ __('Make a Reservation') }}</button>
 
                       </div>
 
@@ -192,9 +192,9 @@
                 <aside class="col-md-3 sidebar" id="sidebar">
                     <!-- widget detail reservation -->
                     <div class="widget shadow widget-details-reservation">
-                        <h4 class="widget-title">Detail Reservation</h4>
+                        <h4 class="widget-title">{{ __('Reservation details') }}</h4>
                         <div class="widget-content">
-                            <h5 class="widget-title-sub">Picking Up Location</h5>
+                            <h5 class="widget-title-sub">{{ __('Picking Up Location') }}</h5>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body" >
@@ -208,7 +208,7 @@
                                     <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
                                 </div>
                             </div>
-                            <h5 class="widget-title-sub">Droping Off Location</h5>
+                            <h5 class="widget-title-sub">{{ __('Picking Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body">
@@ -224,14 +224,14 @@
                             </div>
                             <div class="button">
                                 <button href="#" class="btn btn-block btn-theme" data-toggle="modal"
-                                        data-target="#updateReservation">Update Reservation</button>
+                                        data-target="#updateReservation">{{ __('Update Reservation') }}</button>
                             </div>
                         </div>
                     </div>
                     <!-- /widget detail reservation -->
                     <!-- widget testimonials -->
                     <div class="widget shadow">
-                        <div class="widget-title">Testimonials</div>
+                        <div class="widget-title">{{ __('Testimonials') }}</div>
                         <div class="testimonials-carousel">
                             <div class="owl-carousel" id="testimonials">
                                 <div class="testimonial">
@@ -300,7 +300,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="display: flex;align-items: flex-end;justify-content: space-between;border-bottom: 0px">
-                    <h4 class="modal-title" id="exampleModalLabel">Update Reservation Details</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">{{ __('Update Reservation Details') }}</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -319,8 +319,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up">Picking Up
-                                                                Location</label>
+                                                            <label for="pick-up">{{ __('Picking Up Location') }}</label>
                                                             <select name="update-pick-up-location" id="update-pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -342,8 +341,7 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-location">Picking Off
-                                                                Location</label>
+                                                            <label for="update-pick-off-location">{{ __('Picking Off Location') }}</label>
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
                                                                     class="form-control" title="Pick off location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -370,7 +368,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-up-date">Picking Up Date</label>
+                                                            <label for="update-pick-up-date">{{ __('Picking Up Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="update-pick-up-date"
                                                                    id="update-pick-up-date"
@@ -382,7 +380,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-up-time">Picking Up Time</label>
+                                                            <label for="update-pick-up-time">{{ __('Picking Up Time') }}</label>
                                                             <div class='input-group date' id='update-pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -401,7 +399,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-date">Picking Off Date</label>
+                                                            <label for="update-pick-off-date">{{ __('Picking Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="update-pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
@@ -412,7 +410,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-time">Picking Off Time</label>
+                                                            <label for="update-pick-off-time">{{ __('Picking Off Time') }}</label>
                                                             <div class='input-group date' id='update-pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -429,7 +427,8 @@
 
                                             <div class="row row-submit">
                                                 <div style="display: flex;justify-content: center;">
-                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">Update
+                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">
+                                                        {{ __('Update') }}
                                                     </button>
                                                 </div>
                                             </div>
@@ -455,7 +454,7 @@
                         </div>
 
                         <div class="price" style="padding-left: 20px">
-                            <strong>220.0</strong> <span>$/for 8 day(s)</span>
+                            <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span>
                         </div>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -30px">
@@ -465,7 +464,7 @@
                 <div class="modal-body">
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px">
                         <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
-                            <h5 class="widget-title-sub">Picking Up Location</h5>
+                            <h5 class="widget-title-sub">{{ __('Picking Up Location') }}</h5>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
@@ -481,7 +480,7 @@
                             </div>
                         </div>
                         <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
-                            <h5 class="widget-title-sub">Droping Off Location</h5>
+                            <h5 class="widget-title-sub">{{ __('Picking Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
@@ -498,7 +497,7 @@
                         </div>
                     </div>
                     <div class="container">
-                        <h5 class="widget-title-sub">Additional Equipment</h5>
+                        <h5 class="widget-title-sub">{{ __('Additional Equipment') }}</h5>
                         <div class="list">
                             <ul class="append" style="padding-top:10px">
                             </ul>
@@ -506,14 +505,14 @@
                     </div>
                     <div class="container">
                         <div class="total-price">
-                            <h4>Total</h4>
+                            <h4>{{ __('Total') }}</h4>
                         </div>
 
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button class="btn btn-theme pull-right btn-reservation-now">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
+                    <button class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
 
                 </div>
             </div>
