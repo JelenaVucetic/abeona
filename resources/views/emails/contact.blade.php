@@ -1,7 +1,7 @@
 <x-mail::message>
 # Introduction
 
-The body of your message.
+{{$contact->message}}
 
 <x-mail::button :url="''">
 Button Text
