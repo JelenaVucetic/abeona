@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use App\Http\Services\CarService;
 use App\Models\Car;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -55,7 +56,6 @@ class CarController extends Controller
             $carRequest->input('prices')
         );
 
-
         return $car->fresh();
     }
 
@@ -65,9 +65,16 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
+    // Todo move to pages controller
     public function show(Car $car)
     {
-        //return view('test', ["car" =>$car]);
+        $selectedSeason = getCurrentSeason(Carbon::now());
+
+        $price = collect($car->prices)
+        ->where('season', $selectedSeason)
+        ->first();
+
+        $car->pricePerDay = $price["default"];
         return view('booking', ["locale" => app()->getLocale(), "car" => $car]);
     }
 
@@ -115,3 +122,4 @@ class CarController extends Controller
         // return view('fleet');
     }
 }
+
