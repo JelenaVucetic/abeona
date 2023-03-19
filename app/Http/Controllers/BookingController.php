@@ -15,7 +15,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return Booking::all();
+        $bookings = Booking::all();
+        return view('booking', ['bookings' => $bookings]);
     }
 
     /**
@@ -86,7 +87,7 @@ class BookingController extends Controller
         return $booking->delete();
     }
 
-    public function confirm(Booking $booking) 
+    public function confirm(Booking $booking)
     {
         return $booking->update(['confirmed' => true]);
     }

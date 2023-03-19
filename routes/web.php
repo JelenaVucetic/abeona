@@ -26,7 +26,7 @@ Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
 
-Route::get('findCar', [PagesController::class, 'findCar'])->name('findCar');
+Route::post('findCar', [PagesController::class, 'findCar'])->name('findCar');
 
 
 // Redirect home with default language yourdomain.com/en/
@@ -43,8 +43,6 @@ Route::group(
     Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
     Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
     Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-    Route::get('booking', [PagesController::class, 'booking'])->name('booking');
-
 });
 
 

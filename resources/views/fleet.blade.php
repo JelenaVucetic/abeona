@@ -31,7 +31,7 @@
                                             <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
                                             <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
                                             <div class="buttons">
-                                                <a class="btn btn-theme" href="#">{{ __('Rent It') }}</a>
+                                                <button id="rent-it" class="btn btn-theme">{{ __('Rent It') }}</button>
                                             </div>
                                             <table class="table">
                                                 <tr>
@@ -51,4 +51,30 @@
         </div>
     </section>
     <!-- /PAGE -->
+@endsection
+@section('js')
+    <script>
+        $('#rent-it').click(function(e) {
+
+            e.preventDefault();
+
+            $.ajax({
+                type:'GET',
+                url:"/bookings",
+                data:{
+                    car_id: 1,
+                    pick_off_location: 'test',
+                    pick_up_date: '13-03-2023',
+                    pick_off_date: '13-03-2023',
+                    pick_up_time: '20:00',
+                    pick_off_time: '20:00',
+                },
+                success:function(response){
+                    window.location = '/bookings'
+                    /*  console.log(response)
+                      window.location.replace(response);*/
+                }
+            });
+        })
+    </script>
 @endsection

@@ -46,7 +46,7 @@ class PagesController extends Controller
             return $car;
         });
 
-        return route('fleet', ['cars' => $cars]);
+        return redirect()->route('fleet', ['locale'=> app()->getLocale(), 'cars' => $cars]);
     }
 
     public function about()
@@ -64,11 +64,6 @@ class PagesController extends Controller
     public function contact()
     {
         return view('contact');
-    }
-
-    public function booking(Car $car)
-    {
-        return view('booking');
     }
 
     public function getCurrentSeason($date)

@@ -437,7 +437,7 @@
             }
 
             $.ajax({
-                type:'GET',
+                type:'POST',
                 url:"{{ route('findCar') }}",
                 data:{
                     pick_up_location: pickUpLocation.val(),
@@ -448,8 +448,9 @@
                     pick_off_time: pickOffTime.val(),
                 },
                 success:function(response){
-                    console.log(response)
-                    window.location.replace(response);
+                    window.location = '{{ route('fleet', app()->getLocale()) }}'
+                  /*  console.log(response)
+                    window.location.replace(response);*/
                 }
             });
 
