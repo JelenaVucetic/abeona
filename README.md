@@ -10,6 +10,7 @@ Abeona
 - Dva jezika eng i mne
 
 TODO:
+- [ ] Make an object "$car_filter" from dashboard 
 - [ ] Booking
     - [x] List
     - [X] Create
