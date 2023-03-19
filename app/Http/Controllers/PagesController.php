@@ -16,7 +16,6 @@ class PagesController extends Controller
 
     public function findCar(FindCarRequest $request)
     {
-
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
         $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);
 
@@ -35,6 +34,15 @@ class PagesController extends Controller
         $selectedSeason = $this->getCurrentSeason($startTime);
         $numberOfDaysString = $this->getNumberOfDays($differenceInDays);
 
+        $car_filter = (object) array(
+            "pick-up-location" => $request->input('pick-up-location'),
+            "pick-off-location" => $request->input('pick-off-location'),
+            "pick-up-date" => $request->input('pick-up-date'),
+            "pick-off-date" => $request->input('pick-off-date'),
+            "pick-up-time" => $request->input('pick-up-time'),
+            "pick-off-time" => $request->input('pick-off-time'),
+        );
+
         $cars = Car::all()->map(function ($car) use ($selectedSeason, $numberOfDaysString, $differenceInDays) {
             $price = collect($car->prices)
                 ->where('season', $selectedSeason)
@@ -46,7 +54,7 @@ class PagesController extends Controller
             return $car;
         });
 
-        return redirect()->route('fleet', ['locale'=> app()->getLocale(), 'cars' => $cars]);
+        return view('fleet', ['locale'=> app()->getLocale(), 'cars' => $cars, 'car_filter' => $car_filter]);
     }
 
     public function about()

@@ -435,8 +435,17 @@
                 pickOffTime.focus();
                 return false;
             }
+            
+            window.location.href = '{{ route('findCar', app()->getLocale()) }}' + $.param({
+                pick_up_location: pickUpLocation.val(),
+                pick_off_location: pickOffLocation.val(),
+                pick_up_date: pickUpDate.val(),
+                pick_off_date: pickOffDate.val(),
+                pick_up_time: pickUpTime.val(),
+                pick_off_time: pickOffTime.val(),
+            });
 
-            $.ajax({
+            /* $.ajax({
                 type:'POST',
                 url:"{{ route('findCar') }}",
                 data:{
@@ -449,10 +458,8 @@
                 },
                 success:function(response){
                     window.location = '{{ route('fleet', app()->getLocale()) }}'
-                  /*  console.log(response)
-                    window.location.replace(response);*/
                 }
-            });
+            }); */
 
         });
 
