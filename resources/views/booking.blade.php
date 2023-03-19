@@ -46,7 +46,7 @@
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
-                                        <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span> <i class="fa fa-info-circle"></i>
+                                        <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span>
                                     </div>
 
                                     <div class="list">
@@ -76,27 +76,23 @@
                                 <div class="left">
                                     <div class="checkbox checkbox-danger">
                                         <input id="second-driver" name="second_driver" type="checkbox" class="car-extras" value="20">
-                                        <label for="second_driver">{{ __('Second Driver') }}<span class="pull-right">20 $ /Total</span></label>
+                                        <label for="second_driver">{{ __('Second Driver') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox" class="car-extras" value="20">
-                                        <label for="unlimited_mileage">{{ __('Unlimited Mileage') }}<span class="pull-right">20 $ /Total</span></label>
-                                    </div>
-                                    <div class="checkbox checkbox-danger">
-                                        <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
-                                        <label for="border_crossing">{{ __('Border Crossing') }}<span class="pull-right">20 $ /Total</span></label>
+                                        <label for="unlimited_mileage">{{ __('Unlimited Mileage') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_small">{{ __('Baby Seat Small') }}<span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_small">{{ __('Baby Seat Small') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_big">{{ __('Baby Seat Big') }} <span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_big">{{ __('Baby Seat Big') }} <span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras" value="0">
-                                        <label for="baby_seat_booster">{{ __('Baby Seat Booster') }} <span class="pull-right">Free</span></label>
+                                        <label for="baby_seat_booster">{{ __('Baby Seat Booster') }} <span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -104,25 +100,42 @@
                             <div class="col-md-6">
                                 <div class="right">
                                     <div class="checkbox checkbox-danger">
-                                        <input id="full-insurance" name="full_insurance" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }} <span class="pull-right" >12 $ /for a day</span></label>
+                                        <input id="full-insurance"
+                                               name="full_insurance"
+                                               title="{{ __("You have to choose one insurance") }}" data-toggle="tooltip"
+                                               type="checkbox"
+                                               class="car-extras insurance-check" value="12">
+                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }}
+                                            <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="Deposit is included"></i>
+                                            <span class="pull-right" >12 &euro; /for a day</span>
+                                        </label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="basic-insurance" name="basic_insurance" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right" >12 $ /for a day</span></label>
+                                        <input id="basic-insurance"
+                                               name="basic_insurance"
+                                               type="checkbox" checked=""
+                                               class="car-extras insurance-check" value="12">
+                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right" >Included</span></label>
+                                    </div>
+                                    <div class="checkbox checkbox-danger conditional-display">
+                                        <input id="participation-in-the-damage" name="participation_in_the_damage" type="checkbox" checked="" disabled="disabled"  class="car-extras" value="12">
+                                        <label for="participation_in_the_damage">{{ __('Participation in the damage') }}<span class="pull-right">12 &euro; /{{ __('Total') }}</span></label>
+                                    </div>
+                                    <div class="checkbox checkbox-danger conditional-display">
+                                        <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12"  disabled="disabled">
+                                        <label for="deposit">{{ __('Deposit') }}
+                                            <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="We only accept deposits in cash, in all currencies."></i>
+                                            <span class="pull-right">12 &euro; /{{ __('Total') }}</span>
+                                        </label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="participation-in-the-demage" name="participation_in_the_damage" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="participation_in_the_demage">{{ __('Participation in the damage') }}<span class="pull-right">12 $ /for a day</span></label>
+                                        <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
+                                        <label for="border_crossing">{{ __('Border Crossing') }}<span class="pull-right">20 &euro; /{{ __('Total') }}</span></label>
                                     </div>
-                                    <div class="checkbox checkbox-danger">
-                                        <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12">
-                                        <label for="deposit">{{ __('Deposit') }}<span class="pull-right">12 $ /for a day</span></label>
-                                    </div>
-                                    <div class="checkbox checkbox-danger">
+                                   {{-- <div class="checkbox checkbox-danger">
                                         <input id="green-card" name="green_card" type="checkbox" checked="" class="car-extras" value="0">
                                         <label for="green_card">{{ __('Green Card') }}<span class="pull-right">Included</span></label>
-                                    </div>
+                                    </div>--}}
                                 </div>
                             </div>
 
@@ -178,7 +191,7 @@
 
                     <div class="overflowed reservation-now">
                         <div class="checkbox pull-left">
-                            <input id="accept" type="checkbox" name="fd-name" title="Please accept" data-toggle="tooltip">
+                            <input id="accept" type="checkbox" name="fd-name"  title="{{ __("You have to accept terms and conditions") }}" data-toggle="tooltip">
                             <label for="accept">{{ __('I accept terms and conditions') }}</label>
                         </div>
                         <button id="reservation-btn" class="btn btn-theme pull-right btn-reservation-now">{{ __('Make a Reservation') }}</button>
@@ -523,19 +536,37 @@
 
 @section('js')
     <script>
-        // A $( document ).ready() block.
+        $(document).ready(function () {
+            $('#basic-insurance').change(function () {
+                $('.conditional-display').fadeToggle();
+
+                if( this.checked ) {
+                    $('#full-insurance').prop('checked', false);
+                } else {
+                    $('#full-insurance').prop('checked', true);
+                }
+            });
+            $('#full-insurance').change(function () {
+                if( this.checked ) {
+                    $('#basic-insurance').prop('checked', false);
+                } else {
+                    $('#basic-insurance').prop('checked', true);
+                    $(".conditional-display").show( "slow" );
+                }
+            });
+        });
+
         $( document ).ready(function() {
-            let customerInfo = {};
-            let carExtras = {};
-            let reservationInfo = {};
-
-            let total = 220 // car price
-
             $('#reservation-btn').on('click', function (event) {
-                $(".append").empty()
-                $(".total-price").empty()
+                $(".total-price").empty();
+                let customerInfo = {};
+                let carExtras = {};
+                let reservationInfo = {};
 
-                $('.car-extras:checkbox:checked').map(function() {
+                let total = 220 // car price
+
+
+                $('.car-extras:checkbox:checked').not(":disabled").map(function() {
                     carExtras[$(this).attr("name")] = this.value
                 });
                 console.log(carExtras)
@@ -603,18 +634,41 @@
                     return false;
                 }
 
+
+                if ($('.insurance-check').filter(':checked').length < 1 || $('.insurance-check').filter(':checked').length > 1){
+                    $('#full-insurance').tooltip({placement: 'right', trigger: 'manual'}).tooltip('show');
+                    $('#full-insurance').focus();
+                    return false;
+                }
+
+                if ($('#accept').filter(':checked').length < 1){
+                    $('#accept').tooltip({placement: 'bottom', trigger: 'manual'}).tooltip('show');
+                    $('#accept').focus();
+                    return false;
+                }
+
+
                 $('#reservationModal').modal('show')
             })
 
+            $('#reservationModal').on('hidden.bs.modal', function () {
+                $('.fee-list').remove();
+                $(".total-price").empty();
+            })
 
             $('#reservationModal').on('shown.bs.modal', function () {
-
-
 
             })
         });
 
+        $(document).ready(function(){
+            $('#home').click(function () {
+                $('[data-toggle="tooltip"]').tooltip("hide");
+            });
 
+
+
+        });
     </script>
 
 @endsection

@@ -7,12 +7,12 @@
     "About Us": "O nama",
     "Concat": "Kontakt",
     "Search for Cheap Rental Cars Wherever Your Are": "Pretražite jeftine rent-a-car automobile gde god se nalazili.",
-    "Picking Up Location": "Mjesto preuzimanja",
-    "Picking Off Location": "Mjesto vraćanja,",
-    "Picking Up Date": "Datum preuzimanja",
-    "Picking Up Time": "Vrijeme preuzimanja",
-    "Picking Off Date": "Datum vraćanja",
-    "Picking Off Time": "Vrijeme vraćanja",
+    "Pick Up Location": "Mjesto preuzimanja",
+    "Pick Off Location": "Mjesto vraćanja,",
+    "Pick Up Date": "Datum preuzimanja",
+    "Pick Up Time": "Vrijeme preuzimanja",
+    "Pick Off Date": "Datum vraćanja",
+    "Pick Off Time": "Vrijeme vraćanja",
     "Find Car": "Pretražite",
     "Rent Your Ride": "Iznajmite svoj prevoz.",
     "Find Your Perfect Car Rental": "Pronađite savršen rent-a-car za vas.",
@@ -71,5 +71,6 @@
     "Additional Equipment": "Dodatna oprema",
     "Total": "Ukupno",
     "Close": "Zatvori",
-    "Confirm": "Potvrdi"
+    "Confirm": "Potvrdi",
+    "We only accept deposits in cash, in all currencies.": "Depozit primamo samo u kešu, u svim valutama"
 }

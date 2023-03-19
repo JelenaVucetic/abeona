@@ -23,7 +23,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up">{{ __('Picking Up Location') }}</label>
+                                                            <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select name="pick-up-location" id="pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -45,7 +45,7 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-location">{{ __('Picking Off Location') }}</label>
+                                                            <label for="pick-off-location">{{ __('Pick Off Location') }}</label>
                                                             <select name="pick-off-location" id="pick-off-location"
                                                                     class="form-control" title="Pick off location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -72,7 +72,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up-date">{{ __('Picking Up Date') }}</label>
+                                                            <label for="pick-up-date">{{ __('Pick Up Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up-time">{{ __('Picking Up Time') }}</label>
+                                                            <label for="pick-up-time">{{ __('Pick Up Time') }}</label>
                                                             <div class='input-group date' id='pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -103,7 +103,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-date">{{ __('Picking Off Date') }}</label>
+                                                            <label for="pick-off-date">{{ __('Pick Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
@@ -114,7 +114,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-time">{{ __('Picking Off Time') }}</label>
+                                                            <label for="pick-off-time">{{ __('Pick Off Time') }}</label>
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
