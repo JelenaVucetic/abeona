@@ -170,7 +170,7 @@
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
                                        href="assets/img/preview/cars/car-370x220x1.jpg">
-                                        <img src="assets/img/preview/cars/car-370x220x1.jpg" alt=""/>
+                                        <img src={{$car->images[0]["path"]}}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>
