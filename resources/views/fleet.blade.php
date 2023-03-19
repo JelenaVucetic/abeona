@@ -5,8 +5,11 @@
     @isset($details)
         {{$details}}
     @endisset
+    @isset($car_filter)
+    {{json_encode($car_filter)}}
+    @endisset
     <section class="page-section color">
-        {{json_encode($car_filter)}}
+        
         <div class="container">
 
             <p class="text-left lead">

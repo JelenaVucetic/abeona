@@ -67,7 +67,8 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        //return view('test', ["car" =>$car]);
+        return view('booking', ["locale" => app()->getLocale(), "car" => $car]);
     }
 
     /**

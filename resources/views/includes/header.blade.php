@@ -18,11 +18,11 @@
 
     </div>
     <div style="display:flex; margin: 0px 10px">
-        @foreach(config('app.available_locales') as $locale)
+        {{-- @foreach(config('app.available_locales') as $locale)
             <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])" :active="app()->getLocale() == $locale">
                 <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">
             </x-nav-link>
-        @endforeach
+        @endforeach --}}
     </div>
 </nav>
 <header class="header fixed">
