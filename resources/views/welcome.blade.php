@@ -170,7 +170,7 @@
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
                                        href="assets/img/preview/cars/car-370x220x1.jpg">
-                                        <img src="assets/img/preview/cars/car-370x220x1.jpg" alt=""/>
+                                        <img src={{$car->images[0]["path"]}}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>
@@ -178,7 +178,9 @@
                                     <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
                                     <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
                                     <div class="buttons">
-                                        <a class="btn btn-theme" href="#">{{ __('Rent It') }}</a>
+                                        <a class="btn btn-theme" href={{ route('cars.show', ['car'=> $car->id]) }}>
+                                            {{ __('Rent It') }}
+                                        </a>
                                     </div>
                                     <table class="table">
                                         <tr>
@@ -400,7 +402,7 @@
             var pickOffDate = $("input[name=pick-off-date]");
             var pickUpTime = $("input[name=pick-up-time]");
             var pickOffTime = $("input[name=pick-off-time]");
-
+            
             if (pickUpLocation.val() === "") {
                 pickUpLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                 pickUpLocation.focus();

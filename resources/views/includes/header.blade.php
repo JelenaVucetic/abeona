@@ -16,15 +16,15 @@
 {{--            <img src="{{ asset('assets/img/social.png') }}" alt="viber-and-whatsapp.png" style="width: 40px;height: 30px;margin-top: 5px;">--}}
 {{--        </div>--}}
 
-{{--    </div>--}}
-{{--    <div style="display:flex; margin: 0px 10px">--}}
-{{--        @foreach(config('app.available_locales') as $locale)--}}
-{{--            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])" :active="app()->getLocale() == $locale">--}}
-{{--                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">--}}
-{{--            </x-nav-link>--}}
-{{--        @endforeach--}}
-{{--    </div>--}}
-{{--</nav>--}}
+    </div>
+    <div style="display:flex; margin: 0px 10px">
+        {{-- @foreach(config('app.available_locales') as $locale)
+            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])" :active="app()->getLocale() == $locale">
+                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">
+            </x-nav-link>
+        @endforeach --}}
+    </div>
+</nav>
 <header class="header fixed">
     <div class="header-wrapper">
         <div class="container">
