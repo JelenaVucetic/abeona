@@ -45,11 +45,38 @@ $(function () {
             type:"POST",
             url:"/contacts",
             data:dataString,
+            beforeSend: function(){
+               $('#submit_btn').attr('disabled', 'disabled')
+            },
             success:function () {
-                $('#contact-form').append("<div class=\"alert alert-success fade in\"><button class=\"close\" data-dismiss=\"alert\" type=\"button\">&times;</button><strong>Contact Form Submitted!</strong> We will be in touch soon.</div>");
-                $('#contact-form')[0].reset();
+                $.alert({
+                    title: 'Thank you for your email!',
+                    content: 'We appreciate your interest and will get back to you shortly!',
+                    autoClose: 'close|3000',
+                    buttons: {
+                        close: function () {
+                            $('#submit_btn').removeAttr("disabled");
+                            $('#contact-form')[0].reset();
+                        }
+                    }
+                });
+            },
+            error:function () {
+                $.alert({
+                    title: '',
+                    content: 'Something went wrong. Please try again later.',
+                    autoClose: 'close|2200',
+                    type: 'red',
+                    buttons: {
+                        close: function () {
+                            $('#submit_btn').removeAttr("disabled");
+                        }
+                    }
+                });
             }
         });
+
+
         return false;
     });
 });

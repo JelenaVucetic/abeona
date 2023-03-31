@@ -19,14 +19,19 @@ return new class extends Migration
             $table->boolean("confirmed")->default(false);
             $table->boolean("second_driver");
             $table->boolean("unlimited_mileage");
-            $table->boolean("border_crossing");
+            $table->integer("border_crossing");
             $table->boolean("baby_seat_small");
             $table->boolean("baby_seat_big");
             $table->boolean("baby_seat_booster");
-            $table->boolean("green_card");
             $table->integer("basic_insurance");
             $table->integer("full_insurance");
             $table->integer("deposit");
+            $table->integer("damage_participation");
+            $table->string("first_name");
+            $table->string("last_name");
+            $table->string("email");
+            $table->string("phone_number");
+            $table->text("additional_information")->nullable();
             $table->timestamps();
         });
     }

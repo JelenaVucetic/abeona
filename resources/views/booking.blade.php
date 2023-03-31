@@ -68,30 +68,30 @@
                     <hr class="page-divider half transparent"/>
 
                     <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Extras & Frees') }}</h3>
-                    <form role="form" class="form-extras">
+                    <form id="booking-form" class="form-extras" method="post" enctype="multipart/form-data">
 
                         <div class="row">
 
                             <div class="col-md-6">
                                 <div class="left">
                                     <div class="checkbox checkbox-danger">
-                                        <input id="second-driver" name="second_driver" type="checkbox" class="car-extras" value="20">
+                                        <input id="second-driver" name="second_driver" type="checkbox" class="car-extras">
                                         <label for="second_driver">{{ __('Second Driver') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox" class="car-extras" value="20">
+                                        <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox" class="car-extras">
                                         <label for="unlimited_mileage">{{ __('Unlimited Mileage') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras" value="0">
+                                        <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras">
                                         <label for="baby_seat_small">{{ __('Baby Seat Small') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras" value="0">
+                                        <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras">
                                         <label for="baby_seat_big">{{ __('Baby Seat Big') }} <span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
-                                        <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras" value="0">
+                                        <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras">
                                         <label for="baby_seat_booster">{{ __('Baby Seat Booster') }} <span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                 </div>
@@ -114,12 +114,12 @@
                                         <input id="basic-insurance"
                                                name="basic_insurance"
                                                type="checkbox" checked=""
-                                               class="car-extras insurance-check" value="12">
+                                               class="car-extras insurance-check">
                                         <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right" >Included</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
-                                        <input id="participation-in-the-damage" name="participation_in_the_damage" type="checkbox" checked="" disabled="disabled"  class="car-extras" value="12">
-                                        <label for="participation_in_the_damage">{{ __('Participation in the damage') }}<span class="pull-right">12 &euro; /{{ __('Total') }}</span></label>
+                                        <input id="damage-participation" name="damage_participation" type="checkbox" checked="" disabled="disabled"  class="car-extras" value="12">
+                                        <label for="damage_participation">{{ __('Participation in the damage') }}<span class="pull-right">12 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
                                         <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12"  disabled="disabled">
@@ -140,10 +140,8 @@
                             </div>
 
                         </div>
-
                     </form>
-
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __("Customer Information") }}</h3>
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __("Customer Information") }}</h3>
                     <form action="#" class="form-delivery">
                         <div class="row">
                             <div class="col-md-6">
@@ -176,8 +174,7 @@
                             </div>
                         </div>
                     </form>
-
-                    <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Additional Information') }}</h3>
+                        <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Additional Information') }}</h3>
                     <form action="#" class="form-additional">
                         <div class="row">
                             <div class="col-md-12">
@@ -524,7 +521,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
+                    <button id="confirm-booking" class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -534,29 +531,76 @@
 
 @section('js')
     <script>
-        $(document).ready(function () {
-            $('#basic-insurance').change(function () {
-                $('.conditional-display').fadeToggle();
-
-                if( this.checked ) {
-                    $('#full-insurance').prop('checked', false);
-                } else {
-                    $('#full-insurance').prop('checked', true);
-                }
-            });
-            $('#full-insurance').change(function () {
-                console.log(this.checked)
-                if( this.checked ) {
-                    $('.conditional-display').fadeToggle();
-                    $('#basic-insurance').prop('checked', false);
-                } else {
-                    $('#basic-insurance').prop('checked', true);
-                    $(".conditional-display").show( "slow" );
-                }
-            });
-        });
-
         $( document ).ready(function() {
+            $('#confirm-booking').click(function(e) {
+                e.preventDefault();
+
+                const car_id = 1;
+                const second_driver = ($('#second-driver').is(':checked')) ? 1 : 0;
+                const unlimited_mileage = ($('#unlimited-mileage').is(':checked')) ? 1 : 0;
+                const border_crossing = $('#border-crossing').val();
+                const baby_seat_small = ($('#baby-seat-small').is(':checked')) ? 1 : 0;
+                const baby_seat_big = ($('#baby-seat-big').is(':checked')) ? 1 : 0;
+                const baby_seat_booster = ($('#baby-seat-booster').is(':checked')) ? 1 : 0;
+                const basic_insurance = $('#basic-insurance').val();
+                const full_insurance = $('#full-insurance').val();
+                const deposit = $('#deposit').val();
+                const damage_participation = $('#damage-participation').val();
+
+                const first_name = $('#first-name').val();
+                const last_name = $('#last_name').val();
+                const email = $('#email').val();
+                const phone_number = $('#phone-number').val();
+                const additional_information = $('#additional-info').val()
+
+
+
+                const dataString = 'car_id=' + car_id + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
+                    + '&border_crossing=' + border_crossing + '&baby_seat_small=' + baby_seat_small
+                    + '&baby_seat_big=' + baby_seat_big + '&baby_seat_booster=' + baby_seat_booster
+                    + '&basic_insurance=' + basic_insurance + '&full_insurance=' + full_insurance
+                    + '&damage_participation=' + damage_participation + '&deposit=' + deposit
+                    + '&first_name=' + first_name + '&last_name=' + last_name
+                    + '&email=' + email + '&phone_number=' + phone_number + '&additional_information=' + additional_information;
+
+                 $.ajax({
+                     type:"POST",
+                     url:"/bookings",
+                     data: dataString,
+                     enctype: 'multipart/form-data',
+                     beforeSend: function(){
+                         $('#reservationModal').modal('hide');
+                     },
+                     success:function () {
+                         $.alert({
+                             title: 'Thank you for your reservation!',
+                             content: 'We appreciate your interest and will get back to you shortly!',
+                             autoClose: 'close|5000',
+                             buttons: {
+                                 close: function () {
+                                     clear();
+                                 }
+                             }
+                         });
+                     },
+                     error:function () {
+                         $.alert({
+                             title: '',
+                             content: 'Something went wrong. Please try again later.',
+                             autoClose: 'close|5000',
+                             type: 'red',
+                             buttons: {
+                                 close: function () {
+                                     clear();
+                                 }
+                             }
+                         });
+                     }
+                 });
+            })
+
+
+
             $('#reservation-btn').on('click', function (event) {
                 clear();
                 let customerInfo = {};
@@ -565,9 +609,8 @@
 
                 let total = 220 // car price
 
-
                 $('.car-extras:checkbox:checked').not(":disabled").map(function() {
-                    carExtras[$(this).attr("name")] = this.value
+                    carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value + "&euro;"
                 });
 
                 $.each(carExtras, function(index, value) {
@@ -578,7 +621,7 @@
 
                     $(".append").append(
                         '<li class="fee-list">' +
-                           '<p>'+ feeName + '</p> <span>' + value + '$ </span>' +
+                           '<p>'+ feeName + '</p> <span>' + value + '</span>' +
                         '</li>');
 
                 });
@@ -660,6 +703,28 @@
             $('#home').click(function () {
                 $('[data-toggle="tooltip"]').tooltip("hide");
             });
+
+            $('#basic-insurance').change(function () {
+                $('.conditional-display').fadeToggle();
+
+                if( this.checked ) {
+                    $('#full-insurance').prop('checked', false);
+                } else {
+                    $('#full-insurance').prop('checked', true);
+                }
+            });
+
+            $('#full-insurance').change(function () {
+                console.log(this.checked)
+                if( this.checked ) {
+                    $('.conditional-display').fadeToggle();
+                    $('#basic-insurance').prop('checked', false);
+                } else {
+                    $('#basic-insurance').prop('checked', true);
+                    $(".conditional-display").show( "slow" );
+                }
+            });
+
         });
 
         function clear() {

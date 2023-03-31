@@ -26,10 +26,15 @@ class BookingFactory extends Factory
             "baby_seat_small" => fake()->boolean(),
             "baby_seat_big" => fake()->boolean(),
             "baby_seat_booster" => fake()->boolean(),
-            "green_card" => fake()->boolean(),
             "basic_insurance" => fake()->numberBetween(5000, 1000),
             "full_insurance" => fake()->numberBetween(5000, 1000),
             "deposit" => fake()->numberBetween(5000, 1000),
+            "damage_participation" => fake()->numberBetween(5000, 1000),
+            "first_name" => fake()->firstName(),
+            "last_name" => fake()->lastName(),
+            "email" => fake()->email(),
+            "phone_number" => fake()->phoneNumber(),
+            "additional_information" => fake()->text()
         ];
     }
 }

@@ -13,6 +13,7 @@
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-ui/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/jquery-confirm/jquery-confirm.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-select/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/font-awesome.min.css')}}">
@@ -79,6 +80,7 @@
 <!-- JS Global -->
 <script src="{{ asset('assets/plugins/jquery/jquery-1.11.1.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.js') }}"></script>
+<script src="{{ asset('assets/plugins/jquery-confirm/jquery-confirm.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/superfish/js/superfish.min.js') }}"></script>
