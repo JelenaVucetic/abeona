@@ -24,7 +24,7 @@
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-up">{{ __('Pick Up Location') }}</label>
-                                                            <select name="pick-up-location" id="pick-up" class="form-control"
+                                                            <select id="pick-up-location" name="pick-up-location" id="pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
                                                                 <option value="tivat">Tivat</option>
@@ -88,6 +88,7 @@
                                                             <div class='input-group date' id='pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
+                                                                       id='pick-up-time-input'
                                                                        title="Pick up time is required" data-toggle="tooltip"
                                                                        name="pick-up-time" class="form-control" />
                                                                 <span class="input-group-addon">
@@ -118,6 +119,7 @@
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
+                                                                       id="pick-off-time-input"
                                                                        title="Pick off time is required" data-toggle="tooltip"
                                                                        name="pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
@@ -169,8 +171,8 @@
                             <div class="thumbnail no-border no-padding thumbnail-car-card">
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
-                                       href="assets/img/preview/cars/car-370x220x1.jpg">
-                                        <img src={{$car->images[0]["path"]}}" alt=""/>
+                                       href="{{ asset('storage/' . $car->images[0]["path"]) }}">
+                                        <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>
@@ -274,114 +276,6 @@
         </div>
     </section>
     <!-- /PAGE -->
-
-    <!-- PAGE -->
-    <section class="page-section contact dark">
-        <div class="container">
-
-            <!-- Get in touch -->
-
-            <h2 class="section-title">
-                <small>{{ __('Feel Free to Say Hello!') }}</small>
-                <span>{{ __('Get in Touch With Us') }}</span>
-            </h2>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <!-- Contact form -->
-                    <form name="contact-form" method="post" action="#" class="contact-form alt" id="contact-form">
-
-                        <div class="row">
-                            <div class="col-md-6">
-
-                                <div class="outer required">
-                                    <div class="form-group af-inner has-icon">
-                                        <label class="sr-only" for="name">Name</label>
-                                        <input
-                                            type="text" name="name" id="name" placeholder="Name" value="" size="30"
-                                            data-toggle="tooltip" title="Name is required"
-                                            class="form-control placeholder"/>
-                                        <span class="form-control-icon"><i class="fa fa-user"></i></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-6">
-
-                                <div class="outer required">
-                                    <div class="form-group af-inner has-icon">
-                                        <label class="sr-only" for="email">Email</label>
-                                        <input
-                                            type="text" name="email" id="email" placeholder="Email" value="" size="30"
-                                            data-toggle="tooltip" title="Email is required"
-                                            class="form-control placeholder"/>
-                                        <span class="form-control-icon"><i class="fa fa-envelope"></i></span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="form-group af-inner has-icon">
-                            <label class="sr-only" for="input-message">Message</label>
-                            <textarea
-                                name="message" id="input-message" placeholder="Message" rows="4" cols="50"
-                                data-toggle="tooltip" title="Message is required"
-                                class="form-control placeholder"></textarea>
-                            <span class="form-control-icon"><i class="fa fa-bars"></i></span>
-                        </div>
-
-                        <div class="outer required">
-                            <div class="form-group af-inner">
-                                <input type="submit" name="submit"
-                                       class="form-button form-button-submit btn btn-block btn-theme" id="submit_btn"
-                                       value="Send message"/>
-                            </div>
-                        </div>
-
-                    </form>
-                    <!-- /Contact form -->
-                </div>
-                <div class="col-md-6">
-
-                    <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean
-                        sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.</p>
-
-                    <ul class="media-list contact-list">
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa-home"></i></div>
-                            <div class="media-body">Adress: 1600 Pennsylvania Ave NW, Washington, D.C.</div>
-                        </li>
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa"></i></div>
-                            <div class="media-body">DC 20500, ABD</div>
-                        </li>
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa-phone"></i></div>
-                            <div class="media-body">Support Phone: 01865 339665</div>
-                        </li>
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa-envelope"></i></div>
-                            <div class="media-body">E mails: info@example.com</div>
-                        </li>
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa-clock-o"></i></div>
-                            <div class="media-body">Working Hours: 09:30-21:00 except on Sundays</div>
-                        </li>
-                        <li class="media">
-                            <div class="media-left"><i class="fa fa-map-marker"></i></div>
-                            <div class="media-body">View on The Map</div>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-
-            <!-- /Get in touch -->
-
-        </div>
-    </section>
-    <!-- /PAGE -->
 @endsection
 
 @section('js')
@@ -394,15 +288,17 @@
 
         $('#find-car').submit(function(e){
 
+            console.log('clicked')
             e.preventDefault();
 
-            var pickUpLocation = $("input[name=pick-up-location]");
-            var pickOffLocation = $("input[name=pick-off-location]");
-            var pickUpDate = $("input[name=pick-up-date]");
-            var pickOffDate = $("input[name=pick-off-date]");
-            var pickUpTime = $("input[name=pick-up-time]");
-            var pickOffTime = $("input[name=pick-off-time]");
-            
+            var pickUpLocation = $("#pick-up-location");
+            var pickOffLocation = $("#pick-off-location");
+            var pickUpDate = $("#pick-up-date");
+            var pickOffDate = $("#pick-off-date");
+            var pickUpTime = $("#pick-up-time-input");
+            var pickOffTime = $("#pick-off-time-input");
+
+
             if (pickUpLocation.val() === "") {
                 pickUpLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                 pickUpLocation.focus();
@@ -437,7 +333,7 @@
                 pickOffTime.focus();
                 return false;
             }
-            
+            console.log(pickUpLocation.val())
             window.location.href = '{{ route('findCar', app()->getLocale()) }}' + $.param({
                 pick_up_location: pickUpLocation.val(),
                 pick_off_location: pickOffLocation.val(),
@@ -446,23 +342,6 @@
                 pick_up_time: pickUpTime.val(),
                 pick_off_time: pickOffTime.val(),
             });
-
-            /* $.ajax({
-                type:'POST',
-                url:"{{ route('findCar') }}",
-                data:{
-                    pick_up_location: pickUpLocation.val(),
-                    pick_off_location: pickOffLocation.val(),
-                    pick_up_date: pickUpDate.val(),
-                    pick_off_date: pickOffDate.val(),
-                    pick_up_time: pickUpTime.val(),
-                    pick_off_time: pickOffTime.val(),
-                },
-                success:function(response){
-                    window.location = '{{ route('fleet', app()->getLocale()) }}'
-                }
-            }); */
-
         });
 
 

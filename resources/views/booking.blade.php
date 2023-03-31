@@ -190,11 +190,11 @@
                     </form>
 
                     <div class="overflowed reservation-now">
-                        <div class="checkbox pull-left">
-                            <input id="accept" type="checkbox" name="fd-name"  title="{{ __("You have to accept terms and conditions") }}" data-toggle="tooltip">
+                        <div class="checkbox pull-right">
+                            <input id="accept" type="checkbox"  title="{{ __("You have to accept terms and conditions") }}" data-toggle="tooltip">
                             <label for="accept">{{ __('I accept terms and conditions') }}</label>
                         </div>
-                        <button id="reservation-btn" class="btn btn-theme pull-right btn-reservation-now">{{ __('Make a Reservation') }}</button>
+                        <button id="reservation-btn" class="btn btn-theme btn-reservation-now">{{ __('Make a Reservation') }}</button>
 
                       </div>
 
@@ -207,7 +207,7 @@
                     <div class="widget shadow widget-details-reservation">
                         <h4 class="widget-title">{{ __('Reservation details') }}</h4>
                         <div class="widget-content">
-                            <h5 class="widget-title-sub">{{ __('Picking Up Location') }}</h5>
+                            <h5 class="widget-title-sub">{{ __('Pick Up Location') }}</h5>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body" >
@@ -221,7 +221,7 @@
                                     <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
                                 </div>
                             </div>
-                            <h5 class="widget-title-sub">{{ __('Picking Off Location') }}</h5>
+                            <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body">
@@ -332,7 +332,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-up">{{ __('Picking Up Location') }}</label>
+                                                            <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select name="update-pick-up-location" id="update-pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -354,7 +354,7 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-location">{{ __('Picking Off Location') }}</label>
+                                                            <label for="update-pick-off-location">{{ __('Pick Off Location') }}</label>
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
                                                                     class="form-control" title="Pick off location is required" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
@@ -381,7 +381,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-up-date">{{ __('Picking Up Date') }}</label>
+                                                            <label for="update-pick-up-date">{{ __('Pick Up Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="update-pick-up-date"
                                                                    id="update-pick-up-date"
@@ -393,7 +393,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-up-time">{{ __('Picking Up Time') }}</label>
+                                                            <label for="update-pick-up-time">{{ __('Pick Up Time') }}</label>
                                                             <div class='input-group date' id='update-pick-up-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -412,7 +412,7 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-date">{{ __('Picking Off Date') }}</label>
+                                                            <label for="update-pick-off-date">{{ __('Pick Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="update-pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
@@ -423,7 +423,7 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-time">{{ __('Picking Off Time') }}</label>
+                                                            <label for="update-pick-off-time">{{ __('Pick Off Time') }}</label>
                                                             <div class='input-group date' id='update-pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
@@ -477,7 +477,7 @@
                 <div class="modal-body">
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px">
                         <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
-                            <h5 class="widget-title-sub">{{ __('Picking Up Location') }}</h5>
+                            <h5 class="widget-title-sub">{{ __('Pick Up Location') }}</h5>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
@@ -493,7 +493,7 @@
                             </div>
                         </div>
                         <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
-                            <h5 class="widget-title-sub">{{ __('Picking Off Location') }}</h5>
+                            <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
@@ -524,9 +524,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
                     <button class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
-
                 </div>
             </div>
         </div>
@@ -547,7 +545,9 @@
                 }
             });
             $('#full-insurance').change(function () {
+                console.log(this.checked)
                 if( this.checked ) {
+                    $('.conditional-display').fadeToggle();
                     $('#basic-insurance').prop('checked', false);
                 } else {
                     $('#basic-insurance').prop('checked', true);
@@ -558,7 +558,7 @@
 
         $( document ).ready(function() {
             $('#reservation-btn').on('click', function (event) {
-                $(".total-price").empty();
+                clear();
                 let customerInfo = {};
                 let carExtras = {};
                 let reservationInfo = {};
@@ -569,7 +569,6 @@
                 $('.car-extras:checkbox:checked').not(":disabled").map(function() {
                     carExtras[$(this).attr("name")] = this.value
                 });
-                console.log(carExtras)
 
                 $.each(carExtras, function(index, value) {
                     let feeName = index.replace(/_+/g, ' ').toLowerCase().replace(/\b[a-z]/g, function(letter) {
@@ -594,22 +593,15 @@
 
                 customerInfo[$('textarea.customer-info').attr("name")] = $('textarea.customer-info').val()
 
-                console.log(customerInfo)
-
                 $('input.reservation-info').map(function() {
                     reservationInfo[$(this).attr("name")] = this.value
                 });
 
-                console.log(reservationInfo)
-
-
-                for(let i = 0; i < carExtras.length; i++) {
-                    console.log(carExtras[i])
-                }
                 const firstName = $(".form-delivery input#first-name");
                 if (firstName.val() === "" || firstName.val() === "First Name:*" ) {
                     firstName.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     firstName.focus();
+                    clear();
                     return false;
                 }
 
@@ -617,6 +609,7 @@
                 if (lastName.val() === "" || lastName.val() === "Last Name:*" ) {
                     lastName.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     lastName.focus();
+                    clear();
                     return false;
                 }
 
@@ -624,6 +617,7 @@
                 if (email.val() === "" || email.val() === "Your Email Address:*" ) {
                     email.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     email.focus();
+                    clear();
                     return false;
                 }
 
@@ -631,6 +625,7 @@
                 if (phone.val() === "" || phone.val() === "Phone Number:*" ) {
                     phone.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     phone.focus();
+                    clear();
                     return false;
                 }
 
@@ -638,12 +633,14 @@
                 if ($('.insurance-check').filter(':checked').length < 1 || $('.insurance-check').filter(':checked').length > 1){
                     $('#full-insurance').tooltip({placement: 'right', trigger: 'manual'}).tooltip('show');
                     $('#full-insurance').focus();
+                    clear();
                     return false;
                 }
 
                 if ($('#accept').filter(':checked').length < 1){
-                    $('#accept').tooltip({placement: 'bottom', trigger: 'manual'}).tooltip('show');
+                    $('#accept').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     $('#accept').focus();
+                    clear();
                     return false;
                 }
 
@@ -652,12 +649,10 @@
             })
 
             $('#reservationModal').on('hidden.bs.modal', function () {
-                $('.fee-list').remove();
-                $(".total-price").empty();
+                clear();
             })
 
             $('#reservationModal').on('shown.bs.modal', function () {
-
             })
         });
 
@@ -665,10 +660,12 @@
             $('#home').click(function () {
                 $('[data-toggle="tooltip"]').tooltip("hide");
             });
-
-
-
         });
+
+        function clear() {
+            $('.fee-list').remove();
+            $(".total-price").empty();
+        }
     </script>
 
 @endsection

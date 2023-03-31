@@ -16,9 +16,9 @@ class Car extends CustomModel
     protected $with = ['images', 'prices'];
 
     /**
-     * 
+     *
      * Get the User that created Car
-     * 
+     *
      */
     public function user()
     {
@@ -27,7 +27,7 @@ class Car extends CustomModel
 
     public function images()
     {
-        return $this->hasMany(Image::class, );
+        return $this->hasMany(Image::class);
     }
 
     public function prices()
@@ -36,9 +36,9 @@ class Car extends CustomModel
     }
 
     /**
-     * 
+     *
      * Calculates prices depending of the season and number of days ordered
-     * 
+     *
      */
     public function calculatePrice(int $days): int
     {

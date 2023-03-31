@@ -2,14 +2,11 @@
 
 @section('content')
     <!-- PAGE -->
-    @isset($details)
-        {{$details}}
-    @endisset
     @isset($car_filter)
     {{json_encode($car_filter)}}
     @endisset
     <section class="page-section color">
-        
+
         <div class="container">
 
             <p class="text-left lead">
@@ -26,8 +23,8 @@
                                     <div class="thumbnail no-border no-padding thumbnail-car-card">
                                         <div class="media">
                                             <a class="media-link" data-gal="prettyPhoto"
-                                               href="{{ asset('assets/img/preview/cars/car-370x220x1.jpg')}} ">
-                                                <img src="{{ asset('assets/img/preview/cars/car-370x220x1.jpg') }}" alt=""/>
+                                               href="{{ asset('storage/' . $car->images[0]["path"]) }}">
+                                                <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/>
                                                 <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                             </a>
                                         </div>
