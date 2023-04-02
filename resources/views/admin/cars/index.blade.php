@@ -1,17 +1,139 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>List of cars</h1>
+    <div class="container-fluid">
 
-    @foreach ($cars as $car )
-        {{$car->name}}
-        <br>
-        @foreach ($car->images as $image)
-            {{$image->path}}
-            <br>
-            <img src="{{$image->path}}">
-        @endforeach
-    @endforeach
+        <div class="table-responsive-md">
+            <table class="table">
+                <div>
+                    <a href="{{ route('cars.create') }}">Add new car</a>
+                </div>
+                <h1>List of cars</h1>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Motor</th>
+                    <th scope="col">Doors</th>
+                    <th scope="col">Passenger</th>
+                    <th scope="col">Transmission</th>
+                    <th scope="col">Basic insurance</th>
+                    <th scope="col">Damage participation</th>
+                    <th scope="col">Deposit</th>
+                    <th scope="col">Full insurance</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($cars as $car )
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{$car->name}}</td>
+                        <td>{{$car->motor}}</td>
+                        <td>{{$car->doors}}</td>
+                        <td>{{$car->passenger}}</td>
+                        <td>{{$car->transmission}}</td>
+                        <td>{{$car->basic_insurance}}</td>
+                        <td>{{$car->participation_damage}}</td>
+                        <td>{{$car->deposit}}</td>
+                        <td>{{$car->full_insurance}}</td>
+                        <td>
+                            @foreach ($car->images as $image)
+                                <img style="width: 50px" src="{{$image->path}}" alt="">
+                            @endforeach
+                        </td>
+                        <td>
+                            <button class="car-edit btn-info" data-id="{{$car->id}}">Edit</button>
+                        </td>
+                        <td>
+                            <button class="car-delete btn-danger" data-id="{{$car->id}}">Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
 
-    <a href="{{ route('cars.create') }}">Create</a>
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+<script>
+    $('.car-edit').click(function(e) {
+        e.preventDefault();
+        const car =  $(this).data('id');
+
+        $.ajax({
+            type:"get",
+            url:"/cars/" + car + '/edit',
+            beforeSend: function(){
+            },
+            success:function () {
+                window.location.href = '{{ route('cars.edit', $car) }}'
+            },
+            error:function () {
+                $.alert({
+                    title: '',
+                    content: 'Something went wrong. Please try again later.',
+                    autoClose: 'close|5000',
+                    type: 'red',
+                    buttons: {
+                        close: function () {
+                            clear();
+                        }
+                    }
+                });
+            }
+        });
+    })
+
+    $('.car-delete').click(function(e) {
+        e.preventDefault();
+
+        const car =  $(this).data('id');
+
+        $.confirm({
+            title: 'Are you sure?',
+            content: 'This car will be deleted',
+            buttons: {
+                cancel: function () {
+                    $.alert('Canceled!');
+                },
+                delete: {
+                    text: 'Delete',
+                    btnClass: 'btn-red',
+                    action: function(){
+                        $.ajax({
+                            type:"DELETE",
+                            url:"/cars/" + car,
+                            beforeSend: function(){
+                            },
+                            success:function () {
+                                $.alert('Deleted');
+                                window.location.href = '{{ route('cars.index') }}'
+                            },
+                            error:function () {
+                                $.alert({
+                                    title: '',
+                                    content: 'Something went wrong. Please try again later.',
+                                    autoClose: 'close|5000',
+                                    type: 'red',
+                                    buttons: {
+                                        close: function () {
+                                            clear();
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+
+    })
+</script>
 @endsection

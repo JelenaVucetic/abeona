@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
 
@@ -44,7 +43,6 @@ Route::group(
     Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
     Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
 });
-
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');

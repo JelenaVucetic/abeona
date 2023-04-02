@@ -27,7 +27,7 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-        return $cars;
+        return view('admin.cars.index', ['cars' => $cars]);
     }
 
     /**
@@ -86,7 +86,7 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view('admin.cars.edit', ['car' => $car]);
     }
 
     /**
