@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Helpers\DateTimeHelper;
 use App\Models\Car;
-use App\Http\Requests\FindCarRequest;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+
 
 class PagesController extends Controller
 {
@@ -16,8 +17,9 @@ class PagesController extends Controller
         return view('welcome')->with(["cars" => $cars]);
     }
 
-    public function findCar(FindCarRequest $request)
+    public function findCar(Request $request)
     {
+
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
         $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);
 
@@ -37,12 +39,12 @@ class PagesController extends Controller
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 
         $car_filter = (object) array(
-            "pick-up-location" => $request->input('pick-up-location'),
-            "pick-off-location" => $request->input('pick-off-location'),
-            "pick-up-date" => $request->input('pick-up-date'),
-            "pick-off-date" => $request->input('pick-off-date'),
-            "pick-up-time" => $request->input('pick-up-time'),
-            "pick-off-time" => $request->input('pick-off-time'),
+            "pick_up_location" => $request->input('pick_up_location'),
+            "pick_off_location" => $request->input('pick_off_location'),
+            "pick_up_date" => $request->input('pick_up_date'),
+            "pick_off_date" => $request->input('pick_off_date'),
+            "pick_up_time" => $request->input('pick_up_time'),
+            "pick_off_time" => $request->input('pick_off_time'),
         );
 
         $cars = Car::all()->map(function ($car) use ($selectedSeason, $numberOfDaysString, $differenceInDays) {
@@ -56,7 +58,7 @@ class PagesController extends Controller
             return $car;
         });
 
-        return view('fleet', ['locale'=> app()->getLocale(), 'cars' => $cars, 'car_filter' => $car_filter]);
+        return view('fleet', ['locale' => app()->getLocale(), 'cars' => $cars, 'car_filter' => $car_filter]);
     }
 
     public function about()
