@@ -86,7 +86,7 @@
                                     <a href="{{ route('about-us', app()->getLocale()) }}">{{ __('About Us') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">
-                                    <a href="{{route('contact', app()->getLocale())}}">{{ __('Concat') }}</a>
+                                    <a href="{{route('contact', app()->getLocale())}}">{{ __('Contact') }}</a>
                                 </li>
                             @endif
 
