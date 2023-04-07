@@ -9,6 +9,9 @@ Abeona
 - Check pricing of google maps
 - Dva jezika eng i mne
 
+
+Add full path to env `APP_IMAGE_PATH=http://127.0.0.1:8000/storage/` add domain name instead of local host mb?
+
 TODO:
 - [ ] Make an object "$car_filter" from dashboard 
 - [ ] Booking
