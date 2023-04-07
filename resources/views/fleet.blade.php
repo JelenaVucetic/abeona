@@ -24,7 +24,8 @@
                                         <div class="media">
                                             <a class="media-link" data-gal="prettyPhoto"
                                                href="{{ asset('storage/' . $car->images[0]["path"]) }}">
-                                                <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/>
+                                                {{-- <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/> --}}
+                                                <img src="{{config('image.path') . $car->images[0]["path"] }}" alt=""/>
                                                 <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                             </a>
                                         </div>
