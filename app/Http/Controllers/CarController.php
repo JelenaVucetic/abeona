@@ -162,9 +162,11 @@ class CarController extends Controller
         $car->pricePerDay = $price[$numberOfDaysString];
         $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
         $car->totalDays = $differenceInDays;
-        return $car;
 
 
-        return $car;
+        return response()->json([
+            'car' => $car,
+            'car_filter' => $car_filter
+        ]);
     }
 }
