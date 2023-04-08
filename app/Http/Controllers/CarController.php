@@ -71,8 +71,8 @@ class CarController extends Controller
         $selectedSeason = getCurrentSeason(Carbon::now());
 
         $price = collect($car->prices)
-        ->where('season', $selectedSeason)
-        ->first();
+            ->where('season', $selectedSeason)
+            ->first();
 
         $car->pricePerDay = $price["default"];
         return view('booking', ["locale" => app()->getLocale(), "car" => $car]);
@@ -121,5 +121,52 @@ class CarController extends Controller
         return response()->json($input);
         // return view('fleet');
     }
-}
 
+    public function bookCar(Request $request)
+    {
+        // <== probably extract
+        $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
+        $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);
+
+        $endTimeString = $request->input("pick_off_date") . $request->input("pick_off_time");
+        $endTime = Carbon::createFromFormat('d/m/Y H:i', $endTimeString);
+
+
+        $differenceInDays = $startTime->diffInDays($endTime);
+        $differenceInHours = $startTime->diffInHours($endTime);
+
+
+        if ($differenceInHours % 24 > 0) {
+            $differenceInDays++;
+        }
+
+        $selectedSeason = getCurrentSeason($startTime);
+        $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
+
+        // rename
+        $car_filter = (object) array(
+            "pick_up_location" => $request->input('pick_up_location'),
+            "pick_off_location" => $request->input('pick_off_location'),
+            "pick_up_date" => $request->input('pick_up_date'),
+            "pick_off_date" => $request->input('pick_off_date'),
+            "pick_up_time" => $request->input('pick_up_time'),
+            "pick_off_time" => $request->input('pick_off_time'),
+        );
+        // ==>
+
+        $car = Car::find($request->input('car_id'));
+
+        // mb extract
+        $price = collect($car->prices)
+            ->where('season', $selectedSeason)
+            ->first();
+
+        $car->pricePerDay = $price[$numberOfDaysString];
+        $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
+        $car->totalDays = $differenceInDays;
+        return $car;
+
+
+        return $car;
+    }
+}

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('cars/{id}/book', [CarController::class, 'bookCar']);
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
 
