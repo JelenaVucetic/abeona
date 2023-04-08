@@ -122,7 +122,7 @@ class CarController extends Controller
         // return view('fleet');
     }
 
-    public function bookCar(Request $request)
+    public function bookCar(Request $request, Car $car)
     {
         // <== probably extract
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
@@ -153,8 +153,6 @@ class CarController extends Controller
             "pick_off_time" => $request->input('pick_off_time'),
         );
         // ==>
-
-        $car = Car::find($request->input('car_id'));
 
         // mb extract
         $price = collect($car->prices)

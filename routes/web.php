@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('cars/{id}/book', [CarController::class, 'bookCar']);
+
+Route::get('cars/{car}/book', [CarController::class, 'bookCar']);
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
 
@@ -38,12 +39,14 @@ Route::group(
     [
         'prefix' => '{locale}',
         'middleware' => 'setlocale'
-    ], function () {
-    Route::get('/', [PagesController::class, 'index'])->name('welcome');
-    Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
-    Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
-    Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-});
+    ],
+    function () {
+        Route::get('/', [PagesController::class, 'index'])->name('welcome');
+        Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
+        Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
+        Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+    }
+);
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
@@ -63,7 +66,6 @@ Route::middleware('auth')->group(function () {
     //Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
     Route::get('/car-images', [CarController::class, 'index'])->name('car-images.index');
-
 });
 
 require __DIR__ . '/auth.php';
