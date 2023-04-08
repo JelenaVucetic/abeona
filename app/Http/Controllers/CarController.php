@@ -98,7 +98,7 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-        //
+        return response()->json($car);
     }
 
     /**

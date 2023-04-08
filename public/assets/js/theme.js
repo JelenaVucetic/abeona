@@ -1359,11 +1359,15 @@ jQuery(window).scroll(function () {
 });
 
 function ImgUpload() {
+
+    console.log('here')
     var imgWrap = "";
     var imgArray = [];
 
     $('.upload__inputfile').each(function () {
+
         $(this).on('change', function (e) {
+            $('.upload__img-wrap').empty()
             imgWrap = $(this).closest('.upload__box').find('.upload__img-wrap');
             var maxLength = $(this).attr('data-max_length');
             imgWrap.append("<div style='width: 100%;margin: 10px;'><h5>Select main image</h5></div>")

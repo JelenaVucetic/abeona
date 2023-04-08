@@ -274,7 +274,20 @@
                                     </label>
 
                                 </div>
-                                <div class="upload__img-wrap"></div>
+                                <div class="upload__img-wrap">
+                                    @foreach($car->images as $image)
+                                        <div class='upload__img-box'>
+                                            <div style='background-image: url({{$image->path}})' class='img-bg'>
+                                            <div class='upload__img-close'></div>
+                                            <div class=''>
+                                                <input checked  title='Select main image' data-toggle='tooltip'  name='main-image' type='radio' value='" + f.name + "'>
+                                                </div>
+                                            </div>
+                                        </div>;
+                                    @endforeach
+
+
+                                </div>
                             </div>
                         </div>
 
