@@ -171,8 +171,8 @@
                             <div class="thumbnail no-border no-padding thumbnail-car-card">
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
-                                       href="{{ asset('storage/' . $car->images[0]["path"]) }}">
-                                        <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/>
+                                       href="{{ $car->images[0]["path"] }}">
+                                        <img src="{{ $car->images[0]["path"] }}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>
@@ -180,9 +180,9 @@
                                     <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
                                     <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
                                     <div class="buttons">
-                                        <a class="btn btn-theme" href={{ route('cars.show', ['car'=> $car->id]) }}>
+                                        <button class="btn btn-theme rent-it" data-id="{{ $car->id }}">
                                             {{ __('Rent It') }}
-                                        </a>
+                                        </button>
                                     </div>
                                     <table class="table">
                                         <tr>
@@ -334,9 +334,9 @@
                 return false;
             }
             console.log(pickUpLocation.val())
-            window.location.href = '{{ route('findCar', app()->getLocale()) }}' + $.param({
-                pick_up_location: pickUpLocation.val(),
-                pick_off_location: pickOffLocation.val(),
+            window.location.href = '{{ app()->getLocale() }}/findCar?' + $.param({
+                pick_up_location: encodeURIComponent(pickUpLocation.val()),
+                pick_off_location: encodeURIComponent(pickOffLocation.val()),
                 pick_up_date: pickUpDate.val(),
                 pick_off_date: pickOffDate.val(),
                 pick_up_time: pickUpTime.val(),
@@ -345,6 +345,51 @@
         });
 
 
+        $('.rent-it').click(function(e){
+            e.preventDefault();
+            const car =  $(this).data('id');
+
+            let pickUpLocation = $("#pick-up-location").val();
+            let pickOffLocation = $("#pick-off-location").val();
+            let pickUpDate = $("#pick-up-date").val();
+            let pickOffDate = $("#pick-off-date").val();
+            let pickUpTime = $("#pick-up-time-input").val();
+            let pickOffTime = $("#pick-off-time-input").val();
+
+console.log(pickUpLocation)
+            if (pickUpLocation === "") {
+                pickUpLocation = "Tivat aerodrom"
+            }
+
+            if (pickOffLocation === "") {
+                pickOffLocation = "Tivat aerodrom"
+            }
+
+            if (pickUpDate === "") {
+                pickUpDate = $.datepicker.formatDate('mm/dd/yy', new Date());
+            }
+
+            if (pickOffDate === "") {
+                pickOffDate = $.datepicker.formatDate('mm/dd/yy', new Date());
+            }
+
+            if (pickUpTime === "") {
+                pickUpTime = '20:00'
+            }
+
+            if (pickOffTime === "") {
+                pickOffTime = '20:00'
+            }
+
+            window.location.href = '/cars/' + car + '/book?' + $.param({
+                pick_up_location: encodeURIComponent(pickUpLocation),
+                pick_off_location: encodeURIComponent(pickOffLocation),
+                pick_up_date: pickUpDate,
+                pick_off_date: pickOffDate,
+                pick_up_time: pickUpTime,
+                pick_off_time: pickOffTime,
+            });
+        });
     </script>
 
 

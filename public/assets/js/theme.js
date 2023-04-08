@@ -1314,9 +1314,12 @@ function updater() {
     //owlCarouselSelector.trigger('refresh');
     //owlCarouselSelector.trigger('refresh.owl.carousel');
 
-    $('.datepicker').datepicker({
-        format: 'dd mm yyyy',
-    }).datepicker("setDate",'now');
+    // $('.datepicker').datepicker({
+    //     format: 'dd/mm/yyyy',
+    // }).datepicker("setDate",'now');
+
+    $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+    $( ".datepicker" ).datepicker('setDate', 'today');
 
     $(function () {
         $('#pick-up-time').datetimepicker({

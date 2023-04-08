@@ -90,34 +90,40 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: default</label>
-                                <input type="number" class="form-control summer" id="default"  required />
+                                <input value="{{collect(($car->prices)->where('season', 'summer')->first())['default'] }}"
+                                    type="number" class="form-control summer" id="default"  required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: 1-3 days</label>
-                                <input type="number" class="form-control summer" id="1-3" required />
+                                <input  value="{{collect(($car->prices)->where('season', 'summer')->first())['1-3'] }}"
+                                    type="number" class="form-control summer" id="1-3" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: 4-7 days</label>
-                                <input type="number" class="form-control summer" id="4-7" required />
+                                <input value="{{collect(($car->prices)->where('season', 'summer')->first())['4-7'] }}"
+                                    type="number" class="form-control summer" id="4-7" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: 8-15 days</label>
-                                <input type="number" class="form-control summer" id="8-15"  required />
+                                <input value="{{collect(($car->prices)->where('season', 'summer')->first())['8-15'] }}"
+                                    type="number" class="form-control summer" id="8-15"  required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: 16-22 days</label>
-                                <input type="number" class="form-control summer" id="16-22" required />
+                                <input value="{{collect(($car->prices)->where('season', 'summer')->first())['16-22'] }}"
+                                    type="number" class="form-control summer" id="16-22" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: 23+days</label>
-                                <input type="number" class="form-control summer" id="23+" required />
+                                <input value="{{collect(($car->prices)->where('season', 'summer')->first())['23+'] }}"
+                                    type="number" class="form-control summer" id="23+" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
@@ -128,34 +134,40 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: default</label>
-                                <input type="number" class="form-control autumn" id="default" name="" required />
+                                <input  value="{{collect(($car->prices)->where('season', 'autumn')->first())['default'] }}"
+                                    type="number" class="form-control autumn" id="default" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 1-3 days</label>
-                                <input type="number" class="form-control autumn" id="1-3" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'autumn')->first())['1-3'] }}"
+                                       type="number" class="form-control autumn" id="1-3" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 4-7 days</label>
-                                <input type="number" class="form-control autumn" id="4-7" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'autumn')->first())['4-7'] }}"
+                                       type="number" class="form-control autumn" id="4-7" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 8-15 days</label>
-                                <input type="number" class="form-control autumn" id="8-15" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'autumn')->first())['8-15'] }}"
+                                type="number" class="form-control autumn" id="8-15" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: 16-22 days</label>
-                                <input type="number" class="form-control autumn" id="16-22" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'autumn')->first())['16-22'] }}"
+                                       type="number" class="form-control autumn" id="16-22" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 23+ days</label>
-                                <input type="number" class="form-control autumn" id="23+" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'autumn')->first())['23+'] }}"
+                                       type="number" class="form-control autumn" id="23+" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
@@ -167,34 +179,40 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: default</label>
-                                <input type="number" class="form-control winter" id="default" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['default'] }}"
+                                    type="number" class="form-control winter" id="default" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 1-3 days</label>
-                                <input type="number" class="form-control winter" id="1-3" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['1-3'] }}"
+                                    type="number" class="form-control winter" id="1-3" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 4-7 days</label>
-                                <input type="number" class="form-control winter" id="4-7" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['4-7'] }}"
+                                    type="number" class="form-control winter" id="4-7" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 8-15 days</label>
-                                <input type="number" class="form-control winter" id="8-15" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['8-15'] }}"
+                                    type="number" class="form-control winter" id="8-15" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: 16-22 days</label>
-                                <input type="number" class="form-control winter" id="16-22" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['16-22'] }}"
+                                    type="number" class="form-control winter" id="16-22" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 23+ days</label>
-                                <input type="number" class="form-control winter" id="23+" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'winter')->first())['23+'] }}"
+                                    type="number" class="form-control winter" id="23+" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
@@ -205,35 +223,41 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="">Price: defalt</label>
-                                <input type="number" class="form-control spring" id="default" name="" required />
+                                <label for="">Price: default</label>
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['default'] }}"
+                                       type="number" class="form-control spring" id="default" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 1-3 days</label>
-                                <input type="number" class="form-control spring" id="1-3" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['1-3'] }}"
+                                    type="number" class="form-control spring" id="1-3" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price": 4-7 days</label>
-                                <input type="number" class="form-control spring" id="4-7" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['4-7'] }}"
+                                    type="number" class="form-control spring" id="4-7" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 8-15 days</label>
-                                <input type="number" class="form-control spring" id="8-15" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['8-15'] }}"
+                                    type="number" class="form-control spring" id="8-15" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: 16-22 days</label>
-                                <input type="number" class="form-control spring" id="16-22" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['16-22'] }}"
+                                    type="number" class="form-control spring" id="16-22" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="">Price: 23+ days</label>
-                                <input type="number" class="form-control spring" id="23+" name="" required />
+                                <input value="{{collect(($car->prices)->where('season', 'spring')->first())['23+'] }}"
+                                    type="number" class="form-control spring" id="23+" name="" required />
                                 <small class="form-text text-muted">Please fill price</small>
                             </div>
                         </div>

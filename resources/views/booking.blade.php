@@ -46,7 +46,7 @@
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
-                                        <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span>
+                                        <strong>{{ $car->totalPrice }}</strong> <span>{{ __('$/for number of day(s)', ['number' => $car->totalDays ]) }}</span>
                                     </div>
 
                                     <div class="list">
@@ -54,10 +54,10 @@
                                             <li class="title">
                                                 <h2>Volkswagen Golf</h2>
                                             </li>
-                                            <li>Fuel Diesel</li>
-                                            <li>Transmission Manual</li>
-                                            <li>5 {{ __('Doors') }}</li>
-                                            <li>4 {{ __('Passengers') }}</li>
+                                            <li>Fuel {{ $car->motor }}</li>
+                                            <li>Transmission {{ $car->transmision }}</li>
+                                            <li>{{ $car->doors }} {{ __('Doors') }}</li>
+                                            <li>{{ $car->passenger }} {{ __('Passengers') }}</li>
                                         </ul>
                                     </div>
 
@@ -113,9 +113,10 @@
                                     <div class="checkbox checkbox-danger">
                                         <input id="basic-insurance"
                                                name="basic_insurance"
+                                               value="{{ 12 + 12 }}"
                                                type="checkbox" checked=""
                                                class="car-extras insurance-check">
-                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right" >Included</span></label>
+                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right">{{ 12+12 }} &euro; /{{ __('Total') }} </span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
                                         <input id="damage-participation" name="damage_participation" type="checkbox" checked="" disabled="disabled"  class="car-extras" value="12">
@@ -208,28 +209,28 @@
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body" >
-                                    <input name="pick-up-date" class="reservation-info" disabled value="15 January 2015">
-                                    <input name="pick-up-time" class="reservation-info"  disabled value="08:00 am">
+                                    <input name="pick-up-date" class="reservation-info" disabled value="{{ $car_filter->pick_up_date }}">
+                                    <input name="pick-up-time" class="reservation-info"  disabled value="{{ $car_filter->pick_up_time }}">
                                 </div>
                             </div>
                             <div class="media" style="display:flex;" >
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="media-body">
-                                    <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
+                                    <input name="pick-up-location" class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
                             <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body">
-                                    <input name="pick-off-date" class="reservation-info" disabled value="15 January 2015">
-                                    <input name="pick-off-time" class="reservation-info"  disabled value="08:00 am">
+                                    <input name="pick-off-date" class="reservation-info" disabled value="{{ $car_filter->pick_off_date }}">
+                                    <input name="pick-off-time" class="reservation-info"  disabled value="{{ $car_filter->pick_off_time }}">
                                 </div>
                             </div>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="media-body">
-                                    <input name="pick-off-location"  class="reservation-info" disabled value="From SkyLine AirPort">
+                                    <input name="pick-off-location"  class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_off_location)) }}">
                                 </div>
                             </div>
                             <div class="button">
@@ -304,7 +305,6 @@
 @endsection
 
 @section('modal')
-
     <!-- Modal -->
     <div class="modal fade" id="updateReservation" tabindex="-1" role="dialog" aria-labelledby="updateReservation" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -332,18 +332,18 @@
                                                             <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select name="update-pick-up-location" id="update-pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
-                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
-                                                                <option value="tivat">Tivat</option>
-                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
-                                                                <option value="podgorica">Podgorica</option>
-                                                                <option value="cetinje">Cetinje</option>
-                                                                <option value="bar">Bar</option>
-                                                                <option value="ulcinj">Ulcinj</option>
-                                                                <option value="petrovac">Petrovac</option>
-                                                                <option value="budva">Budva</option>
-                                                                <option value="kotor">Kotor</option>
-                                                                <option value="herceg novi">Herceg Novi</option>
-                                                                <option value="niksic">Niksic</option>
+                                                                <option {{ $car_filter->pick_up_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
+                                                                <option {{ $car_filter->pick_up_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
+                                                                <option {{ $car_filter->pick_up_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_up_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
+                                                                <option {{ $car_filter->pick_up_location == 'ulcinj' ? "selected" : "" }}  value="ulcinj">Ulcinj</option>
+                                                                <option {{ $car_filter->pick_up_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
+                                                                <option {{ $car_filter->pick_up_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
+                                                                <option {{ $car_filter->pick_up_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
+                                                                <option {{ $car_filter->pick_up_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
+
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
@@ -354,18 +354,19 @@
                                                             <label for="update-pick-off-location">{{ __('Pick Off Location') }}</label>
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
                                                                     class="form-control" title="Pick off location is required" data-toggle="tooltip" >
-                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
-                                                                <option value="tivat">Tivat</option>
-                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
-                                                                <option value="podgorica">Podgorica</option>
-                                                                <option value="cetinje">Cetinje</option>
-                                                                <option value="bar">Bar</option>
-                                                                <option value="ulcinj">Ulcinj</option>
-                                                                <option value="petrovac">Petrovac</option>
-                                                                <option value="budva">Budva</option>
-                                                                <option value="kotor">Kotor</option>
-                                                                <option value="herceg novi">Herceg Novi</option>
-                                                                <option value="niksic">Niksic</option>
+
+                                                                <option {{ $car_filter->pick_off_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
+                                                                <option {{ $car_filter->pick_off_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
+                                                                <option {{ $car_filter->pick_off_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_off_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
+                                                                <option {{ $car_filter->pick_off_location == 'ulcinj' ? "selected" : "" }}  value="ulcinj">Ulcinj</option>
+                                                                <option {{ $car_filter->pick_off_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
+                                                                <option {{ $car_filter->pick_off_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
+                                                                <option {{ $car_filter->pick_off_location == 'kotor' ? "selected" : "" }}  value="kotor">Kotor</option>
+                                                                <option {{ $car_filter->pick_off_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
+                                                                <option {{ $car_filter->pick_off_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
@@ -383,6 +384,7 @@
                                                                    name="update-pick-up-date"
                                                                    id="update-pick-up-date"
                                                                    title="Pick up date is required" data-toggle="tooltip"
+                                                                   value="{{ $car_filter->pick_up_date }}"
                                                                    placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
@@ -393,7 +395,7 @@
                                                             <label for="update-pick-up-time">{{ __('Pick Up Time') }}</label>
                                                             <div class='input-group date' id='update-pick-up-time'>
                                                                 <input type='text'
-                                                                       value="20:00"
+                                                                       value="{{ $car_filter->pick_up_time }}"
                                                                        title="Pick up time is required" data-toggle="tooltip"
                                                                        name="update-pick-up-time" class="form-control" />
                                                                 <span class="input-group-addon">
@@ -413,6 +415,7 @@
                                                             <input type="text" class="form-control datepicker"
                                                                    name="update-pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
+                                                                   value="{{ $car_filter->pick_off_date }}"
                                                                    id="update-pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
@@ -423,7 +426,7 @@
                                                             <label for="update-pick-off-time">{{ __('Pick Off Time') }}</label>
                                                             <div class='input-group date' id='update-pick-off-time'>
                                                                 <input type='text'
-                                                                       value="20:00"
+                                                                       value="{{ $car_filter->pick_off_time }}"
                                                                        title="Pick off time is required" data-toggle="tooltip"
                                                                        name="update-pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
@@ -437,7 +440,7 @@
 
                                             <div class="row row-submit">
                                                 <div style="display: flex;justify-content: center;">
-                                                    <button type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">
+                                                    <button data-id="{{ $car->id }}" id="update-reservation-details" type="submit" class="btn btn-submit btn-theme pull-right" style="margin-bottom: 5px">
                                                         {{ __('Update') }}
                                                     </button>
                                                 </div>
@@ -478,14 +481,14 @@
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
-                                    <input name="pick-up-date" class="reservation-info" disabled value="15 January 2015">
-                                    <input name="pick-up-time" class="reservation-info"  disabled value="08:00 am">
+                                    <input name="pick-up-date" class="reservation-info" disabled value="{{ $car_filter->pick_up_date }}">
+                                    <input name="pick-up-time" class="reservation-info"  disabled value="{{ $car_filter->pick_up_time }}">
                                 </div>
                             </div>
                             <div class="media" style="display:flex;" >
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="" style="width: fit-content;">
-                                    <input name="pick-up-location" class="reservation-info" disabled value="From SkyLine AirPort">
+                                    <input name="pick-up-location" class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
                         </div>
@@ -494,14 +497,14 @@
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
-                                    <input name="pick-off-date" class="reservation-info" disabled value="15 January 2015">
-                                    <input name="pick-off-time" class="reservation-info"  disabled value="08:00 am">
+                                    <input name="pick-off-date" class="reservation-info" disabled value="{{ $car_filter->pick_off_date }}">
+                                    <input name="pick-off-time" class="reservation-info"  disabled value="{{ $car_filter->pick_off_time }}">
                                 </div>
                             </div>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="" style="width: fit-content;">
-                                    <input name="pick-off-location"  class="reservation-info" disabled value="From SkyLine AirPort">
+                                    <input name="pick-off-location"  class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_off_location)) }}">
                                 </div>
                             </div>
                         </div>
@@ -532,6 +535,62 @@
 @section('js')
     <script>
         $( document ).ready(function() {
+            $('#update-reservation-details').click(function(e) {
+                e.preventDefault();
+
+                var pickUpLocation = $("select[name='update-pick-up-location']");
+                var pickOffLocation = $("select[name='update-pick-off-location']");
+                var pickUpDate = $("input[name='update-pick-up-date']");
+                var pickOffDate = $("input[name='update-pick-off-date']");
+                var pickUpTime = $("input[name='update-pick-up-time']");
+                var pickOffTime = $("input[name='update-pick-off-time']");
+                const car =  $(this).data('id');
+
+                if (pickUpLocation.val() === "") {
+                    pickUpLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    pickUpLocation.focus();
+                    return false;
+                }
+
+                if (pickOffLocation.val() === "") {
+                    pickOffLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    pickOffLocation.focus();
+                    return false;
+                }
+
+                if (pickUpDate.val() === "") {
+                    pickUpDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    // pickUpDate.focus();
+                    return false;
+                }
+
+                if (pickOffDate.val() === "") {
+                    pickOffDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    //  pickOffDate.focus();
+                    return false;
+                }
+
+                if (pickUpTime.val() === "") {
+                    pickUpTime.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    return false;
+                }
+
+                if (pickOffTime.val() === "") {
+                    pickOffTime.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                    pickOffTime.focus();
+                    return false;
+                }
+
+                window.location.href = '/cars/' + car + '/book?' + $.param({
+                    pick_up_location: pickUpLocation.val(),
+                    pick_off_location: pickOffLocation.val(),
+                    pick_up_date: pickUpDate.val(),
+                    pick_off_date: pickOffDate.val(),
+                    pick_up_time: pickUpTime.val(),
+                    pick_off_time: pickOffTime.val()
+                });
+            })
+
             $('#confirm-booking').click(function(e) {
                 e.preventDefault();
 
@@ -554,6 +613,14 @@
                 const additional_information = $('#additional-info').val()
 
 
+                const pick_up_location = $("input[name='pick-up-location']").val()
+                const pick_up_time = $("input[name='pick-up-time']").val()
+                const pick_up_date = $("input[name='pick-up-date']").val()
+                const pick_off_location = $("input[name='pick-off-location']").val()
+                const pick_off_date = $("input[name='pick-off-date']").val()
+                const pick_off_time = $("input[name='pick-off-time']").val()
+
+                const total = $('#total-amount').val()
 
                 const dataString = 'car_id=' + car_id + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
                     + '&border_crossing=' + border_crossing + '&baby_seat_small=' + baby_seat_small
@@ -561,7 +628,10 @@
                     + '&basic_insurance=' + basic_insurance + '&full_insurance=' + full_insurance
                     + '&damage_participation=' + damage_participation + '&deposit=' + deposit
                     + '&first_name=' + first_name + '&last_name=' + last_name
-                    + '&email=' + email + '&phone_number=' + phone_number + '&additional_information=' + additional_information;
+                    + '&email=' + email + '&phone_number=' + phone_number + '&additional_information=' + additional_information
+                    + '&pick_up_location=' + pick_up_location + '&pick_up_time=' + pick_up_time + '&pick_up_date=' + pick_up_date
+                    + '&pick_off_location=' + pick_off_location + '&pick_off_date=' + pick_off_date + '&pick_off_time=' + pick_off_time
+                    + '&total=' + total;
 
                  $.ajax({
                      type:"POST",
@@ -608,16 +678,27 @@
                 let reservationInfo = {};
 
                 let total = 220 // car price
+                const numOfDays = 8;
 
                 $('.car-extras:checkbox:checked').not(":disabled").map(function() {
-                    carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value + "&euro;"
+                    console.log()
+                    console.log(this.value)
+                    if( $(this).attr("name") === 'full_insurance') {
+                        carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value * numOfDays + "&euro;"
+                    } else {
+                        carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value + "&euro;"
+                    }
+
                 });
 
                 $.each(carExtras, function(index, value) {
                     let feeName = index.replace(/_+/g, ' ').toLowerCase().replace(/\b[a-z]/g, function(letter) {
                         return letter.toUpperCase();
                     });
-                    total += parseFloat(value)
+
+                    if($.isNumeric(parseFloat(value))) {
+                        total += parseFloat(value)
+                    }
 
                     $(".append").append(
                         '<li class="fee-list">' +
@@ -627,7 +708,7 @@
                 });
 
                 $(".total-price").append(
-                    ' <span class="total">Total: ' + total + '$ </span>'
+                    '<input type="hidden" id="total-amount" value="'+total+'"> <span class="total">Total: ' + total + '&euro; </span>'
                     );
 
                 $('input.customer-info').map(function() {

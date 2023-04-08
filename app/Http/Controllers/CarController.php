@@ -166,10 +166,6 @@ class CarController extends Controller
         $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
         $car->totalDays = $differenceInDays;
 
-
-        return response()->json([
-            'car' => $car,
-            'car_filter' => $car_filter
-        ]);
+        return view('booking', ['locale' => app()->getLocale(), 'car' => $car, 'car_filter' => $car_filter]);
     }
 }

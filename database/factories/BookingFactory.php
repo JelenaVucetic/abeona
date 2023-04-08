@@ -34,7 +34,14 @@ class BookingFactory extends Factory
             "last_name" => fake()->lastName(),
             "email" => fake()->email(),
             "phone_number" => fake()->phoneNumber(),
-            "additional_information" => fake()->text()
+            "additional_information" => fake()->text(),
+            "pick_up_location" => fake()->city(),
+            "pick_up_date" => fake()->date('d/m/Y'),
+            "pick_up_time" => fake()->time('H:i'),
+            "pick_off_location" => fake()->city(),
+            "pick_off_date" => fake()->date('d/m/Y'),
+            "pick_off_time" => fake()->time('H:i'),
+            "total" => fake()->numberBetween(5000, 1000)
         ];
     }
 }

@@ -2,9 +2,6 @@
 
 @section('content')
     <!-- PAGE -->
-    @isset($car_filter)
-    {{json_encode($car_filter)}}
-    @endisset
     <section class="page-section color">
 
         <div class="container">
@@ -16,6 +13,12 @@
             </p>
             <hr class="page-divider"/>
                 <div class="container">
+                    <input type="hidden" value="{{ $car_filter->pick_up_location }}" name="pick_up_location">
+                    <input type="hidden" value="{{ $car_filter->pick_up_date }}" name="pick_up_date">
+                    <input type="hidden" value="{{ $car_filter->pick_up_time }}" name="pick_up_time">
+                    <input type="hidden" value="{{ $car_filter->pick_off_location }}" name="pick_off_location">
+                    <input type="hidden" value="{{ $car_filter->pick_off_date }}" name="pick_off_date">
+                    <input type="hidden" value="{{ $car_filter->pick_off_time }}" name="pick_off_time">
                     @foreach ($cars->chunk(3) as $cars_set)
                         <div class="row">
                             @foreach ($cars_set as $car)
@@ -33,7 +36,7 @@
                                             <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
                                             <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
                                             <div class="buttons">
-                                                <button id="rent-it" class="btn btn-theme">{{ __('Rent It') }}</button>
+                                                <button class="rent-car btn btn-theme" data-id="{{ $car->id }}">{{ __('Rent It') }}</button>
                                             </div>
                                             <table class="table">
                                                 <tr>
@@ -56,26 +59,17 @@
 @endsection
 @section('js')
     <script>
-        $('#rent-it').click(function(e) {
-
+        $('.rent-car').click(function(e) {
             e.preventDefault();
 
-            $.ajax({
-                type:'GET',
-                url:"/bookings",
-                data:{
-                    car_id: 1,
-                    pick_off_location: 'test',
-                    pick_up_date: '13-03-2023',
-                    pick_off_date: '13-03-2023',
-                    pick_up_time: '20:00',
-                    pick_off_time: '20:00',
-                },
-                success:function(response){
-                    window.location = '/bookings'
-                    /*  console.log(response)
-                      window.location.replace(response);*/
-                }
+            const car =  $(this).data('id');
+            window.location.href = '/cars/' + car + '/book?' + $.param({
+                pick_up_location: $("input[name=pick_up_location]").val(),
+                pick_off_location: $("input[name=pick_off_location]").val(),
+                pick_up_date: $("input[name=pick_up_date]").val(),
+                pick_off_date: $("input[name=pick_off_date]").val(),
+                pick_up_time: $("input[name=pick_up_time]").val(),
+                pick_off_time: $("input[name=pick_off_time]").val()
             });
         })
     </script>

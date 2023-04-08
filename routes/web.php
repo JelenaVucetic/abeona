@@ -27,7 +27,11 @@ Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
 
-Route::get('findCar', [PagesController::class, 'findCar'])->name('findCar');
+
+Route::get('/dashboard', function () {
+    return view('admin.reservations.index');
+});
+//->middleware(['auth', 'verified'])->name('dashboard');
 
 
 // Redirect home with default language yourdomain.com/en/
@@ -39,23 +43,19 @@ Route::group(
     [
         'prefix' => '{locale}',
         'middleware' => 'setlocale'
-    ],
-    function () {
-        Route::get('/', [PagesController::class, 'index'])->name('welcome');
-        Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
-        Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
-        Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-    }
-);
+    ], function () {
+    Route::get('/', [PagesController::class, 'index'])->name('welcome');
+    Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
+    Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
+    Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+    Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
+});
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
 
 Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 
-Route::get('/dashboard', function () {
-    return view('admin.reservations.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -32,6 +32,13 @@ return new class extends Migration
             $table->string("email");
             $table->string("phone_number");
             $table->text("additional_information")->nullable();
+            $table->string('pick_up_location');
+            $table->string('pick_up_date');
+            $table->string('pick_up_time');
+            $table->string('pick_off_location');
+            $table->string('pick_off_date');
+            $table->string('pick_off_time');
+            $table->integer('total');
             $table->timestamps();
         });
     }
