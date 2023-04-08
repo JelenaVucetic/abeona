@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
+
 class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.reservations.index');
+        $bookings = Booking::all();
+        return view('admin.reservations.index', ['bookings' => $bookings]);
     }
 }

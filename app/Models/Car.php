@@ -25,6 +25,11 @@ class Car extends CustomModel
         return $this->belongsTo(User::class);
     }
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class);

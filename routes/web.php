@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
@@ -28,9 +29,7 @@ Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
 
 
-Route::get('/dashboard', function () {
-    return view('admin.reservations.index');
-});
+Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 //->middleware(['auth', 'verified'])->name('dashboard');
 
 

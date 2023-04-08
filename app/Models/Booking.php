@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends CustomModel
 {
     use HasFactory;
+
+    protected $with = ['car'];
+
+    public function car()
+    {
+         return $this->belongsTo(Car::class);
+    }
 }
