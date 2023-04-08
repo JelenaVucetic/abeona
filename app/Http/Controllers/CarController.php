@@ -143,9 +143,6 @@ class CarController extends Controller
             $differenceInDays += 1;
         }
 
-        //dd($differenceInDays);
-
-
         $selectedSeason = getCurrentSeason($startTime);
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 
