@@ -135,10 +135,16 @@ class CarController extends Controller
         $differenceInDays = $startTime->diffInDays($endTime);
         $differenceInHours = $startTime->diffInHours($endTime);
 
+        if ($differenceInDays == 0) {
+            $differenceInDays += 1;
+        }
 
         if ($differenceInHours % 24 > 0) {
-            $differenceInDays++;
+            $differenceInDays += 1;
         }
+
+        //dd($differenceInDays);
+
 
         $selectedSeason = getCurrentSeason($startTime);
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
