@@ -26,7 +26,15 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
+        $now = now();
+        $currentSeason = getCurrentSeason($now);
+        $cars = Car::all()->map(function($car) use ($currentSeason){
+            $price = collect($car->prices)
+            ->where('season', $currentSeason)
+            ->first();
+            $car->pricePerDay = $price['default'];
+        });
+        
         return view('admin.cars.index', ['cars' => $cars]);
     }
 
