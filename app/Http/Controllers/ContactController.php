@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ContactStored;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
-use App\Providers\ContactMailStored;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -19,7 +19,7 @@ class ContactController extends Controller
             $contactRequest->all()
         );
 
-        ContactMailStored::dispatch($contact);
+        ContactStored::dispatch($contact);
 
         return  $contact;
     }

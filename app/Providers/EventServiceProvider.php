@@ -6,6 +6,10 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Events\BookingStored;
+use App\Events\ContactStored;
+use App\Listeners\SendBookingEmail;
+use App\Listeners\SendContactEmail;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,8 +22,11 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        ContactMailStored::class => [
+        ContactStored::class => [
             SendContactEmail::class,
+        ],
+        BookingStored::class => [
+            SendBookingEmail::class,
         ],
     ];
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BookingStored;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
@@ -37,9 +38,13 @@ class BookingController extends Controller
      */
     public function store(StoreBookingRequest $request)
     {
-        return Booking::create(
+        $booking = Booking::create(
             $request->all()
         );
+
+        BookingStored::dispatch($booking);
+
+        return $booking;
     }
 
     /**

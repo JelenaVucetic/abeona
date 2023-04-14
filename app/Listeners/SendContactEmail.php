@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
 use App\Mail\ContactMail;
 use App\Models\User;
-use App\Providers\ContactMailStored;
+use App\Events\ContactStored;
 use Log;
 use Mail;
 
@@ -26,7 +26,7 @@ class SendContactEmail
      * @param  \App\Providers\ContactMailStored  $event
      * @return void
      */
-    public function handle(ContactMailStored $event)
+    public function handle(ContactStored $event)
     {
         Log::info(json_encode($event->contact->email));
         $user = User::factory()->make(['email'=> $event->contact->email]);
