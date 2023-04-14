@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Models\User;
 use Log;
-use Illuminate\Support\Facades\Mail;
+use Mail;
 use App\Mail\BookingMail;
 
 class SendBookingEmail
