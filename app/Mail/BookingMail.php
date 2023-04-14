@@ -45,7 +45,7 @@ class BookingMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.booking-confirmation',
+            view: 'emails.booking-request',
         );
     }
 

@@ -611,7 +611,7 @@
                 const damage_participation = $('#damage-participation').val();
 
                 const first_name = $('#first-name').val();
-                const last_name = $('#last_name').val();
+                const last_name = $('#last-name').val();
                 const email = $('#email').val();
                 const phone_number = $('#phone-number').val();
                 const additional_information = $('#additional-info').val()
