@@ -1318,12 +1318,17 @@ function updater() {
     //     format: 'dd/mm/yyyy',
     // }).datepicker("setDate",'now');
 
-    $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy' });
+    $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
     $( ".datepicker" ).datepicker('setDate', 'today');
+
+    $( ".datepicker-update" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
+
 
     $(function () {
         $('#pick-up-time').datetimepicker({
-            format: 'HH:mm  '
+            format: 'HH:mm ',
+            keepOpen: false,
+            showClose: true
         });
     });
     $(function () {

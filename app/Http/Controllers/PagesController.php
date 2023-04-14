@@ -6,6 +6,7 @@ use App\Helpers\DateTimeHelper;
 use App\Models\Car;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 
 class PagesController extends Controller
@@ -13,7 +14,16 @@ class PagesController extends Controller
 
     public function index()
     {
-        $cars = Car::all();
+        $now = now();
+        $currentSeason = getCurrentSeason($now);
+
+        $cars = Car::all()->map(function($car) use ($currentSeason){
+            $price = collect($car->prices)
+                ->where('season', $currentSeason)
+                ->first();
+            $car->pricePerDay = $price['default'];
+            return $car;
+        });
         return view('welcome')->with(["cars" => $cars]);
     }
 
@@ -68,13 +78,32 @@ class PagesController extends Controller
 
     public function about()
     {
-        $cars = Car::all();
+        $now = now();
+        $currentSeason = getCurrentSeason($now);
+
+        $cars = Car::all()->map(function($car) use ($currentSeason){
+            $price = collect($car->prices)
+                ->where('season', $currentSeason)
+                ->first();
+            $car->pricePerDay = $price['default'];
+            return $car;
+        });
+
         return view('about-us', ['cars' => $cars]);
     }
 
     public function fleet()
     {
-        $cars = Car::all();
+        $now = now();
+        $currentSeason = getCurrentSeason($now);
+
+        $cars = Car::all()->map(function($car) use ($currentSeason){
+            $price = collect($car->prices)
+                ->where('season', $currentSeason)
+                ->first();
+            $car->pricePerDay = $price['default'];
+            return $car;
+        });
         return view('fleet',  ['cars' => $cars]);
     }
 

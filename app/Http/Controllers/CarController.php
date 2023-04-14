@@ -28,13 +28,15 @@ class CarController extends Controller
     {
         $now = now();
         $currentSeason = getCurrentSeason($now);
+
         $cars = Car::all()->map(function($car) use ($currentSeason){
             $price = collect($car->prices)
             ->where('season', $currentSeason)
             ->first();
             $car->pricePerDay = $price['default'];
+            return $car;
         });
-        
+
         return view('admin.cars.index', ['cars' => $cars]);
     }
 
@@ -94,7 +96,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view('admin.cars.edit', ['car' => $car]);
+
+        return view('admin.cars.edit', compact('car'));
     }
 
     /**
@@ -130,8 +133,9 @@ class CarController extends Controller
         // return view('fleet');
     }
 
-    public function bookCar(Request $request, Car $car)
+    public function bookCar(Request $request)
     {
+        $car = Car::find($request->input("car_id"));
         // <== probably extract
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
         $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);

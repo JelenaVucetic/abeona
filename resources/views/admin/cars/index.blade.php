@@ -5,10 +5,11 @@
 
         <div class="table-responsive-md">
             <table class="table">
-                <div>
-                    <a href="{{ route('cars.create') }}">Add new car</a>
+                <div style="margin: 20px 0px;display: flex;justify-content: space-between;align-items: baseline;">
+                    <h1>List of cars</h1>
+                    <a href="{{ route('cars.create') }}" style="padding: 15px 30px;background-color: #f8981d;border-color: #f8981d;color: #ffffff;">Add new car</a>
                 </div>
-                <h1>List of cars</h1>
+
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -66,12 +67,12 @@
         const car =  $(this).data('id');
 
         $.ajax({
-            type:"get",
-            url:"/cars/" + car + '/edit',
+            type:"GET",
+            url: "{{ route('cars.edit', $car) }}",
             beforeSend: function(){
             },
             success:function () {
-                window.location.href = '{{ route('cars.edit', $car) }}'
+                window.location.href = "{{ route('cars.edit', $car) }}"
             },
             error:function () {
                 $.alert({
@@ -81,7 +82,6 @@
                     type: 'red',
                     buttons: {
                         close: function () {
-                            clear();
                         }
                     }
                 });
@@ -122,7 +122,6 @@
                                     type: 'red',
                                     buttons: {
                                         close: function () {
-                                            clear();
                                         }
                                     }
                                 });

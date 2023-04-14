@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('cars/{car}/book', [CarController::class, 'bookCar']);
+
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
 
@@ -47,6 +47,7 @@ Route::group(
     Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
     Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
     Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+    Route::get('/cars/{car}/book', [CarController::class, 'bookCar'])->name('bookCar');
     Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
 });
 
