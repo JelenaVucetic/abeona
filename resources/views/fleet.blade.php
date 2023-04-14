@@ -13,12 +13,24 @@
             </p>
             <hr class="page-divider"/>
                 <div class="container">
-                    <input type="hidden" value="{{ $car_filter->pick_up_location }}" name="pick_up_location">
-                    <input type="hidden" value="{{ $car_filter->pick_up_date }}" name="pick_up_date">
-                    <input type="hidden" value="{{ $car_filter->pick_up_time }}" name="pick_up_time">
-                    <input type="hidden" value="{{ $car_filter->pick_off_location }}" name="pick_off_location">
-                    <input type="hidden" value="{{ $car_filter->pick_off_date }}" name="pick_off_date">
-                    <input type="hidden" value="{{ $car_filter->pick_off_time }}" name="pick_off_time">
+                    <input type="hidden"
+                           value="{{ isset($car_filter) ? $car_filter->pick_up_location : "Tivat" }}"
+                           name="pick_up_location">
+                    <input type="hidden"
+                           value="{{isset($car_filter) ?  $car_filter->pick_up_date : now()->format('d/m/Y')}}"
+                           name="pick_up_date">
+                    <input type="hidden"
+                           value="{{ isset($car_filter) ? $car_filter->pick_up_time : date('H:i')  }}"
+                           name="pick_up_time">
+                    <input type="hidden"
+                           value="{{ isset($car_filter) ? $car_filter->pick_off_location : "Tivat"}}"
+                           name="pick_off_location">
+                    <input type="hidden"
+                           value="{{ isset($car_filter) ? $car_filter->pick_off_date : now()->format('d/m/Y')}}"
+                           name="pick_off_date">
+                    <input type="hidden"
+                           value="{{ isset($car_filter) ?$car_filter->pick_off_time : date('H:i')}}"
+                           name="pick_off_time">
                     @foreach ($cars->chunk(3) as $cars_set)
                         <div class="row">
                             @foreach ($cars_set as $car)
@@ -63,7 +75,8 @@
             e.preventDefault();
 
             const car =  $(this).data('id');
-            window.location.href = '/cars/' + car + '/book?' + $.param({
+            window.location.href =  '/{{ app()->getLocale() }}/cars/' + car + '/book?' + $.param({
+                car_id: car,
                 pick_up_location: $("input[name=pick_up_location]").val(),
                 pick_off_location: $("input[name=pick_off_location]").val(),
                 pick_up_date: $("input[name=pick_up_date]").val(),

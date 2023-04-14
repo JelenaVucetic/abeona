@@ -86,7 +86,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view('admin.cars.edit', ['car' => $car]);
+
+        return view('admin.cars.edit', compact('car'));
     }
 
     /**

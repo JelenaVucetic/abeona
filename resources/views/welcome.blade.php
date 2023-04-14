@@ -76,10 +76,10 @@
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
-                                                                   title="Pick up date is required" data-toggle="tooltip"
+                                                                   title="{{ __("Pick up date is required") }}" data-toggle="tooltip"
                                                                    placeholder="dd/mm/yyyy">
-                                                            <span class="form-control-icon"><i
-                                                                    class="fa fa-calendar"></i></span>
+                                                            <span class="form-control-icon">
+                                                                <i class="fa fa-calendar"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -89,7 +89,7 @@
                                                                 <input type='text'
                                                                        value="20:00"
                                                                        id='pick-up-time-input'
-                                                                       title="Pick up time is required" data-toggle="tooltip"
+                                                                       title="{{ __('Pick up time is required') }}" data-toggle="tooltip"
                                                                        name="pick-up-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -107,7 +107,7 @@
                                                             <label for="pick-off-date">{{ __('Pick Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-off-date"
-                                                                   title="Pick off date is required" data-toggle="tooltip"
+                                                                   title="{{ __("Pick off date is required") }}" data-toggle="tooltip"
                                                                    id="pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
@@ -120,7 +120,7 @@
                                                                 <input type='text'
                                                                        value="20:00"
                                                                        id="pick-off-time-input"
-                                                                       title="Pick off time is required" data-toggle="tooltip"
+                                                                       title="{{ __('Pick off time is required') }}" data-toggle="tooltip"
                                                                        name="pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -311,6 +311,13 @@
                 return false;
             }
 
+            if (pickUpDate.val() > pickOffDate.val()) {
+                console.log('here')
+                pickUpDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+                // pickUpDate.focus();
+                return false;
+            }
+
             if (pickUpDate.val() === "") {
                 pickUpDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                // pickUpDate.focus();
@@ -333,7 +340,7 @@
                 pickOffTime.focus();
                 return false;
             }
-            console.log(pickUpLocation.val())
+
             window.location.href = '{{ app()->getLocale() }}/findCar?' + $.param({
                 pick_up_location: encodeURIComponent(pickUpLocation.val()),
                 pick_off_location: encodeURIComponent(pickOffLocation.val()),
@@ -356,7 +363,6 @@
             let pickUpTime = $("#pick-up-time-input").val();
             let pickOffTime = $("#pick-off-time-input").val();
 
-console.log(pickUpLocation)
             if (pickUpLocation === "") {
                 pickUpLocation = "Tivat aerodrom"
             }

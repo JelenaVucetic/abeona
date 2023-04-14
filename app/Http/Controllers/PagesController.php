@@ -6,6 +6,7 @@ use App\Helpers\DateTimeHelper;
 use App\Models\Car;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 
 class PagesController extends Controller
