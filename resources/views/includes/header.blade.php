@@ -1,12 +1,12 @@
 <nav>
-    {{--<div style="display:flex; margin: 0px 30px; justify-content: end">
-        @foreach(config('app.available_locales') as $locale)
-            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])"
-                        :active="app()->getLocale() == $locale">
-                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">
-            </x-nav-link>
-        @endforeach
-    </div>--}}
+{{--    <div style="display:flex; margin: 0px 30px; justify-content: end">--}}
+{{--        @foreach(config('app.available_locales') as $locale)--}}
+{{--            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])"--}}
+{{--                        :active="app()->getLocale() == $locale">--}}
+{{--                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">--}}
+{{--            </x-nav-link>--}}
+{{--        @endforeach--}}
+{{--    </div>--}}
 </nav>
 <header class="header fixed">
     <div class="header-wrapper">

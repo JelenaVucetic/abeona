@@ -171,14 +171,14 @@
                             <div class="thumbnail no-border no-padding thumbnail-car-card">
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
-                                       href="{{ $car->images[0]["path"] }}">
-                                        <img src="{{ $car->images[0]["path"] }}" alt=""/>
+                                       href="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}">
+                                        <img src="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>
                                 <div class="caption text-center">
                                     <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
-                                    <div class="caption-text">{{ __('Start from price a day', ['price' => 39 ]) }}</div>
+                                    <div class="caption-text">{{ __('Start from price a day', ['price' => $car->pricePerDay ]) }}</div>
                                     <div class="buttons">
                                         <button class="btn btn-theme rent-it" data-id="{{ $car->id }}">
                                             {{ __('Rent It') }}
@@ -387,7 +387,8 @@
                 pickOffTime = '20:00'
             }
 
-            window.location.href = '/cars/' + car + '/book?' + $.param({
+            window.location.href = '{{ app()->getLocale() }}/cars/' + car + '/book?' + $.param({
+                car_id: car,
                 pick_up_location: encodeURIComponent(pickUpLocation),
                 pick_off_location: encodeURIComponent(pickOffLocation),
                 pick_up_date: pickUpDate,

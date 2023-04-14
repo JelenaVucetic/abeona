@@ -315,7 +315,7 @@
             data: formData,
             contentType: false,
             success: function (data) {
-                alert('success');
+                window.location.href = "/cars"
             }
         })
     });

@@ -14,38 +14,40 @@
                             <div class="col-md-8">
                                 <div class="owl-carousel img-carousel">
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image0.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ asset('assets/car-images') }}/image0.jpeg" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image0.jpeg') }}" alt=""/></a>
+                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a  href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image1.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ asset('assets/car-images/image1.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image1.jpeg') }}" alt=""/></a>
+                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image2.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ asset('assets/car-images/image2.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image2.jpeg') }}" alt=""/></a>
+                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image3.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ asset('assets/car-images/image3.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image3.jpeg') }}" alt=""/></a>
+                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ asset('assets/car-images/image4.jpeg') }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ asset('assets/car-images/image4.jpeg') }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ asset('assets/car-images/image4.jpeg') }}" alt=""/></a>
+                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a>
                                     </div>
                                 </div>
                                 <div class="row car-thumbnails">
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image0.jpeg') }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image1.jpeg') }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image2.jpeg') }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image3.jpeg') }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="{{ asset('assets/car-images/image4.jpeg') }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a></div>
                                 </div>
 
                             </div>
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
+                                        <input type="hidden" id="car-total-price" value="{{ $car->totalPrice }}">
+                                        <input type="hidden" id="car-total-days" value="{{ $car->totalDays }}">
                                         <strong>{{ $car->totalPrice }}</strong> <span>{{ __('$/for number of day(s)', ['number' => $car->totalDays ]) }}</span>
                                     </div>
 
@@ -324,6 +326,7 @@
                                     <div class="form-search light">
                                         <form id="find-car" action="#">
                                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                            <input type="hidden" name="car_id" id="car_id" value="{{ $car->id }}">
 
                                             <div class="row row-inputs">
                                                 <div class="container-fluid">
@@ -380,7 +383,7 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="update-pick-up-date">{{ __('Pick Up Date') }}</label>
-                                                            <input type="text" class="form-control datepicker"
+                                                            <input type="text" class="form-control datepicker-update"
                                                                    name="update-pick-up-date"
                                                                    id="update-pick-up-date"
                                                                    title="Pick up date is required" data-toggle="tooltip"
@@ -412,7 +415,7 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="update-pick-off-date">{{ __('Pick Off Date') }}</label>
-                                                            <input type="text" class="form-control datepicker"
+                                                            <input type="text" class="form-control datepicker-update"
                                                                    name="update-pick-off-date"
                                                                    title="Pick off date is required" data-toggle="tooltip"
                                                                    value="{{ $car_filter->pick_off_date }}"
@@ -467,7 +470,7 @@
                         </div>
 
                         <div class="price" style="padding-left: 20px">
-                            <strong>220.0</strong> <span>{{ __('$/for number of day(s)', ['number' => 8]) }}</span>
+                            <strong style="font-size: 22px">{{ $car->totalPrice }}</strong> <span>{{ __('$/for number of day(s)', ['number' => $car->totalDays]) }}</span>
                         </div>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -30px">
@@ -524,7 +527,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="confirm-booking" class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
+                    <button id="confirm-booking" data-id="{{ $car->id }}" class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -538,12 +541,12 @@
             $('#update-reservation-details').click(function(e) {
                 e.preventDefault();
 
-                var pickUpLocation = $("select[name='update-pick-up-location']");
-                var pickOffLocation = $("select[name='update-pick-off-location']");
-                var pickUpDate = $("input[name='update-pick-up-date']");
-                var pickOffDate = $("input[name='update-pick-off-date']");
-                var pickUpTime = $("input[name='update-pick-up-time']");
-                var pickOffTime = $("input[name='update-pick-off-time']");
+                let pickUpLocation = $("select[name='update-pick-up-location']");
+                let pickOffLocation = $("select[name='update-pick-off-location']");
+                let pickUpDate = $("input[name='update-pick-up-date']");
+                let pickOffDate = $("input[name='update-pick-off-date']");
+                let pickUpTime = $("input[name='update-pick-up-time']");
+                let pickOffTime = $("input[name='update-pick-off-time']");
                 const car =  $(this).data('id');
 
                 if (pickUpLocation.val() === "") {
@@ -581,7 +584,8 @@
                     return false;
                 }
 
-                window.location.href = '/cars/' + car + '/book?' + $.param({
+                window.location.href = '/{{ app()->getLocale() }}/cars/' + car + '/book?' + $.param({
+                    car_id: car,
                     pick_up_location: pickUpLocation.val(),
                     pick_off_location: pickOffLocation.val(),
                     pick_up_date: pickUpDate.val(),
@@ -594,7 +598,7 @@
             $('#confirm-booking').click(function(e) {
                 e.preventDefault();
 
-                const car_id = 1;
+                const car =  $(this).data('id');
                 const second_driver = ($('#second-driver').is(':checked')) ? 1 : 0;
                 const unlimited_mileage = ($('#unlimited-mileage').is(':checked')) ? 1 : 0;
                 const border_crossing = $('#border-crossing').val();
@@ -622,7 +626,7 @@
 
                 const total = $('#total-amount').val()
 
-                const dataString = 'car_id=' + car_id + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
+                const dataString = 'car_id=' + car + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
                     + '&border_crossing=' + border_crossing + '&baby_seat_small=' + baby_seat_small
                     + '&baby_seat_big=' + baby_seat_big + '&baby_seat_booster=' + baby_seat_booster
                     + '&basic_insurance=' + basic_insurance + '&full_insurance=' + full_insurance
@@ -677,13 +681,13 @@
                 let carExtras = {};
                 let reservationInfo = {};
 
-                let total = 220 // car price
-                const numOfDays = 8;
+                let total = parseInt($('#car-total-price').val()) // car price
+                let numOfDays = parseInt($('#car-total-days').val())
 
                 $('.car-extras:checkbox:checked').not(":disabled").map(function() {
-                    console.log()
-                    console.log(this.value)
                     if( $(this).attr("name") === 'full_insurance') {
+                        console.log(this.value)
+                        console.log(numOfDays)
                         carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value * numOfDays + "&euro;"
                     } else {
                         carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value + "&euro;"

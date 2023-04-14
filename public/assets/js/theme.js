@@ -1321,6 +1321,9 @@ function updater() {
     $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
     $( ".datepicker" ).datepicker('setDate', 'today');
 
+    $( ".datepicker-update" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
+
+
     $(function () {
         $('#pick-up-time').datetimepicker({
             format: 'HH:mm ',
