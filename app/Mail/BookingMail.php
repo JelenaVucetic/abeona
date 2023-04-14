@@ -9,12 +9,13 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Log;
 
 class BookingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private Booking $booking;
+    public Booking $booking;
     /**
      * Create a new message instance.
      *
@@ -22,6 +23,7 @@ class BookingMail extends Mailable
      */
     public function __construct(Booking $booking)
     {
+        Log::info($booking);
         $this->booking = $booking;
     }
 
