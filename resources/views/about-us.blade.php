@@ -23,12 +23,12 @@
                             <div class="swiper-slide">
                                 <div class="thumbnail no-border no-padding thumbnail-car-card">
                                     <div class="media">
-                                        <a class="media-link" data-gal="prettyPhoto"
+                                      {{--  <a class="media-link" data-gal="prettyPhoto"
                                            href="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}">
-                                            {{-- <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/> --}}
+                                            --}}{{-- <img src="{{ asset('storage/' . $car->images[0]["path"]) }}" alt=""/> --}}{{--
                                             <img src="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>
                                             <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
-                                        </a>
+                                        </a>--}}
                                     </div>
                                     <div class="caption text-center">
                                         <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>

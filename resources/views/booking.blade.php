@@ -11,38 +11,37 @@
                     <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Car Information') }}</h3>
                     <div class="car-big-card alt">
                         <div class="row">
-                            <div class="col-md-8">
-                                <div class="owl-carousel img-carousel">
-                                    <div class="item">
-                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a  href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a>
-                                    </div>
-                                    <div class="item">
-                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a>
-                                    </div>
-                                    <div class="item">
-                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a>
-                                    </div>
-                                    <div class="item">
-                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a>
-                                    </div>
-                                    <div class="item">
-                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a>
-                                    </div>
-                                </div>
-                                <div class="row car-thumbnails">
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a></div>
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a></div>
-                                </div>
-
-                            </div>
+{{--                            <div class="col-md-8">--}}
+{{--                                <div class="owl-carousel img-carousel">--}}
+{{--                                    <div class="item">--}}
+{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
+{{--                                        <a  href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item">--}}
+{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
+{{--                                        <a href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item">--}}
+{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
+{{--                                        <a href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item">--}}
+{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
+{{--                                        <a href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="item">--}}
+{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
+{{--                                        <a href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="row car-thumbnails">--}}
+{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a></div>--}}
+{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a></div>--}}
+{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a></div>--}}
+{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a></div>--}}
+{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
@@ -86,15 +85,19 @@
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-small" name="baby_seat_small" type="checkbox" class="car-extras">
-                                        <label for="baby_seat_small">{{ __('Baby Seat Small') }}<span class="pull-right">{{ __('Free') }}</span></label>
+                                        <label for="baby_seat_small">{{ __('Child seat (up to 1 years old)') }}<span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-big" name="baby_seat_big" type="checkbox" class="car-extras">
-                                        <label for="baby_seat_big">{{ __('Baby Seat Big') }} <span class="pull-right">{{ __('Free') }}</span></label>
+                                        <label for="baby_seat_big">{{ __('Child seat') }} <span class="pull-right">{{ __('Free') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox" class="car-extras">
-                                        <label for="baby_seat_booster">{{ __('Baby Seat Booster') }} <span class="pull-right">{{ __('Free') }}</span></label>
+                                        <label for="baby_seat_booster">{{ __('Child seat - booster') }} <span class="pull-right">{{ __('Free') }}</span></label>
+                                    </div>
+                                    <div class="checkbox checkbox-danger">
+                                        <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
+                                        <label for="border_crossing">{{ __('Border Crossing') }}<span class="pull-right">20 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                 </div>
                             </div>
@@ -102,39 +105,40 @@
                             <div class="col-md-6">
                                 <div class="right">
                                     <div class="checkbox checkbox-danger">
-                                        <input id="full-insurance"
-                                               name="full_insurance"
-                                               title="{{ __("You have to choose one insurance") }}" data-toggle="tooltip"
-                                               type="checkbox"
-                                               class="car-extras insurance-check" value="12">
-                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }}
-                                            <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="Deposit is included"></i>
-                                            <span class="pull-right" >12 &euro; /for a day</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox checkbox-danger">
                                         <input id="basic-insurance"
                                                name="basic_insurance"
                                                value="{{ 12 + 12 }}"
                                                type="checkbox" checked=""
                                                class="car-extras insurance-check">
-                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right">{{ 12+12 }} &euro; /{{ __('Total') }} </span></label>
+                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span class="pull-right">Included</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
-                                        <input id="damage-participation" name="damage_participation" type="checkbox" checked="" disabled="disabled"  class="car-extras" value="12">
-                                        <label for="damage_participation">{{ __('Participation in the damage') }}<span class="pull-right">12 &euro; /{{ __('Total') }}</span></label>
+                                        <input type="hidden" id="participation-damage-value" value="{{ $car->participation_damage }}">
+                                        <input id="damage-participation" name="damage_participation" type="checkbox" checked="" disabled="disabled"  class="car-extras">
+                                        <label for="damage_participation">{{ __('Damage responsibility') }}<span class="pull-right">{{ __('Up to') . ' ' . $car->participation_damage }} &euro;</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
-                                        <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras" value="12"  disabled="disabled">
+                                        <input type="hidden" id="deposit-value" value="{{ $car->deposit }}">
+                                        <input id="deposit" name="deposit" type="checkbox" checked="" class="car-extras"  disabled="disabled">
                                         <label for="deposit">{{ __('Deposit') }}
                                             <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="We only accept deposits in cash, in all currencies."></i>
-                                            <span class="pull-right">12 &euro; /{{ __('Total') }}</span>
+                                            <span class="pull-right">{{ $car->deposit }} &euro; /{{ __('Total') }}</span>
                                         </label>
                                     </div>
+
                                     <div class="checkbox checkbox-danger">
-                                        <input id="border-crossing" name="border_crossing" type="checkbox" class="car-extras" value="20">
-                                        <label for="border_crossing">{{ __('Border Crossing') }}<span class="pull-right">20 &euro; /{{ __('Total') }}</span></label>
+                                        <input type="hidden" id="full-insurance-value" value="{{ $car->full_insurance }}">
+                                        <input id="full-insurance"
+                                               name="full_insurance"
+                                               title="{{ __("You have to choose one insurance") }}" data-toggle="tooltip"
+                                               type="checkbox"
+                                               class="car-extras insurance-check">
+                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }}
+                                            <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="Deposit is included"></i>
+                                            <span class="pull-right" >{{ $car->full_insurance }} &euro; /for a day</span>
+                                        </label>
                                     </div>
+
                                    {{-- <div class="checkbox checkbox-danger">
                                         <input id="green-card" name="green_card" type="checkbox" checked="" class="car-extras" value="0">
                                         <label for="green_card">{{ __('Green Card') }}<span class="pull-right">Included</span></label>
@@ -190,13 +194,12 @@
                     </form>
 
                     <div class="overflowed reservation-now">
-                        <div class="checkbox pull-right">
+                       {{-- <div class="checkbox pull-right">
                             <input id="accept" type="checkbox"  title="{{ __("You have to accept terms and conditions") }}" data-toggle="tooltip">
                             <label for="accept">{{ __('I accept terms and conditions') }}</label>
-                        </div>
+                        </div>--}}
                         <button id="reservation-btn" class="btn btn-theme btn-reservation-now">{{ __('Make a Reservation') }}</button>
-
-                      </div>
+                    </div>
 
                 </div>
                 <!-- /CONTENT -->
@@ -466,7 +469,7 @@
                 <div class="modal-header" style="border-bottom: none">
                     <div style="display: flex; align-items: baseline; flex-wrap: wrap;padding: 0px 20px;">
                         <div>
-                            <h3 style="margin-top: 10px">Volkswagen Golf</h3>
+                            <h3 style="margin-top: 10px">{{ $car->name }}</h3>
                         </div>
 
                         <div class="price" style="padding-left: 20px">
@@ -513,7 +516,7 @@
                         </div>
                     </div>
                     <div class="container">
-                        <h5 class="widget-title-sub">{{ __('Additional Equipment') }}</h5>
+                        <h5 class="widget-title-sub">{{ __('Extras & Frees') }}</h5>
                         <div class="list">
                             <ul class="append" style="padding-top:10px">
                             </ul>
@@ -599,16 +602,15 @@
                 e.preventDefault();
 
                 const car =  $(this).data('id');
+                const car_price = $('#car-total-price').val();
                 const second_driver = ($('#second-driver').is(':checked')) ? 1 : 0;
                 const unlimited_mileage = ($('#unlimited-mileage').is(':checked')) ? 1 : 0;
-                const border_crossing = $('#border-crossing').val();
+                const border_crossing = ($('#border-crossing').is(':checked')) ? 1 : 0;
                 const baby_seat_small = ($('#baby-seat-small').is(':checked')) ? 1 : 0;
                 const baby_seat_big = ($('#baby-seat-big').is(':checked')) ? 1 : 0;
                 const baby_seat_booster = ($('#baby-seat-booster').is(':checked')) ? 1 : 0;
-                const basic_insurance = $('#basic-insurance').val();
-                const full_insurance = $('#full-insurance').val();
-                const deposit = $('#deposit').val();
-                const damage_participation = $('#damage-participation').val();
+                const basic_insurance = ($('#basic-insurance').is(':checked')) ? 1 : 0;
+                const full_insurance = ($('#full-insurance').is(':checked')) ? 1 : 0;
 
                 const first_name = $('#first-name').val();
                 const last_name = $('#last-name').val();
@@ -626,11 +628,10 @@
 
                 const total = $('#total-amount').val()
 
-                const dataString = 'car_id=' + car + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
+                const dataString = 'car_id=' + car + '&car_price=' + car_price + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
                     + '&border_crossing=' + border_crossing + '&baby_seat_small=' + baby_seat_small
                     + '&baby_seat_big=' + baby_seat_big + '&baby_seat_booster=' + baby_seat_booster
                     + '&basic_insurance=' + basic_insurance + '&full_insurance=' + full_insurance
-                    + '&damage_participation=' + damage_participation + '&deposit=' + deposit
                     + '&first_name=' + first_name + '&last_name=' + last_name
                     + '&email=' + email + '&phone_number=' + phone_number + '&additional_information=' + additional_information
                     + '&pick_up_location=' + pick_up_location + '&pick_up_time=' + pick_up_time + '&pick_up_date=' + pick_up_date
@@ -684,13 +685,22 @@
                 let total = parseInt($('#car-total-price').val()) // car price
                 let numOfDays = parseInt($('#car-total-days').val())
 
+                //.not(":disabled")
                 $('.car-extras:checkbox:checked').not(":disabled").map(function() {
                     if( $(this).attr("name") === 'full_insurance') {
-                        console.log(this.value)
-                        console.log(numOfDays)
-                        carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value * numOfDays + "&euro;"
+                        carExtras[$(this).attr("name")] = $('#full-insurance-value').val() * numOfDays + "&euro;"
+                        total += parseInt($('#full-insurance-value').val() * numOfDays)
+                    } else if ( $(this).attr("name") === 'basic_insurance') {
+                        carExtras[$(this).attr("name")] = '<p class="basic-insurance-info">includes damage responsibility up to <span> ' +
+                            $('#participation-damage-value').val() +'</span> and deposit <span>' +
+                            $('#deposit-value').val() + '</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
+
+                        total += parseInt($('#deposit-value').val())
+                    } else if ( $(this).attr("name") === 'border_crossing') {
+                        carExtras[$(this).attr("name")] = 20 + '&euro;';
+                        total += parseInt(20)
                     } else {
-                        carExtras[$(this).attr("name")] = this.value === 'on' ? 'Free' : this.value + "&euro;"
+                        carExtras[$(this).attr("name")] = 'Free'
                     }
 
                 });
@@ -700,19 +710,19 @@
                         return letter.toUpperCase();
                     });
 
-                    if($.isNumeric(parseFloat(value))) {
-                        total += parseFloat(value)
-                    }
+                    // if($.isNumeric(parseFloat(value))) {
+                    //     total += parseFloat(value)
+                    // }
 
                     $(".append").append(
                         '<li class="fee-list">' +
-                           '<p>'+ feeName + '</p> <span>' + value + '</span>' +
+                           '<p  class="fee-name">'+ feeName + '</p> <span  class="fee-value">' + value + '</span>' +
                         '</li>');
 
                 });
 
                 $(".total-price").append(
-                    '<input type="hidden" id="total-amount" value="'+total+'"> <span class="total">Total: ' + total + '&euro; </span>'
+                    '<input type="hidden" id="total-amount" value="'+total+'">Total: <span class="total"> ' + total + '&euro; </span>'
                     );
 
                 $('input.customer-info').map(function() {
@@ -765,13 +775,13 @@
                     return false;
                 }
 
-                if ($('#accept').filter(':checked').length < 1){
+               /* if ($('#accept').filter(':checked').length < 1){
                     $('#accept').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                     $('#accept').focus();
                     clear();
                     return false;
                 }
-
+*/
 
                 $('#reservationModal').modal('show')
             })

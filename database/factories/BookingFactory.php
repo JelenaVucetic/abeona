@@ -19,6 +19,7 @@ class BookingFactory extends Factory
     {
         return [
             "car_id" => fake()->numberBetween(1,10),
+            "car_price" => fake()->numberBetween(5000, 1000),
             "confirmed" => fake()->boolean(),
             "second_driver" => fake()->boolean(),
             "unlimited_mileage" => fake()->boolean(),
@@ -26,10 +27,8 @@ class BookingFactory extends Factory
             "baby_seat_small" => fake()->boolean(),
             "baby_seat_big" => fake()->boolean(),
             "baby_seat_booster" => fake()->boolean(),
-            "basic_insurance" => fake()->numberBetween(5000, 1000),
-            "full_insurance" => fake()->numberBetween(5000, 1000),
-            "deposit" => fake()->numberBetween(5000, 1000),
-            "damage_participation" => fake()->numberBetween(5000, 1000),
+            "basic_insurance" => fake()->boolean(),
+            "full_insurance" => fake()->boolean(),
             "first_name" => fake()->firstName(),
             "last_name" => fake()->lastName(),
             "email" => fake()->email(),

@@ -48,7 +48,7 @@
     "Baby Seat Booster": "Dečije sedište - booster",
     "Ful Rent a Car Insures": "Puno osiguranje",
     "Basic Rent a Car Insures": "Osnovno osiguranje",
-    "Participation in the damage": "Učešće u šteti",
+    "Damage responsibility": "Učešće u šteti",
     "Deposit": "Deposit",
     "Green Card": "Zeleni karton",
     "Customer Information": "Korisničke informacije",
@@ -76,5 +76,9 @@
     "Pick up date is required": "Datum preuzimanja je obavezan",
     "Pick up time is required": "Vrijeme preuzimanja je obavezno",
     "Pick off date is required": "Datum vraćanja je obavezan",
-    "Pick off time is required": "Vrijeme vraćanja je obavezno"
+    "Pick off time is required": "Vrijeme vraćanja je obavezno",
+    "Up to": "Do",
+    "Child seat (up to 1 years old)": "Dječije sjedište (do jedne godine)",
+    "Child seat - booster": "Dječije sjedište - booster",
+    "Child seat": "Dječije sjedište"
 }

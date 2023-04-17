@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\BookingConfirmed;
 use App\Events\BookingStored;
 use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
@@ -94,6 +95,8 @@ class BookingController extends Controller
 
     public function confirm(Booking $booking)
     {
+        BookingConfirmed::dispatch($booking);
+
         return $booking->update(['confirmed' => true]);
     }
 }

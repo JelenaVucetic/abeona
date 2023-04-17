@@ -17,9 +17,9 @@
                                 <i class="pull-left fa fa-phone"></i>
                                 <div class="media-body">
                                     <strong>{{ __('Telephone') }}:</strong><br>
-                                    +382 69 414 413 <br>
-                                    +382 67 544 058 <br>
-                                    +382 67 974 281
+                                    Danko  +382 69 414 413 <br>
+                                    Branko  +382 67 544 058 <br>
+                                    Filip  +382 67 974 281
                                 </div>
                             </div>
                             <div class="media">

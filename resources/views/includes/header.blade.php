@@ -75,13 +75,20 @@
                                 </li>
                             @endif
 
-                            <li>
+                            <li style="display: flex;align-items: center">
                                 <ul class="social-icons">
-                                    <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/abeonarentacartivat" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" href="https://www.instagram.com/abeonarentacar/" class="instagram"><i class="fa fa-instagram"></i></a></li>
+{{--                                    <li><a href="" style="font-weight: 600;padding: 0px 5px">EN</a></li>--}}
+{{--                                    <li><a href="" style="font-weight: 600;padding: 0px 5px;margin-right: 20px;">MNE</a></li>--}}
+
                                 </ul>
+                                <div class="dropdown">
+                                    <a href="#">EN</a>
+                                    <div class="dropdown-options">
+                                        <a href="#">MNE</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                         <!-- /navigation menu -->

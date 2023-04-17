@@ -16,17 +16,16 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->foreignId("car_id")->constrained();
+            $table->integer("car_price");
             $table->boolean("confirmed")->default(false);
             $table->boolean("second_driver");
             $table->boolean("unlimited_mileage");
-            $table->integer("border_crossing");
+            $table->boolean("border_crossing");
             $table->boolean("baby_seat_small");
             $table->boolean("baby_seat_big");
             $table->boolean("baby_seat_booster");
-            $table->integer("basic_insurance");
-            $table->integer("full_insurance");
-            $table->integer("deposit");
-            $table->integer("damage_participation");
+            $table->boolean("basic_insurance");
+            $table->boolean("full_insurance");
             $table->string("first_name");
             $table->string("last_name");
             $table->string("email");

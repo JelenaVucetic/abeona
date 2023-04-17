@@ -244,7 +244,6 @@
 </head>
 <body
     style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
-{{$booking}}
 <div class="es-wrapper-color" style="background-color:#FFFFFF"><!--[if gte mso 9]>
     <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
         <v:fill type="tile" color="#ffffff"></v:fill>
@@ -281,47 +280,79 @@
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Pick-up Location:</p>
+                                                                    Pick-up Location: {{ $booking->pick_up_location }}</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Pick-up Date: </p>
+                                                                    Pick-up Date: {{ $booking->pick_up_date }} </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Pick-up Time: </p>
+                                                                    Pick-up Time: {{ $booking->pick_up_time }}</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Drop-off Location:</p>
+                                                                    Drop-off Location: {{ $booking->pick_off_location }}</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Drop-off Date: </p>
+                                                                    Drop-off Date: {{ $booking->pick_off_date }} </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Drop-off Time: </p>
+                                                                    Drop-off Time: {{ $booking->pick_off_time }}</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Vehicle: [Make and Model]&nbsp;</p>
+                                                                    Vehicle: {{ $booking->car->name }}&nbsp;</p>
+                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                    Vehicle price: {{ $booking->car_price }}&nbsp;</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     Extras and Frees</p>
                                                                 <ul>
-                                                                    <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                            [Item 1]</p></li>
-                                                                    <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                            [Item 2]</p></li>
+                                                                    @if( $booking->second_driver)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Second Driver') }}</p></li>
+                                                                    @endif
+                                                                    @if( $booking->unlimited_mileage)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Unlimited Mileage') }}</p></li>
+                                                                    @endif
+                                                                    @if( $booking->border_crossing)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Border Crossing') }} 20 &euro;</p></li>
+                                                                    @endif
+                                                                    @if( $booking->baby_seat_small)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Child seat (up to 1 years old)') }}</p></li>
+                                                                    @endif
+                                                                    @if( $booking->baby_seat_big)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Child seat') }}</p></li>
+                                                                    @endif
+                                                                    @if( $booking->baby_seat_booster)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Child seat - booster') }}</p></li>
+                                                                    @endif
+                                                                    @if( $booking->basic_insurance)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Basic Insurance') }}
+                                                                                includes damage responsibility up to {{ $booking->car->participation_damage }}
+                                                                                and deposit {{ $booking->car->deposit }}
+                                                                            </p>
+                                                                        </li>
+                                                                    @endif
+                                                                    @if( $booking->full_insurance)
+                                                                        <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
+                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
+                                                                                {{ __('Full Insurance') }} {{ $booking->car->full_insurance  }} per day
+                                                                            </p>
+                                                                        </li>
+                                                                    @endif
                                                                 </ul>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Total: [Total]<br><br></p>
-                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Your rental car will be fully fueled and ready for
-                                                                    your use upon arrival.<br><br></p>
-                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    In case you need to make any changes to your
-                                                                    reservation or cancel it, please contact us at least
-                                                                    24 hours in advance of your pick-up time.</p>
-                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    We look forward to serving you and making your trip
-                                                                    a memorable one.</p></td>
+                                                                    Total: {{ $booking->total }}<br><br></p>
                                                         </tr>
                                                     </table>
                                                 </td>
