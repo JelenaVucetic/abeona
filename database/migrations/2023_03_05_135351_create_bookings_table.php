@@ -37,6 +37,8 @@ return new class extends Migration
             $table->string('pick_off_location');
             $table->string('pick_off_date');
             $table->string('pick_off_time');
+            $table->integer('pick_up_price');
+            $table->integer('pick_off_price');
             $table->integer('total');
             $table->timestamps();
         });

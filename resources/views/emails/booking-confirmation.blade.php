@@ -283,13 +283,21 @@
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Pick-up Location: {{ $booking->pick_up_location }}</p>
+                                                                    Pick-up Location: {{ $booking->pick_up_location }}
+                                                                    @if( $booking->pick_up_price != 0)
+                                                                        {{ $booking->pick_up_price }} &euro;
+                                                                    @endif
+                                                                </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     Pick-up Date: {{ $booking->pick_up_date }} </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     Pick-up Time: {{ $booking->pick_up_time }}</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Drop-off Location: {{ $booking->pick_off_location }}</p>
+                                                                    Drop-off Location: {{ $booking->pick_off_location }}
+                                                                    @if( $booking->pick_off_price != 0)
+                                                                    {{ $booking->pick_off_price }} &euro;
+                                                                    @endif
+                                                                </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     Drop-off Date: {{ $booking->pick_off_date }} </p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">

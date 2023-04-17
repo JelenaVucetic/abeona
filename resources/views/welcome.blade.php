@@ -30,14 +30,21 @@
                                                                 <option value="tivat">Tivat</option>
                                                                 <option value="podgorica aerodrom">Podgorica Aerodrom</option>
                                                                 <option value="podgorica">Podgorica</option>
-                                                                <option value="cetinje">Cetinje</option>
                                                                 <option value="bar">Bar</option>
                                                                 <option value="ulcinj">Ulcinj</option>
                                                                 <option value="petrovac">Petrovac</option>
                                                                 <option value="budva">Budva</option>
                                                                 <option value="kotor">Kotor</option>
                                                                 <option value="herceg novi">Herceg Novi</option>
-                                                                <option value="niksic">Niksic</option>
+                                                                <option value="dubrovnik">Dubrovnik</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="nikšic">Nikšic</option>
+                                                                <option value="pljevlja">Pljevlja</option>
+                                                                <option value="berane">Berane</option>
+                                                                <option value="bijelo polje">Bijelo Polje</option>
+                                                                <option value="kolašin">Kolašin</option>
+                                                                <option value="mojkovac">Mojkovac</option>
+                                                                <option value="žabljak">Žabljak</option>
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
@@ -52,14 +59,21 @@
                                                                 <option value="tivat">Tivat</option>
                                                                 <option value="podgorica aerodrom">Podgorica Aerodrom</option>
                                                                 <option value="podgorica">Podgorica</option>
-                                                                <option value="cetinje">Cetinje</option>
                                                                 <option value="bar">Bar</option>
                                                                 <option value="ulcinj">Ulcinj</option>
                                                                 <option value="petrovac">Petrovac</option>
                                                                 <option value="budva">Budva</option>
                                                                 <option value="kotor">Kotor</option>
                                                                 <option value="herceg novi">Herceg Novi</option>
-                                                                <option value="niksic">Niksic</option>
+                                                                <option value="dubrovnik">Dubrovnik</option>
+                                                                <option value="cetinje">Cetinje</option>
+                                                                <option value="nikšic">Nikšic</option>
+                                                                <option value="pljevlja">Pljevlja</option>
+                                                                <option value="berane">Berane</option>
+                                                                <option value="bijelo polje">Bijelo Polje</option>
+                                                                <option value="kolašin">Kolašin</option>
+                                                                <option value="mojkovac">Mojkovac</option>
+                                                                <option value="žabljak">Žabljak</option>
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>

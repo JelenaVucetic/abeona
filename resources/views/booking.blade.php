@@ -497,6 +497,31 @@
                                     <input name="pick-up-location" class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
+                            <div>
+                                {{ __('Pick up price') }}:
+                                @if( str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi' ||
+                                        $car_filter->pick_up_location == 'podgorica' ||
+                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica aerodrom' ||
+                                        $car_filter->pick_up_location == 'cetinje')
+                                    <input type="hidden" id="pick-up-price" value="30">
+                                    30 &euro;
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom')
+                                    <input type="hidden" id="pick-up-price" value="0">
+                                    Free
+                                @elseif(  $car_filter->pick_up_location == 'budva')
+                                    <input type="hidden" id="pick-up-price" value="20">
+                                    20 &euro;
+                                @elseif(  $car_filter->pick_up_location == 'ulcinj')
+                                    <input type="hidden" id="pick-up-price" value="50">
+                                    50 &euro;
+                                @elseif(  $car_filter->pick_up_location == 'dubrovnik')
+                                    <input type="hidden" id="pick-up-price" value="100">
+                                    100 &euro;
+                                @else
+                                    <input type="hidden" id="pick-up-price" value="70">
+                                    70 &euro;
+                                @endif
+                            </div>
                         </div>
                         <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
                             <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
@@ -512,6 +537,31 @@
                                 <div class="" style="width: fit-content;">
                                     <input name="pick-off-location"  class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_off_location)) }}">
                                 </div>
+                            </div>
+                            <div>
+                                {{ __('Pick off price') }}:
+                                @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' ||
+                                        $car_filter->pick_off_location == 'podgorica' ||
+                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
+                                        $car_filter->pick_up_location == 'cetinje')
+                                    <input type="hidden" id="pick-off-price" value="30">
+                                    30 &euro;
+                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat aerodrom')
+                                    <input type="hidden" id="pick-off-price" value="0">
+                                    Free
+                                @elseif(  $car_filter->pick_off_location == 'budva')
+                                    <input type="hidden" id="pick-off-price" value="20">
+                                    20 &euro;
+                                @elseif(  $car_filter->pick_off_location == 'ulcinj')
+                                    <input type="hidden" id="pick-off-price" value="50">
+                                    50 &euro;
+                                @elseif(  $car_filter->pick_off_location == 'dubrovnik')
+                                    <input type="hidden" id="pick-off-price" value="100">
+                                    100 &euro;
+                                @else
+                                    <input type="hidden" id="pick-uoff-price" value="70">
+                                    70 &euro;
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -626,6 +676,9 @@
                 const pick_off_date = $("input[name='pick-off-date']").val()
                 const pick_off_time = $("input[name='pick-off-time']").val()
 
+                const pick_up_price = $('#pick-up-price').val()
+                const pick_off_price = $('#pick-off-price').val()
+
                 const total = $('#total-amount').val()
 
                 const dataString = 'car_id=' + car + '&car_price=' + car_price + '&second_driver=' + second_driver + '&unlimited_mileage=' + unlimited_mileage
@@ -636,6 +689,7 @@
                     + '&email=' + email + '&phone_number=' + phone_number + '&additional_information=' + additional_information
                     + '&pick_up_location=' + pick_up_location + '&pick_up_time=' + pick_up_time + '&pick_up_date=' + pick_up_date
                     + '&pick_off_location=' + pick_off_location + '&pick_off_date=' + pick_off_date + '&pick_off_time=' + pick_off_time
+                    + '&pick_up_price=' + pick_up_price + '&pick_off_price=' + pick_off_price
                     + '&total=' + total;
 
                  $.ajax({
@@ -682,7 +736,10 @@
                 let carExtras = {};
                 let reservationInfo = {};
 
-                let total = parseInt($('#car-total-price').val()) // car price
+                const pickUpPrice = $('#pick-up-price').val()
+                const pickoffPrice = $('#pick-off-price').val()
+
+                let total = parseInt($('#car-total-price').val()) + parseInt(pickUpPrice) + parseInt(pickoffPrice)
                 let numOfDays = parseInt($('#car-total-days').val())
 
                 //.not(":disabled")

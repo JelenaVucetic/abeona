@@ -40,6 +40,8 @@ class BookingFactory extends Factory
             "pick_off_location" => fake()->city(),
             "pick_off_date" => fake()->date('d/m/Y'),
             "pick_off_time" => fake()->time('H:i'),
+            "pick_up_price" => fake()->numberBetween(0, 100),
+            "pick_off_price" => fake()->numberBetween(0, 100),
             "total" => fake()->numberBetween(5000, 1000)
         ];
     }
