@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Car;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Carbon\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Booking>
@@ -18,7 +19,7 @@ class BookingFactory extends Factory
     public function definition()
     {
         return [
-            "car_id" => fake()->numberBetween(1,10),
+            "car_id" => fake()->numberBetween(1, 10),
             "car_price" => fake()->numberBetween(5000, 1000),
             "confirmed" => fake()->boolean(),
             "second_driver" => fake()->boolean(),
@@ -42,7 +43,8 @@ class BookingFactory extends Factory
             "pick_off_time" => fake()->time('H:i'),
             "pick_up_price" => fake()->numberBetween(0, 100),
             "pick_off_price" => fake()->numberBetween(0, 100),
-            "total" => fake()->numberBetween(5000, 1000)
+            "total" => fake()->numberBetween(5000, 1000),
+            "created_at" => Carbon::now()->subDays(random_int(5, 20))
         ];
     }
 }
