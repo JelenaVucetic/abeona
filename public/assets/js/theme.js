@@ -644,31 +644,20 @@ jQuery(document).ready(function () {
         if ($('#map-canvas').length) {
 
             var map;
-            var marker, marker2, marker3, marker4, marker5, marker6, marker7, marker8;
+            var marker;
             var infowindow;
             var mapIWcontent = '' +
                     '' +
                     '<div class="map-info-window">' +
                     '<div class="thumbnail no-border no-padding thumbnail-car-card">' +
                     '<div class="media">' +
-                    '<a class="media-link" href="#">' +
-                    '<img src="assets/img/preview/car-images/car-270x220x1.jpg" alt=""/>' +
-                    '<span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>' +
-                    '</a>' +
+                   '<img src="/assets/img/map-car.jpg" alt=""/>' +
+
                     '</div>' +
                     '<div class="caption text-center">' +
-                    '<h4 class="caption-title"><a href="#">VW POLO TRENDLINE 2.0 TDI</a></h4>' +
-                    '<div class="caption-text">Start from 39$/per a day</div>' +
-                    '<div class="buttons">' +
-                    '<a class="btn btn-theme" href="#">Rent It</a>' +
-                    '</div>' +
-                    '<table class="table">' +
-                    '<tr>' +
-                    '<td><i class="fa fa-car"></i> 2013</td>' +
-                    '<td><i class="fa fa-dashboard"></i> Diesel</td>' +
-                    '<td><i class="fa fa-cog"></i> Auto</td>' +
-                    '</tr>' +
-                    '</table>' +
+                    '<h4 class="caption-title">' +
+                    '<a target="_blank" href="https://www.google.com/maps/place/Abeona+Rent+A+Car+Montenegro/@42.4133243,18.7151772,17z/data=!3m1!4b1!4m6!3m5!1s0x134c3325a66eb00d:0x9c563e7f877c9919!8m2!3d42.4133243!4d18.7177521!16s%2Fg%2F11fmq0m337">Abeona Rent A Car Montenegro, Jadranski put, Tivat</a></h4>' +
+
                     '</div>' +
                     '</div>' +
                     '</div>' +
@@ -688,40 +677,16 @@ jQuery(document).ready(function () {
                 var mapOptions = {
                     scrollwheel: false,
                     zoom: 12,
-                    center: new google.maps.LatLng(41.079379, 28.9984466) // map coordinates
+                    center: new google.maps.LatLng(42.41353021902146, 18.717666265819776) // map coordinates
                 };
 
                 map = new google.maps.Map(document.getElementById('map-canvas'),
                         mapOptions);
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.0096559, 28.9755535), // marker coordinates
+                    position: new google.maps.LatLng(42.41353021902146, 18.717666265819776), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
-                });
-                marker2 = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.007135, 28.910556), // marker coordinates
-                    map: map,
-                    icon: image,
-                    title: 'Hello World!'
-                });
-                marker3 = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.040807, 28.848071), // marker coordinates
-                    map: map,
-                    icon: image,
-                    title: 'Hello World!'
-                });
-                marker4 = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.051164, 29.078097), // marker coordinates
-                    map: map,
-                    icon: image,
-                    title: 'Hello World!'
-                });
-                marker5 = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.077050, 28.995013), // marker coordinates
-                    map: map,
-                    icon: image,
-                    title: 'Hello World!'
+                    title: 'Abeona Rent A Car Montenegro'
                 });
 
                 infowindow = new google.maps.InfoWindow({
@@ -731,19 +696,6 @@ jQuery(document).ready(function () {
                 });
                 google.maps.event.addListener(marker, 'click', function () {
                     infowindow.open(map, marker);
-                });
-                // more markers
-                google.maps.event.addListener(marker2, 'click', function () {
-                    infowindow.open(map, marker2);
-                });
-                google.maps.event.addListener(marker3, 'click', function () {
-                    infowindow.open(map, marker3);
-                });
-                google.maps.event.addListener(marker4, 'click', function () {
-                    infowindow.open(map, marker4);
-                });
-                google.maps.event.addListener(marker5, 'click', function () {
-                    infowindow.open(map, marker5);
                 });
 
                 // open marker when google map init
