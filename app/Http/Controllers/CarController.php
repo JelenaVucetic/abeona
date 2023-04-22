@@ -29,13 +29,13 @@ class CarController extends Controller
         $now = now();
         $currentSeason = getCurrentSeason($now);
 
-        $cars = Car::all()->map(function($car) use ($currentSeason){
+        $cars = Car::all()->map(function ($car) use ($currentSeason) {
             $price = collect($car->prices)
-            ->where('season', $currentSeason)
-            ->first();
+                ->where('season', $currentSeason)
+                ->first();
             $car->pricePerDay = $price['default'];
             return $car;
-        });
+        })->sortBy("pricePerDay");
 
         return view('admin.cars.index', ['cars' => $cars]);
     }

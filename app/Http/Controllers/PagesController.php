@@ -17,7 +17,7 @@ class PagesController extends Controller
         $now = now();
         $currentSeason = getCurrentSeason($now);
 
-        $cars = Car::all()->map(function($car) use ($currentSeason){
+        $cars = Car::all()->map(function ($car) use ($currentSeason) {
             $price = collect($car->prices)
                 ->where('season', $currentSeason)
                 ->first();
@@ -29,7 +29,7 @@ class PagesController extends Controller
 
     public function findCar(Request $request)
     {
-       // <== probably extract
+        // <== probably extract
         $startTimeString = $request->input("pick_up_date") . " " . $request->input("pick_up_time");
         $startTime = Carbon::createFromFormat('d/m/Y H:i', $startTimeString);
 
@@ -71,7 +71,7 @@ class PagesController extends Controller
             $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
             $car->totalDays = $differenceInDays;
             return $car;
-        });
+        })->sortBy("pricePerDay");
 
         return view('fleet', ['locale' => app()->getLocale(), 'cars' => $cars, 'car_filter' => $car_filter]);
     }
@@ -81,7 +81,7 @@ class PagesController extends Controller
         $now = now();
         $currentSeason = getCurrentSeason($now);
 
-        $cars = Car::all()->map(function($car) use ($currentSeason){
+        $cars = Car::all()->map(function ($car) use ($currentSeason) {
             $price = collect($car->prices)
                 ->where('season', $currentSeason)
                 ->first();
@@ -97,13 +97,14 @@ class PagesController extends Controller
         $now = now();
         $currentSeason = getCurrentSeason($now);
 
-        $cars = Car::all()->map(function($car) use ($currentSeason){
+        $cars = Car::all()->map(function ($car) use ($currentSeason) {
             $price = collect($car->prices)
                 ->where('season', $currentSeason)
                 ->first();
             $car->pricePerDay = $price['default'];
             return $car;
-        });
+        })->sortBy("pricePerDay");
+
         return view('fleet',  ['cars' => $cars]);
     }
 
