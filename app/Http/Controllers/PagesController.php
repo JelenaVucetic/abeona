@@ -23,7 +23,8 @@ class PagesController extends Controller
                 ->first();
             $car->pricePerDay = $price['default'];
             return $car;
-        });
+        })->sortBy("pricePerDay");
+        
         return view('welcome')->with(["cars" => $cars]);
     }
 
@@ -87,7 +88,8 @@ class PagesController extends Controller
                 ->first();
             $car->pricePerDay = $price['default'];
             return $car;
-        });
+        })
+        ->sortBy("pricePerDay");
 
         return view('about-us', ['cars' => $cars]);
     }
