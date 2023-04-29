@@ -52,9 +52,9 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-location">{{ __('Pick Off Location') }}</label>
+                                                            <label for="pick-off-location">{{ __('Drop Off Location') }}</label>
                                                             <select name="pick-off-location" id="pick-off-location"
-                                                                    class="form-control" title="Pick off location is required" data-toggle="tooltip" >
+                                                                    class="form-control" title="{{ __('Drop off location is required') }}" data-toggle="tooltip" >
                                                                 <option value="tivat aerodrom">Tivat Aerodrom</option>
                                                                 <option value="tivat">Tivat</option>
                                                                 <option value="podgorica aerodrom">Podgorica Aerodrom</option>
@@ -90,7 +90,7 @@
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
-                                                                   title="{{ __("Pick up date is required") }}" data-toggle="tooltip"
+                                                                   title="{{ __('The pick-up date is required and must be before the drop-off date.') }}" data-toggle="tooltip"
                                                                    placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon">
                                                                 <i class="fa fa-calendar"></i></span>
@@ -118,10 +118,10 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-date">{{ __('Pick Off Date') }}</label>
+                                                            <label for="pick-off-date">{{ __('Drop Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker"
                                                                    name="pick-off-date"
-                                                                   title="{{ __("Pick off date is required") }}" data-toggle="tooltip"
+                                                                   title="{{ __("Drop off date is required") }}" data-toggle="tooltip"
                                                                    id="pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-calendar"></i></span>
@@ -129,12 +129,12 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="pick-off-time">{{ __('Pick Off Time') }}</label>
+                                                            <label for="pick-off-time">{{ __('Drop Off Time') }}</label>
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
                                                                        value="20:00"
                                                                        id="pick-off-time-input"
-                                                                       title="{{ __('Pick off time is required') }}" data-toggle="tooltip"
+                                                                       title="{{ __('Drop off time is required') }}" data-toggle="tooltip"
                                                                        name="pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -225,11 +225,12 @@
                     <div class="testimonial">
                         <div class="media">
                             <div class="media-body">
-                                <div class="testimonial-text">Everything works very cool! They quickly found a car, even drove to the apartment for free,
-                                    thanks to Philip for this! Quickly drawn up and quickly took the car!
-                                    I really enjoyed a good relationship! I advise everyone these guys they are great.
+                                <div class="testimonial-text">
+                                    I would definitely be renting my cars from Filip of Abeona from now on. He's very
+                                    reasonable and offers full service.. hassle free and clean cars with no hidden fees.
+                                    Had a blast with this convertible beetle!
                                 </div>
-                                <div class="testimonial-name">ИЛЬЯ ЛЕТОДИАНИ <span class="testimonial-position">RUSSIA</span>
+                                <div class="testimonial-name">Mona O{{-- <span class="testimonial-position">RUSSIA</span>--}}
                                 </div>
                             </div>
                         </div>
@@ -237,7 +238,8 @@
                     <div class="testimonial">
                         <div class="media">
                             <div class="media-body">
-                                <div class="testimonial-text">It was excellent working with Fillip and renting a car from him in the beautiful Montenegro,
+                                <div class="testimonial-text">
+                                    It was excellent working with Fillip and renting a car from him in the beautiful Montenegro,
                                     especially that it was my husband’s and my first time traveling from the US to there. We had so much fun and comfort with
                                         the very nice and extremely-fuel-efficient car that he gave us. Communication with Philip was easy and
                                     the points he made before signing the contract were very helpful. We highly recommend him.
@@ -250,10 +252,11 @@
                     <div class="testimonial">
                         <div class="media">
                             <div class="media-body">
-                                <div class="testimonial-text">Abeona was a great rental car experience. We drove three of it cars during our trip and all three were excellent.
+                                <div class="testimonial-text">
+                                    Abeona was a great rental car experience. We drove three of it cars during our trip and all three were excellent.
                                     Filip’s service was first class. I highly recommend Abeona to anyone traveling to Montenegro.
                                 </div>
-                                <div class="testimonial-name">JOHN VUKMANOVIC<span class="testimonial-position">USA</span>
+                                <div class="testimonial-name">JOHN VUKMANOVIC{{--<span class="testimonial-position">USA</span>--}}
                                 </div>
                             </div>
                         </div>
@@ -261,11 +264,69 @@
                     <div class="testimonial">
                         <div class="media">
                             <div class="media-body">
-                                <div class="testimonial-text">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla
-                                    facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et
-                                    ultrices posuere cubilia.
+                                <div class="testimonial-text">
+                                    Great experience from start to finish Filip was quick to respond on emails and we
+                                    were met at the Airport. Rented the convertible A3 to drive around Montenegro (would
+                                    definitely recommend!). Car was clean and in a good condition. Will certainly use
+                                    again. Thanks all!
                                 </div>
-                                <div class="testimonial-name">John Anthony Gibson <span class="testimonial-position">Co- founder at Rent It</span>
+                                <div class="testimonial-name">Michael Dowsett {{--<span class="testimonial-position">Co- founder at Rent It</span>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="testimonial-text">
+                                    Absolutely best experience I ever had with car rental. The owner is really helpful,
+                                    friendly and will go extra mile for his customers. We didn’t book in advance so we
+                                    had to wait for a car few hours. Meanwhile he dropped us in the city , gave us some
+                                    recommendations on places to visit, few hours later brought us the car . Owner is
+                                    very flexible and will find the best solution for your needs. Highly recommended!!
+                                    Thank you very much once again!
+                                </div>
+                                <div class="testimonial-name">Ieva Vainauskaitė {{--<span class="testimonial-position">Co- founder at Rent It</span>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="testimonial-text">
+                                        Very professional , easy and nice car to rental, we drove Montenegro, Croatia and
+                                        Bosnia, picked up car in Tivat airport and delivered in Sarajevo airport. Nice and
+                                        fast reply on what’s app with Abeona rental. Strongly recommended. I’ll chose them
+                                        again.
+                                </div>
+                                <div class="testimonial-name">Dani Olav Nilsen {{--<span class="testimonial-position">Co- founder at Rent It</span>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="testimonial-text">
+                                    Absolutely friendly and nice persons are working here. It was a great and lovely
+                                    experience. Car was nice and fresh. Filip and Nikola were amazing and kindly. Highly
+                                    recommended.
+                                </div>
+                                <div class="testimonial-name">Кирилл Шульга {{--<span class="testimonial-position">Co- founder at Rent It</span>--}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="media">
+                            <div class="media-body">
+                                <div class="testimonial-text">
+                                    Filip is beyond great! Highly communicative. Always ready and willing to help. Cars
+                                    are clean and in great condition. Would definitely rent again when back in
+                                    Montenegro
+                                </div>
+                                <div class="testimonial-name">Ben Shalom {{--<span class="testimonial-position">Co- founder at Rent It</span>--}}
                                 </div>
                             </div>
                         </div>
@@ -293,6 +354,7 @@
 @endsection
 
 @section('js')
+    <script type = "text/JavaScript" src ="{{ asset("assets/js/moment.js") }}"></script>
     <script>
         $.ajaxSetup({
             headers: {
@@ -312,7 +374,8 @@
             var pickUpTime = $("#pick-up-time-input");
             var pickOffTime = $("#pick-off-time-input");
 
-
+            console.log(pickUpDate.val())
+            console.log(pickOffDate.val())
             if (pickUpLocation.val() === "") {
                 pickUpLocation.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
                 pickUpLocation.focus();
@@ -325,10 +388,22 @@
                 return false;
             }
 
-            if (pickUpDate.val() > pickOffDate.val()) {
-                console.log('here')
-                pickUpDate.tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
+            if (moment(pickUpDate.val(), 'DD/MM/YYYY').isAfter(moment(pickOffDate.val(), 'DD/MM/YYYY'))) {
+          /*      pickUpDate.attr("title", "New Tooltip Title");
+                // Refresh the tooltip to update its content
+                pickUpDate.tooltip("refresh");*/
+                pickUpDate.tooltip({placement: 'top', trigger: 'manual', title: "zasto"}).tooltip('show');
                 // pickUpDate.focus();
+         /*   console.log(pickUpDate)
+                pickUpDate.tooltip({
+                    placement: 'top',
+                    trigger: 'manual',
+                    title: 'Old tooltip text' // Existing tooltip text
+                }).tooltip("option", "content", "New tooltip text"); // New tooltip text
+
+                pickUpDate.tooltip("show");*/
+
+
                 return false;
             }
 

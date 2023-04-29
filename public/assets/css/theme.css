@@ -1344,6 +1344,10 @@ input[type=checkbox] {
     position: relative !important;
     height: auto !important;
   }
+
+    .confirm-modal-box {
+        margin: 10px 0px;
+    }
 }
 .header .header-wrapper {
   padding: 0;
@@ -8628,7 +8632,8 @@ input[type=number]::-webkit-outer-spin-button {
 .fee-value {
     width: 50%;
 }
-
-.basic-insurance-info span {
-
+.confirm-modal-box {
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
 }

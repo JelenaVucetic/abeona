@@ -126,7 +126,9 @@
                                                class="car-extras insurance-check">
                                         <label for="full_insurance">{{ __('Ful Rent a Car Insures') }}
                                             <i class="fa fa-info-circle deposit-info" style="padding-left: 5px" data-toggle="tooltip" title="Deposit is included"></i>
-                                            <span class="pull-right" >{{ $car->full_insurance }} &euro; /for a day</span>
+                                            <span class="pull-right" >
+                                                {{ $car->totalDays < 15 ? $car->full_insurance : $car->full_insurance + 5 }} &euro; /for a day
+                                            </span>
                                         </label>
                                     </div>
 
@@ -215,7 +217,7 @@
                                     <input name="pick-up-location" class="reservation-info" disabled value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
-                            <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
+                            <h5 class="widget-title-sub">{{ __('Drop Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="media-body">
@@ -245,12 +247,24 @@
                                     <div class="media">
                                         <div class="media-body">
                                             <div class="testimonial-text">
+                                                I would definitely be renting my cars from Filip of Abeona from now on. He's very
+                                                reasonable and offers full service.. hassle free and clean cars with no hidden fees.
+                                                Had a blast with this convertible beetle!
+                                            </div>
+                                            <div class="testimonial-name">Mona O {{--<span class="testimonial-position">USA</span>--}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="testimonial-text">
                                                 It was excellent working with Fillip and renting a car from him in the beautiful Montenegro,
                                                 especially that it was my husband’s and my first time traveling from the US to there. We had so much fun and comfort with
                                                 the very nice and extremely-fuel-efficient car that he gave us. Communication with Philip was easy and
                                                 the points he made before signing the contract were very helpful. We highly recommend him.
                                             </div>
-                                            <div class="testimonial-name">FAMILY MODIRI <span class="testimonial-position">USA</span></div>
+                                            <div class="testimonial-name">FAMILY MODIRI {{--<span class="testimonial-position">USA</span>--}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -260,19 +274,73 @@
                                             <div class="testimonial-text">
                                                 Abeona was a great rental car experience. We drove three of it cars during our trip and all three were excellent.
                                                 Filip’s service was first class. I highly recommend Abeona to anyone traveling to Montenegro.
-
                                             </div>
-                                            <div class="testimonial-name">JOHN VUKMANOVIC <span class="testimonial-position">USA</span></div>
+                                            <div class="testimonial-name">JOHN VUKMANOVIC{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="testimonial">
                                     <div class="media">
                                         <div class="media-body">
-                                            <div class="testimonial-text">Everything works very cool! They quickly found a car, even drove to the apartment for free,
-                                                thanks to Philip for this! Quickly drawn up and quickly took the car!
-                                                I really enjoyed a good relationship! I advise everyone these guys they are great.</div>
-                                            <div class="testimonial-name">ИЛЬЯ ЛЕТОДИАНИ<span class="testimonial-position">RUSSIA</span></div>
+                                            <div class="testimonial-text">
+                                                Great experience from start to finish Filip was quick to respond on emails and we
+                                                were met at the Airport. Rented the convertible A3 to drive around Montenegro (would
+                                                definitely recommend!). Car was clean and in a good condition. Will certainly use
+                                                again. Thanks all!
+                                            </div>
+                                            <div class="testimonial-name">Michael Dowsett{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="testimonial-text">
+                                                Absolutely best experience I ever had with car rental. The owner is really helpful,
+                                                friendly and will go extra mile for his customers. We didn’t book in advance so we
+                                                had to wait for a car few hours. Meanwhile he dropped us in the city , gave us some
+                                                recommendations on places to visit, few hours later brought us the car . Owner is
+                                                very flexible and will find the best solution for your needs. Highly recommended!!
+                                                Thank you very much once again!
+                                            </div>
+                                            <div class="testimonial-name">Ieva Vainauskaitė{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="testimonial-text">
+                                                Very professional , easy and nice car to rental, we drove Montenegro, Croatia and
+                                                Bosnia, picked up car in Tivat airport and delivered in Sarajevo airport. Nice and
+                                                fast reply on what’s app with Abeona rental. Strongly recommended. I’ll chose them
+                                                again.
+                                            </div>
+                                            <div class="testimonial-name">Dani Olav Nilsen{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="testimonial-text">
+                                                Absolutely friendly and nice persons are working here. It was a great and lovely
+                                                experience. Car was nice and fresh. Filip and Nikola were amazing and kindly. Highly
+                                                recommended.
+                                            </div>
+                                            <div class="testimonial-name">Кирилл Шульга{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="testimonial">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="testimonial-text">
+                                                Filip is beyond great! Highly communicative. Always ready and willing to help. Cars
+                                                are clean and in great condition. Would definitely rent again when back in
+                                                Montenegro
+                                            </div>
+                                            <div class="testimonial-name">Ben Shalom{{--<span class="testimonial-position">RUSSIA</span>--}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -348,9 +416,9 @@
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-location">{{ __('Pick Off Location') }}</label>
+                                                            <label for="update-pick-off-location">{{ __('Drop Off Location') }}</label>
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
-                                                                    class="form-control" title="Pick off location is required" data-toggle="tooltip" >
+                                                                    class="form-control" title="{{ __('Drop off location is required') }}" data-toggle="tooltip" >
 
                                                                 <option {{ $car_filter->pick_off_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
                                                                 <option {{ $car_filter->pick_off_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
@@ -408,10 +476,10 @@
                                                 <div class="container-fluid">
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-date">{{ __('Pick Off Date') }}</label>
+                                                            <label for="update-pick-off-date">{{ __('Drop Off Date') }}</label>
                                                             <input type="text" class="form-control datepicker-update"
                                                                    name="update-pick-off-date"
-                                                                   title="Pick off date is required" data-toggle="tooltip"
+                                                                   title="{{ __("Drop off date is required") }}" data-toggle="tooltip"
                                                                    value="{{ $car_filter->pick_off_date }}"
                                                                    id="update-pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
@@ -420,11 +488,11 @@
                                                     </div>
                                                     <div class="col-sm-5">
                                                         <div class="form-group has-icon has-label">
-                                                            <label for="update-pick-off-time">{{ __('Pick Off Time') }}</label>
+                                                            <label for="update-pick-off-time">{{ __('Drop Off Time') }}</label>
                                                             <div class='input-group date' id='update-pick-off-time'>
                                                                 <input type='text'
                                                                        value="{{ $car_filter->pick_off_time }}"
-                                                                       title="Pick off time is required" data-toggle="tooltip"
+                                                                       title="{{ __('Drop off time is required') }}" data-toggle="tooltip"
                                                                        name="update-pick-off-time" class="form-control" />
                                                                 <span class="input-group-addon">
                                                                <span class="glyphicon glyphicon-time"></span>
@@ -473,7 +541,7 @@
                 </div>
                 <div class="modal-body">
                     <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 20px">
-                        <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
+                        <div class="confirm-modal-box" >
                             <h5 class="widget-title-sub">{{ __('Pick Up Location') }}</h5>
                             <div class="media" style="display: flex">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
@@ -514,8 +582,8 @@
                                 @endif
                             </div>
                         </div>
-                        <div style="border: 1px solid lightgray;padding: 20px;border-radius: 10px;">
-                            <h5 class="widget-title-sub">{{ __('Pick Off Location') }}</h5>
+                        <div class="confirm-modal-box">
+                            <h5 class="widget-title-sub">{{ __('Drop Off Location') }}</h5>
                             <div class="media" style="display:flex;">
                                 <span class="media-object pull-left"><i class="fa fa-calendar"></i></span>
                                 <div class="" style="width: fit-content;display: flex;flex-direction: column;">
@@ -530,7 +598,7 @@
                                 </div>
                             </div>
                             <div>
-                                {{ __('Pick off price') }}:
+                                {{ __('Drop off price') }}:
                                 @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' ||
                                         $car_filter->pick_off_location == 'podgorica' ||
                                         str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
