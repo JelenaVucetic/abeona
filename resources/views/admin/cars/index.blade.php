@@ -66,13 +66,15 @@
         e.preventDefault();
         const car =  $(this).data('id');
 
+        console.log(car)
+
         $.ajax({
             type:"GET",
-            url: "{{ route('cars.edit', $car) }}",
+            url: "cars/"+ car +"/edit",
             beforeSend: function(){
             },
             success:function () {
-                window.location.href = "{{ route('cars.edit', $car) }}"
+                window.location.href = "cars/"+ car +"/edit"
             },
             error:function () {
                 $.alert({
