@@ -9,7 +9,7 @@
 
     <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('assets/ico/apple-touch-icon-144-precomposed.png') }}">
-    <link rel="shortcut icon" href="{{asset('assets/ico/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('assets/img/abeona-tab-icon.png')}}">
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="{{asset('assets/plugins/jquery-ui/jquery-ui.css')}}">
