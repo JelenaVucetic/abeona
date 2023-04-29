@@ -9,42 +9,40 @@
                 <form id="edit-car-form" class="needs-validation" novalidate autocomplete="off" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="_token" id="create_token" value="{{ csrf_token() }}">
                     <div class="container">
+                        <h2 style="margin-left: 10px;margin-bottom: 10px;">Car details</h2>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="inputName">Car Name</label>
                                 <input type="text" class="form-control" id="name" name="car[name]" value="{{$car->name}}" placeholder="Car name" required />
                                 <small class="form-text text-muted">Please fill car name</small>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="motor">Engine</label>
                                 <input type="text" class="form-control" id="motor" name="car[motor]" value="{{$car->motor}}" placeholder="Car engine" required />
                                 <small class="form-text text-muted">Please fill car engine</small>
                             </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="passenger">Passengers</label>
                                 <input type="number" class="form-control" id="passenger" name="car[passenger]" value="{{$car->passenger}}"  required />
                                 <small class="form-text text-muted">Please fill number of passengers</small>
                             </div>
-                            <div class="form-group col-md-6">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
                                 <label for="passengers">Doors</label>
                                 <input type="number" class="form-control" id="doors" name="car[doors]" value="{{$car->doors}}" required />
                                 <small class="form-text text-muted">Please fill number of doors</small>
                             </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="transmission">Transmission</label>
                                 <select class="form-control" id="transmission" name="car[transmission]" >
                                     <option {{ $car->transmission == 'manual' ? "selected" : "" }} value="manual">Manual</option>
                                     <option {{ $car->transmission == 'automatic' ? "selected" : "" }} value="automatic">Automatic</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="year">Year</label>
                                 <input type="number" class="form-control" id="year" name="car[year]" value="{{$car->year}}" />
                                 <small class="form-text text-muted">Please fill yaar</small>
@@ -52,12 +50,7 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="basic_insurance">Basic Insurance</label>
-                                <input type="number" class="form-control" id="basic_insurance" name="car[basic_insurance]" value="{{$car->basic_insurance}}" required />
-                                <small class="form-text text-muted">Please fill price for basic insuranec</small>
-                            </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="full_insurance">Full Insurance</label>
                                 <input type="number" class="form-control" id="full_insurance" name="car[full_insurance]" value="{{$car->full_insurance}}" required />
                                 <small class="form-text text-muted">Please fill price for full insuranec</small>
@@ -65,28 +58,29 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label for="basic_insurance">Basic Insurance</label>
+                                <input type="number" class="form-control" id="basic_insurance" name="car[basic_insurance]" value="{{$car->basic_insurance}}" required />
+                                <small class="form-text text-muted">Please fill price for basic insuranec</small>
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label for="participation_damage">Participation Damage</label>
                                 <input type="number" class="form-control" id="participation_damage" name="car[participation_damage]"  value="{{$car->participation_damage}}" required />
                                 <small class="form-text text-muted">Please fill Participation Damage</small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label for="deposit">Deposit</label>
                                 <input type="number" class="form-control" id="participation_damage" name="car[deposit]"  value="{{$car->deposit}}" required />
                                 <small class="form-text text-muted">Please fill deposit price</small>
-
                             </div>
                         </div>
                     </div>
 
-
-
                     <hr />
 
-                    <h1>Prices</h1>
-
                     <div class="container">
-                        <h3>Summer <br> 15.06-15.09</h3>
+                        <h2 style="margin-bottom: 10px; margin-left: 10px">Prices</h2>
+                        <h4 style="margin-left: 10px">Summer  15.06-15.09</h4>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="prices">Price: default</label>
@@ -130,7 +124,7 @@
 
                     </div>
                     <div class="container">
-                        <h3>Autumn <br> 15.09.-15.11.</h3>
+                        <h4 style="margin-left: 10px;">Autumn 15.09.-15.11.</h4>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: default</label>
@@ -175,7 +169,7 @@
                     </div>
 
                     <div class="container">
-                        <h3>Winter 15.11.-15.03</h3>
+                        <h4 style="margin-left: 10px;">Winter 15.11.-15.03</h4>
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <label for="">Price: default</label>
@@ -219,7 +213,7 @@
                     </div>
 
                     <div class="container">
-                        <h3>Spring <br> 15.03.-15.06.</h3>
+                        <h4 style="margin-left: 10px;">Spring 15.03.-15.06.</h4>
 
                         <div class="form-row">
                             <div class="form-group col-md-3">
@@ -277,7 +271,7 @@
                                 <div class="upload__img-wrap">
                                     @foreach($car->images as $image)
                                         <div class='upload__img-box'>
-                                            <div style='background-image: url({{$image->path}})' class='img-bg'>
+                                            <div style='background-image: url({{ "/storage/" . $image->path}})' class='img-bg'>
                                             <div class='upload__img-close'></div>
                                             <div class=''>
                                                 <input checked  title='Select main image' data-toggle='tooltip'  name='main-image' type='radio' value='" + f.name + "'>
@@ -285,8 +279,6 @@
                                             </div>
                                         </div>;
                                     @endforeach
-
-
                                 </div>
                             </div>
                         </div>
