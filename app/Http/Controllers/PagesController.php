@@ -24,7 +24,7 @@ class PagesController extends Controller
             $car->pricePerDay = $price['default'];
             return $car;
         })->sortBy("pricePerDay");
-        
+
         return view('welcome')->with(["cars" => $cars]);
     }
 
@@ -74,7 +74,7 @@ class PagesController extends Controller
             return $car;
         })->sortBy("pricePerDay");
 
-        return view('fleet', ['locale' => app()->getLocale(), 'cars' => $cars, 'car_filter' => $car_filter]);
+        return view('fleet', ['cars' => $cars, 'car_filter' => $car_filter]);
     }
 
     public function about()

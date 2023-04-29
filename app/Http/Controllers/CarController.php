@@ -85,7 +85,7 @@ class CarController extends Controller
             ->first();
 
         $car->pricePerDay = $price["default"];
-        return view('booking', ["locale" => app()->getLocale(), "car" => $car]);
+        return view('booking', ["car" => $car]);
     }
 
     /**
@@ -178,6 +178,6 @@ class CarController extends Controller
         $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
         $car->totalDays = $differenceInDays;
 
-        return view('booking', ['locale' => app()->getLocale(), 'car' => $car, 'car_filter' => $car_filter]);
+        return view('booking', ['car' => $car, 'car_filter' => $car_filter]);
     }
 }

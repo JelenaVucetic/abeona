@@ -1,21 +1,10 @@
-<nav>
-{{--    <div style="display:flex; margin: 0px 30px; justify-content: end">--}}
-{{--        @foreach(config('app.available_locales') as $locale)--}}
-{{--            <x-nav-link :href="route(\Illuminate\Support\Facades\Route::currentRouteName(), ['locale' => $locale])"--}}
-{{--                        :active="app()->getLocale() == $locale">--}}
-{{--                <img style="width: 20px;margin:10px 5px" src="{{ asset('assets/img/' . $locale . '.png') }}">--}}
-{{--            </x-nav-link>--}}
-{{--        @endforeach--}}
-{{--    </div>--}}
-</nav>
 <header class="header fixed">
     <div class="header-wrapper">
         <div class="container">
 
             <!-- Logo -->
             <div class="logo">
-                <a href="{{ route('welcome', app()->getLocale()) }}"><img src="{{ asset('assets/img/abeona.png') }}"
-                                                                          alt="Rent It"/></a>
+                <a href="{{ route('welcome') }}"><img src="{{ asset('assets/img/abeona.png') }}" alt="Rent It"/></a>
             </div>
             <!-- /Logo -->
 
@@ -32,19 +21,19 @@
                         <ul class="nav sf-menu">
                             @if (auth()->check())
                                 <li class="{{ Route::currentRouteName() == 'dashboard'? 'active' : '' }}">
-                                    <a href="{{ route('dashboard', app()->getLocale()) }}">Dashboard</a>
+                                    <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'profile.edit' ? 'active' : '' }}">
-                                    <a href="{{ route('profile.edit', app()->getLocale()) }}"> {{ __('Profile') }}</a>
+                                    <a href="{{ route('profile.edit') }}"> {{ __('Profile') }}</a>
                                 </li>
 
                                 <li class="{{ Route::currentRouteName() == 'cars.index' ? 'active' : '' }}">
                                     <a href="{{ route('cars.index') }}">{{ __('Cars') }}</a>
                                 </li>
 
-                                 <li class="{{ (strpos(Route::currentRouteName(), 'car-images.index') == 0) ? 'active' : '' }}">
-                                     <a href="{{ route('car-images.index') }}">Car Images</a>
-                                 </li>
+                                <li class="{{ (strpos(Route::currentRouteName(), 'car-images.index') == 0) ? 'active' : '' }}">
+                                    <a href="{{ route('car-images.index') }}">Car Images</a>
+                                </li>
 
                                 <li>
                                     <!-- Authentication -->
@@ -62,32 +51,42 @@
 
                             @else
                                 <li class="{{ Route::currentRouteName() == 'welcome' ? 'active' : '' }}">
-                                    <a href="{{ route('welcome', app()->getLocale()) }}">{{ __('Home') }}</a>
+                                    <a href="{{ route('welcome') }}">{{ __('Home') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'fleet' ? 'active' : '' }}">
-                                    <a href="{{ route('fleet', app()->getLocale()) }}">{{ __('Fleet') }}</a>
+                                    <a href="{{ route('fleet') }}">{{ __('Fleet') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}">
-                                    <a href="{{ route('about-us', app()->getLocale()) }}">{{ __('About Us') }}</a>
+                                    <a href="{{ route('about-us') }}">{{ __('About Us') }}</a>
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'contact' ? 'active' : '' }}">
-                                    <a href="{{route('contact', app()->getLocale())}}">{{ __('Contact') }}</a>
+                                    <a href="{{route('contact')}}">{{ __('Contact') }}</a>
                                 </li>
                             @endif
 
                             <li style="display: flex;align-items: center">
                                 <ul class="social-icons">
-                                    <li><a target="_blank" href="https://www.facebook.com/abeonarentacartivat" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a target="_blank" href="https://www.instagram.com/abeonarentacar/" class="instagram"><i class="fa fa-instagram"></i></a></li>
-{{--                                    <li><a href="" style="font-weight: 600;padding: 0px 5px">EN</a></li>--}}
-{{--                                    <li><a href="" style="font-weight: 600;padding: 0px 5px;margin-right: 20px;">MNE</a></li>--}}
-
+                                    <li><a target="_blank" href="https://www.facebook.com/abeonarentacartivat"
+                                           class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" href="https://www.instagram.com/abeonarentacar/"
+                                           class="instagram"><i class="fa fa-instagram"></i></a></li>
                                 </ul>
-                                <div class="dropdown">
-                                    <a href="#">EN</a>
-                                    <div class="dropdown-options">
-                                        <a href="#">MNE</a>
-                                    </div>
+                                <div class="dropdown" style="text-transform: uppercase">
+                                    <a rel="alternate"
+                                       hreflang="{{ Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() }}"
+                                       href="{{ LaravelLocalization::getLocalizedURL(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale(), null, [], true) }}">
+                                        {{Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()}}
+                                    </a>
+                                    @foreach(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        @if(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() != $localeCode)
+                                            <div class="dropdown-options">
+                                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                   href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                    {{$localeCode}}
+                                                </a>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </li>
                         </ul>

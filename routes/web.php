@@ -8,6 +8,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,26 +36,18 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 
 Route::delete("/images/{image}", [ImageController::class, 'destroy']);
 
-
-// Redirect home with default language yourdomain.com/en/
-Route::get('/', function () {
-    return redirect(app()->getLocale());
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => [ 'localeSessionRedirect' ]], function()
+{
+    /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    Route::get('/', [PagesController::class, 'index'])->name('welcome');
+    Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
+    Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
+    Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+    Route::get('/cars/{car}/book', [CarController::class, 'bookCar'])->name('bookCar');
+    Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
 });
-
-Route::group(
-    [
-        'prefix' => '{locale}',
-        'middleware' => 'setlocale'
-    ],
-    function () {
-        Route::get('/', [PagesController::class, 'index'])->name('welcome');
-        Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
-        Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
-        Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-        Route::get('/cars/{car}/book', [CarController::class, 'bookCar'])->name('bookCar');
-        Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
-    }
-);
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
