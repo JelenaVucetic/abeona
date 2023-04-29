@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::get('contacts', [ContactController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 //->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::delete("/images/{image}", [ImageController::class, 'destroy']);
+
 
 // Redirect home with default language yourdomain.com/en/
 Route::get('/', function () {
@@ -42,14 +45,16 @@ Route::group(
     [
         'prefix' => '{locale}',
         'middleware' => 'setlocale'
-    ], function () {
-    Route::get('/', [PagesController::class, 'index'])->name('welcome');
-    Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
-    Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
-    Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-    Route::get('/cars/{car}/book', [CarController::class, 'bookCar'])->name('bookCar');
-    Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
-});
+    ],
+    function () {
+        Route::get('/', [PagesController::class, 'index'])->name('welcome');
+        Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
+        Route::get('/fleet', [PagesController::class, 'fleet'])->name('fleet');
+        Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+        Route::get('/cars/{car}/book', [CarController::class, 'bookCar'])->name('bookCar');
+        Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
+    }
+);
 
 
 Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
