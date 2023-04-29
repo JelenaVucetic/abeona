@@ -184,11 +184,11 @@
                         <div class="col-md-4">
                             <div class="thumbnail no-border no-padding thumbnail-car-card">
                                 <div class="media">
-{{--                                    <a class="media-link" data-gal="prettyPhoto"--}}
-{{--                                       href="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}">--}}
-{{--                                        <img src="/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>--}}
-{{--                                        <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>--}}
-{{--                                    </a>--}}
+                                    <a class="media-link" data-gal="prettyPhoto"
+                                       href="{{ env("APP_IMAGE_PATH") }}/{{collect(($car->images)->where('type', 'main')->first())['path']}}">
+                                        <img src="{{ env("APP_IMAGE_PATH") }}/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>
+                                        <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
+                                    </a>
                                 </div>
                                 <div class="caption text-center">
                                     <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>

@@ -21,10 +21,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('admin')
         ]);
 
-        $this->call([
-            CarSeeder::class,
-            ContactSeeder::class,
-            BookingSeeder::class,
-        ]);
+//        $this->call([
+//            CarSeeder::class,
+//            ContactSeeder::class,
+//            BookingSeeder::class,
+//        ]);
     }
 }

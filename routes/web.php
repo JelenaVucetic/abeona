@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+require __DIR__ . '/auth.php';
 
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
@@ -68,4 +68,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/car-images', [CarController::class, 'index'])->name('car-images.index');
 });
 
-require __DIR__ . '/auth.php';
+
