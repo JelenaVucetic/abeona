@@ -185,8 +185,8 @@
                             <div class="thumbnail no-border no-padding thumbnail-car-card">
                                 <div class="media">
                                     <a class="media-link" data-gal="prettyPhoto"
-                                       href="{{ env("APP_IMAGE_PATH") }}/{{collect(($car->images)->where('type', 'main')->first())['path']}}">
-                                        <img src="{{ env("APP_IMAGE_PATH") }}/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>
+                                       href="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}">
+                                        <img src="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt=""/>
                                         <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                                     </a>
                                 </div>

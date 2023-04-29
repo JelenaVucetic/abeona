@@ -11,37 +11,37 @@
                     <h3 class="block-title alt"><i class="fa fa-angle-down"></i>{{ __('Car Information') }}</h3>
                     <div class="car-big-card alt">
                         <div class="row">
-{{--                            <div class="col-md-8">--}}
-{{--                                <div class="owl-carousel img-carousel">--}}
-{{--                                    <div class="item">--}}
-{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
-{{--                                        <a  href="/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item">--}}
-{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
-{{--                                        <a href="/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item">--}}
-{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
-{{--                                        <a href="/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item">--}}
-{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
-{{--                                        <a href="/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="item">--}}
-{{--                                        <a class="btn btn-zoom" href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>--}}
-{{--                                        <a href="/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="row car-thumbnails">--}}
-{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[0]["path"] }}" alt=""/></a></div>--}}
-{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[1]["path"] }}" alt=""/></a></div>--}}
-{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[2]["path"] }}" alt=""/></a></div>--}}
-{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[3]["path"] }}" alt=""/></a></div>--}}
-{{--                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="/storage/{{ $car->images[4]["path"] }}" alt=""/></a></div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            <div class="col-md-8">
+                                <div class="owl-carousel img-carousel">
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a  href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" alt=""/></a>
+                                    </div>
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" alt=""/></a>
+                                    </div>
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" alt=""/></a>
+                                    </div>
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" alt=""/></a>
+                                    </div>
+                                    <div class="item">
+                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
+                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" alt=""/></a>
+                                    </div>
+                                </div>
+                                <div class="row car-thumbnails">
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img style="width: 100%;" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [1,300]);"><img style="width: 100%;" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [2,300]);"><img style="width: 100%;" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [3,300]);"><img style="width: 100%;" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#" onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [4,300]);"><img style="width: 100%;" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" alt=""/></a></div>
+                                </div>
+                            </div>
                             <div class="col-md-4">
                                 <div class="car-details">
                                     <div class="price">
