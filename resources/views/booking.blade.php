@@ -14,24 +14,19 @@
                             <div class="col-md-8">
                                 <div class="owl-carousel img-carousel">
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a  href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" alt=""/></a>
+                                        <a style="pointer-events: none"  href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[0]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" alt=""/></a>
+                                        <a style="pointer-events: none"  href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[1]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" alt=""/></a>
+                                        <a  style="pointer-events: none" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[2]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" alt=""/></a>
+                                        <a  style="pointer-events: none" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[3]["path"] }}" alt=""/></a>
                                     </div>
                                     <div class="item">
-                                        <a class="btn btn-zoom" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><i class="fa fa-arrows-h"></i></a>
-                                        <a href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" alt=""/></a>
+                                        <a  style="pointer-events: none" href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" data-gal="prettyPhoto"><img class="img-responsive" src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $car->images[4]["path"] }}" alt=""/></a>
                                     </div>
                                 </div>
                                 <div class="row car-thumbnails">

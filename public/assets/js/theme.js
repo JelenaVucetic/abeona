@@ -180,6 +180,7 @@ jQuery(document).ready(function () {
         });
         // Main slider
         if (mainSlider.length) {
+
             mainSlider.owlCarousel({
                 //items: 1,
                 autoplay: false,
