@@ -618,7 +618,7 @@
                                     <input type="hidden" id="pick-off-price" value="100">
                                     100 &euro;
                                 @else
-                                    <input type="hidden" id="pick-uoff-price" value="70">
+                                    <input type="hidden" id="pick-off-price" value="70">
                                     70 &euro;
                                 @endif
                             </div>
@@ -735,8 +735,13 @@
                 const pick_off_date = $("input[name='pick-off-date']").val()
                 const pick_off_time = $("input[name='pick-off-time']").val()
 
-                const pick_up_price = $('#pick-up-price').val()
-                const pick_off_price = $('#pick-off-price').val()
+                const pick_up_price = parseInt($('#pick-up-price').val())
+                const pick_off_price = parseInt($('#pick-off-price').val())
+
+                console.log(pick_up_price)
+                console.log(pick_off_price)
+                console.log(typeof pick_up_price)
+                console.log(typeof pick_off_price)
 
                 const total = $('#total-amount').val()
 
@@ -808,8 +813,8 @@
                         total += parseInt($('#full-insurance-value').val() * numOfDays)
                     } else if ( $(this).attr("name") === 'basic_insurance') {
                         carExtras[$(this).attr("name")] = '<p class="basic-insurance-info">includes damage responsibility up to <span> ' +
-                            $('#participation-damage-value').val() +'</span> and deposit <span>' +
-                            $('#deposit-value').val() + '</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
+                            $('#participation-damage-value').val() +'&euro;</span> and deposit <span>' +
+                            $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
 
                         total += parseInt($('#deposit-value').val())
                     } else if ( $(this).attr("name") === 'border_crossing') {
