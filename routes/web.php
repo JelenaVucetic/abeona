@@ -22,20 +22,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 require __DIR__ . '/auth.php';
 
-Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
-
-Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
 
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
-
-
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-//->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::delete("/images/{image}", [ImageController::class, 'destroy']);
-Route::post('/images/{car}/save', [ImageController::class, 'store']);
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
@@ -50,14 +40,6 @@ Route::group([
     Route::get('/findCar', [PagesController::class, 'findCar'])->name('findCar');
 });
 
-
-Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
-
-Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
-
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -67,6 +49,18 @@ Route::middleware('auth')->group(function () {
     //Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
     Route::get('/car-images', [CarController::class, 'index'])->name('car-images.index');
+
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::resource('cars', CarController::class);
+
+    Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
+
+    Route::delete("/images/{image}", [ImageController::class, 'destroy']);
+    Route::post('/images/{car}/save', [ImageController::class, 'store']);
+
+    Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
+
+    Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 });
 
 
