@@ -283,6 +283,7 @@
 
                     <div class="container">
                         <div class="form-group">
+                            <input type="hidden" id="car-id" value="{{ $car->id }}">
                             <div class="upload__box">
                                 <div class="upload__btn-box">
                                     <label class="upload__btn">
@@ -292,18 +293,12 @@
 
                                 </div>
                                 <div class="upload__img-wrap">
-                                    {{--<div class='upload__img-box'>
-                                        <div style='background-image: url({{ "/storage/" . $image->path}})' class='img-bg'>
-                                            <div class='upload__img-close'></div>
-                                            <div class=''>
-                                                <input checked  title='Select main image' data-toggle='tooltip'  name='main-image' type='radio' value='" + f.name + "'>
-                                            </div>
-                                        </div>
-                                    </div>;--}}
                                 </div>
 
                             </div>
-
+                            <div>
+                                <button id='save-images' style='position: absolute;bottom: 0; display: none' class='btn btn-primary'>Save images</button>
+                            </div>
                         </div>
 
                     </div>
@@ -341,7 +336,7 @@
                             $.ajax({
                                 processData: false,
                                 type: 'DELETE',
-                                url: "/car-images/"+ image +"/delete",
+                                url: "/images/"+ image,
                                 contentType: false,
                                 success: function (data) {
                                     $.alert('Deleted');
@@ -354,34 +349,11 @@
             });
         });
 
-        $('#edit-car').click(function(e) {
+      /*  $('#edit-car').click(function(e) {
             e.preventDefault();
             const car =  $(this).data('id');
             let formData = new FormData($('#edit-car-form')[0]);
 
-         /*   let carImages = {};
-            const totalImages = $("#images")[0].files.length;
-
-            if (totalImages > 0) {
-                let images = $("#images")[0];
-
-                const mainImageName = $('input[name="main-image"]:checked')
-                if (!mainImageName.is(":checked")) {
-                    $('input[name="main-image"]:first').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
-                    return false;
-                }
-                for (let i = 0; i < totalImages; i++) {
-                    formData.append('files[]', images.files[i])
-
-                    if (images.files[i]['name'] === mainImageName.val()) {
-                        formData.append('images['+i+'][type]', 'main');
-                    } else {
-                        formData.append('images['+i +'][type]', 'details');
-                    }
-                    formData.append('images['+i+'][name]', 'image'+i+'.jpg')
-                }
-
-            }*/
             const seasons = ['summer', 'autumn', 'winter', 'spring']
             $.each(seasons, function( index, value ) {
                 formData.append('prices['+index+'][season]', value)
@@ -400,9 +372,45 @@
                     alert('success');
                 }
             })
-        });
+        });*/
 
+        $('#save-images').click(function(e) {
+            e.preventDefault();
+            console.log('save images')
+            const car = $('#car-id').val();
+            let formData = new FormData();
+            formData.append('car_id', car)
+            const totalImages = $("#images")[0].files.length;
 
+            if (totalImages > 0) {
+                let images = $("#images")[0];
+
+                const mainImageName = $('input[name="main-image"]:checked')
+
+                for (let i = 0; i < totalImages; i++) {
+
+                    formData.append('files[]', images.files[i])
+
+                    if (images.files[i]['name'] === mainImageName.val()) {
+                        formData.append('images['+i+'][type]', 'main');
+                    } else {
+                        formData.append('images['+i +'][type]', 'details');
+                    }
+                    formData.append('images['+i+'][name]', 'image'+i+'.jpg')
+                }
+
+            }
+            $.ajax({
+                processData: false,
+                type: 'POST',
+                url: "/images/" + car + "/save",
+                data: formData,
+                contentType: false,
+                success: function (data) {
+                    alert('success');
+                }
+            })
+        })
 
     </script>
 @endsection

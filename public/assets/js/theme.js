@@ -1446,9 +1446,7 @@ function ImgUploadOnEdit() {
 
                 }
             });
-            imgWrap.append( "<div>" +
-                "<button class='btn btn-primary'>Save images</button>" +
-                "</div>")
+            $('#save-images').css("display", "block")
         });
     });
 

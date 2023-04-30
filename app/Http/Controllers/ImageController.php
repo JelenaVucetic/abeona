@@ -20,7 +20,6 @@ class ImageController extends Controller
     public function store(Request $request)
     {
         $car = Car::find($request->input("car_id"));
-        dd($request);
         $this->carService->storeImages($car, $request);
     }
 

@@ -35,6 +35,7 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 //->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::delete("/images/{image}", [ImageController::class, 'destroy']);
+Route::post('/images/{car}/save', [ImageController::class, 'store']);
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
@@ -54,7 +55,7 @@ Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
 
 Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 
-Route::delete('/car-images/{image}/delete', [ImageController::class, 'destroy']);
+
 
 
 Route::middleware('auth')->group(function () {
