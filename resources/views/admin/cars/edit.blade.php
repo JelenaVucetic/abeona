@@ -256,38 +256,58 @@
                             </div>
                         </div>
                     </div>
+
+                    <div style="display: flex;justify-content: center">
+                        <div class="form-group col-md-3">
+                            <button id="edit-car" class="btn btn-primary btn-block col-lg-2" type="submit" data-id="{{$car->id}}">Save</button>
+                        </div>
+                    </div>
                     <hr />
+
+                    <div class="container">
+                        @foreach($car->images as $image)
+                            <div style="display: flex; flex-direction: column">
+                                <div style="display: flex; margin-bottom: 20px">
+                                    <img style="width: 200px" src="{{ env("APP_IMAGE_PATH") }}/storage/{{$image->path}}"
+                                         alt=""/>
+                                    <div style="margin-left: 20px">
+                                        <p>Image type: {{ $image->type }}</p>
+                                        <button id="delete-image" data-image-id="{{ $image->id }}"
+                                                data-car-id="{{ $car->id }}" class="btn btn-danger">Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
 
                     <div class="container">
                         <div class="form-group">
                             <div class="upload__box">
                                 <div class="upload__btn-box">
                                     <label class="upload__btn">
-                                        <p>Upload images</p>
+                                        <p>Add new images</p>
                                         <input type="file" id="images" multiple="" data-max_length="20" class="upload__inputfile">
                                     </label>
 
                                 </div>
                                 <div class="upload__img-wrap">
-                                    @foreach($car->images as $image)
-                                        <div class='upload__img-box'>
-                                            <div style='background-image: url({{ "/storage/" . $image->path}})' class='img-bg'>
+                                    {{--<div class='upload__img-box'>
+                                        <div style='background-image: url({{ "/storage/" . $image->path}})' class='img-bg'>
                                             <div class='upload__img-close'></div>
                                             <div class=''>
                                                 <input checked  title='Select main image' data-toggle='tooltip'  name='main-image' type='radio' value='" + f.name + "'>
-                                                </div>
                                             </div>
-                                        </div>;
-                                    @endforeach
+                                        </div>
+                                    </div>;--}}
                                 </div>
+
                             </div>
+
                         </div>
 
                     </div>
 
-                    <!-- Start Submit Button -->
-                    <button id="edit-car" class="btn btn-primary btn-block col-lg-2" type="submit" data-id="{{$car->id}}">Save</button>
-                    <!-- End Submit Button -->
                 </form>
                 <!-- End Form -->
             </div>
@@ -300,7 +320,38 @@
 @section('js')
     <script>
         jQuery(document).ready(function () {
-            ImgUpload();
+            ImgUploadOnEdit();
+        });
+        $('#delete-image').click(function(e) {
+            e.preventDefault();
+            const image = $(this).data('image-id');
+            const car = $(this).data('car-id');
+
+            $.confirm({
+                title: 'Are you sure?',
+                content: 'This image will be deleted',
+                buttons: {
+                    cancel: function () {
+                        $.alert('Canceled!');
+                    },
+                    delete: {
+                        text: 'Delete',
+                        btnClass: 'btn-red',
+                        action: function(){
+                            $.ajax({
+                                processData: false,
+                                type: 'DELETE',
+                                url: "/car-images/"+ image +"/delete",
+                                contentType: false,
+                                success: function (data) {
+                                    $.alert('Deleted');
+                                    window.location.href = '/cars/'+ car + '/edit'
+                                }
+                            })
+                        }
+                    }
+                }
+            });
         });
 
         $('#edit-car').click(function(e) {
@@ -308,7 +359,7 @@
             const car =  $(this).data('id');
             let formData = new FormData($('#edit-car-form')[0]);
 
-            let carImages = {};
+         /*   let carImages = {};
             const totalImages = $("#images")[0].files.length;
 
             if (totalImages > 0) {
@@ -330,7 +381,7 @@
                     formData.append('images['+i+'][name]', 'image'+i+'.jpg')
                 }
 
-            }
+            }*/
             const seasons = ['summer', 'autumn', 'winter', 'spring']
             $.each(seasons, function( index, value ) {
                 formData.append('prices['+index+'][season]', value)

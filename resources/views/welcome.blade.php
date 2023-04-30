@@ -38,13 +38,13 @@
                                                                 <option value="herceg novi">Herceg Novi</option>
                                                                 <option value="dubrovnik">Dubrovnik</option>
                                                                 <option value="cetinje">Cetinje</option>
-                                                                <option value="nikšic">Nikšic</option>
+                                                                <option value="niksic">Nikšic</option>
                                                                 <option value="pljevlja">Pljevlja</option>
                                                                 <option value="berane">Berane</option>
                                                                 <option value="bijelo polje">Bijelo Polje</option>
-                                                                <option value="kolašin">Kolašin</option>
+                                                                <option value="kolasin">Kolašin</option>
                                                                 <option value="mojkovac">Mojkovac</option>
-                                                                <option value="žabljak">Žabljak</option>
+                                                                <option value="zabljak">Žabljak</option>
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
@@ -67,13 +67,13 @@
                                                                 <option value="herceg novi">Herceg Novi</option>
                                                                 <option value="dubrovnik">Dubrovnik</option>
                                                                 <option value="cetinje">Cetinje</option>
-                                                                <option value="nikšic">Nikšic</option>
+                                                                <option value="niksic">Nikšic</option>
                                                                 <option value="pljevlja">Pljevlja</option>
                                                                 <option value="berane">Berane</option>
                                                                 <option value="bijelo polje">Bijelo Polje</option>
-                                                                <option value="kolašin">Kolašin</option>
+                                                                <option value="kolasin">Kolašin</option>
                                                                 <option value="mojkovac">Mojkovac</option>
-                                                                <option value="žabljak">Žabljak</option>
+                                                                <option value="zabljak">Žabljak</option>
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>

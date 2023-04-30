@@ -406,8 +406,16 @@
                                                                 <option {{ $car_filter->pick_up_location == 'ulcinj' ? "selected" : "" }}  value="ulcinj">Ulcinj</option>
                                                                 <option {{ $car_filter->pick_up_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
                                                                 <option {{ $car_filter->pick_up_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
-                                                                <option {{ $car_filter->pick_up_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
-                                                                <option {{ $car_filter->pick_up_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
+                                                                <option {{ $car_filter->pick_up_location == 'kotor' ? "selected" : "" }} value="kotor">Kotor</option>
+                                                                <option {{ $car_filter->pick_up_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">Dubrovnik</option>
+                                                                <option {{ $car_filter->pick_up_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_up_location == 'niksic' ? "selected" : "" }}  value="niksic">Nikšic</option>
+                                                                <option {{ $car_filter->pick_up_location == 'pljevlja' ? "selected" : "" }}  value="pljevlja">Pljevlja</option>
+                                                                <option {{ $car_filter->pick_up_location == 'berane' ? "selected" : "" }} value="berane">Berane</option>
+                                                                <option {{ $car_filter->pick_up_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">Bijelo Polje</option>
+                                                                <option {{ $car_filter->pick_up_location == 'kolasin' ? "selected" : "" }} value="kolasin">Kolašin</option>
+                                                                <option {{ $car_filter->pick_up_location == 'mojkovac' ? "selected" : "" }}  value="mojkovac">Mojkovac</option>
+                                                                <option {{ $car_filter->pick_up_location == 'zabljak' ? "selected" : "" }}  value="zabljak">Žabljak</option>
 
                                                             </select>
                                                             <span class="form-control-icon"><i
@@ -430,8 +438,16 @@
                                                                 <option {{ $car_filter->pick_off_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
                                                                 <option {{ $car_filter->pick_off_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
                                                                 <option {{ $car_filter->pick_off_location == 'kotor' ? "selected" : "" }}  value="kotor">Kotor</option>
-                                                                <option {{ $car_filter->pick_off_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
-                                                                <option {{ $car_filter->pick_off_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
+                                                                <option {{ $car_filter->pick_off_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">Dubrovnik</option>
+                                                                <option {{ $car_filter->pick_off_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_off_location == 'niksic' ? "selected" : "" }}  value="niksic">Nikšic</option>
+                                                                <option {{ $car_filter->pick_off_location == 'pljevlja' ? "selected" : "" }}  value="pljevlja">Pljevlja</option>
+                                                                <option {{ $car_filter->pick_off_location == 'berane' ? "selected" : "" }} value="berane">Berane</option>
+                                                                <option {{ $car_filter->pick_off_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">Bijelo Polje</option>
+                                                                <option {{ $car_filter->pick_off_location == 'kolasin' ? "selected" : "" }} value="kolasin">Kolašin</option>
+                                                                <option {{ $car_filter->pick_off_location == 'mojkovac' ? "selected" : "" }}  value="mojkovac">Mojkovac</option>
+                                                                <option {{ $car_filter->pick_off_location == 'zabljak' ? "selected" : "" }}  value="zabljak">Žabljak</option>
+
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>

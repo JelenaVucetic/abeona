@@ -54,6 +54,8 @@ Route::post('/cars/find', [CarController::class, 'find'])->name('cars.find');
 
 Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 
+Route::delete('/car-images/{image}/delete', [ImageController::class, 'destroy']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

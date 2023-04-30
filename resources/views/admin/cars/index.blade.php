@@ -41,9 +41,7 @@
                         <td>{{$car->deposit}}</td>
                         <td>{{$car->full_insurance}}</td>
                         <td>
-                            @foreach ($car->images as $image)
-                                <img style="width: 50px" src="{{$image->path}}" alt="">
-                            @endforeach
+                            <img style="width: 80px" src="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}" alt="">
                         </td>
                         <td>
                             <button class="car-edit btn-info" data-id="{{$car->id}}">Edit</button>
