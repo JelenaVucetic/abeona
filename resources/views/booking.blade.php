@@ -47,7 +47,7 @@
                                                 <h2>Volkswagen Golf</h2>
                                             </li>
                                             <li>Fuel {{ $car->motor }}</li>
-                                            <li>Transmission {{ $car->transmision }}</li>
+                                            <li>Transmission {{ $car->transmission }}</li>
                                             <li>{{ $car->doors }} {{ __('Doors') }}</li>
                                             <li>{{ $car->passenger }} {{ __('Passengers') }}</li>
                                         </ul>
@@ -397,9 +397,9 @@
                                                             <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select name="update-pick-up-location" id="update-pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
-                                                                <option {{ $car_filter->pick_up_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_up_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
-                                                                <option {{ $car_filter->pick_up_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'podgorica ' . __("Airport") ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_up_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
                                                                 <option {{ $car_filter->pick_up_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
                                                                 <option {{ $car_filter->pick_up_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
@@ -420,9 +420,9 @@
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
                                                                     class="form-control" title="{{ __('Drop off location is required') }}" data-toggle="tooltip" >
 
-                                                                <option {{ $car_filter->pick_off_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_off_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
-                                                                <option {{ $car_filter->pick_off_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'podgorica ' . __("Airport")  ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_off_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
                                                                 <option {{ $car_filter->pick_off_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
                                                                 <option {{ $car_filter->pick_off_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
@@ -560,11 +560,11 @@
                                 {{ __('Pick up price') }}:
                                 @if( str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi' ||
                                         $car_filter->pick_up_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica aerodrom' ||
+                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica ' .  __("Airport")  ||
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-up-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom')
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat ' .  __("Airport") )
                                     <input type="hidden" id="pick-up-price" value="0">
                                     Free
                                 @elseif(  $car_filter->pick_up_location == 'budva')
@@ -601,11 +601,11 @@
                                 {{ __('Drop off price') }}:
                                 @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' ||
                                         $car_filter->pick_off_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
+                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica ' .  __("Airport") ||
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-off-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat aerodrom')
+                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat ' .  __("Airport") )
                                     <input type="hidden" id="pick-off-price" value="0">
                                     Free
                                 @elseif(  $car_filter->pick_off_location == 'budva')

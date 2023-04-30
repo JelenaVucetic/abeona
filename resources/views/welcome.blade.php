@@ -26,9 +26,9 @@
                                                             <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select id="pick-up-location" name="pick-up-location" id="pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
-                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option value="tivat">Tivat</option>
-                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option value="podgorica">Podgorica</option>
                                                                 <option value="bar">Bar</option>
                                                                 <option value="ulcinj">Ulcinj</option>
@@ -55,9 +55,9 @@
                                                             <label for="pick-off-location">{{ __('Drop Off Location') }}</label>
                                                             <select name="pick-off-location" id="pick-off-location"
                                                                     class="form-control" title="{{ __('Drop off location is required') }}" data-toggle="tooltip" >
-                                                                <option value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option value="tivat">Tivat</option>
-                                                                <option value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option value="podgorica">Podgorica</option>
                                                                 <option value="bar">Bar</option>
                                                                 <option value="ulcinj">Ulcinj</option>
@@ -453,11 +453,11 @@
             let pickOffTime = $("#pick-off-time-input").val();
 
             if (pickUpLocation === "") {
-                pickUpLocation = "Tivat aerodrom"
+                pickUpLocation = "Tivat {{ __("Airport") }}"
             }
 
             if (pickOffLocation === "") {
-                pickOffLocation = "Tivat aerodrom"
+                pickOffLocation = "Tivat {{ __("Airport") }}"
             }
 
             if (pickUpDate === "") {

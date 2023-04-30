@@ -83,5 +83,6 @@
     "Child seat": "Dječije sjedište",
     "Pick up price": "Cijena preuzimanja vozila",
     "Drop off price": "Cijena vraćanja vozila",
-    "The pick-up date is required and must be before the drop-off date." : "Datum preuzimanja je obavezan."
+    "The pick-up date is required and must be before the drop-off date." : "Datum preuzimanja je obavezan.",
+    "Airport": "Aerodrom"
 }
