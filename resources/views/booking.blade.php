@@ -47,7 +47,7 @@
                                                 <h2>Volkswagen Golf</h2>
                                             </li>
                                             <li>Fuel {{ $car->motor }}</li>
-                                            <li>Transmission {{ $car->transmision }}</li>
+                                            <li>Transmission {{ $car->transmission }}</li>
                                             <li>{{ $car->doors }} {{ __('Doors') }}</li>
                                             <li>{{ $car->passenger }} {{ __('Passengers') }}</li>
                                         </ul>
@@ -397,17 +397,25 @@
                                                             <label for="pick-up">{{ __('Pick Up Location') }}</label>
                                                             <select name="update-pick-up-location" id="update-pick-up" class="form-control"
                                                                     title="Pick up location is required" data-toggle="tooltip" >
-                                                                <option {{ $car_filter->pick_up_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_up_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
-                                                                <option {{ $car_filter->pick_up_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_up_location == 'podgorica ' . __("Airport") ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_up_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
                                                                 <option {{ $car_filter->pick_up_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
                                                                 <option {{ $car_filter->pick_up_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
                                                                 <option {{ $car_filter->pick_up_location == 'ulcinj' ? "selected" : "" }}  value="ulcinj">Ulcinj</option>
                                                                 <option {{ $car_filter->pick_up_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
                                                                 <option {{ $car_filter->pick_up_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
-                                                                <option {{ $car_filter->pick_up_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
-                                                                <option {{ $car_filter->pick_up_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
+                                                                <option {{ $car_filter->pick_up_location == 'kotor' ? "selected" : "" }} value="kotor">Kotor</option>
+                                                                <option {{ $car_filter->pick_up_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">Dubrovnik</option>
+                                                                <option {{ $car_filter->pick_up_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_up_location == 'niksic' ? "selected" : "" }}  value="niksic">Nikšic</option>
+                                                                <option {{ $car_filter->pick_up_location == 'pljevlja' ? "selected" : "" }}  value="pljevlja">Pljevlja</option>
+                                                                <option {{ $car_filter->pick_up_location == 'berane' ? "selected" : "" }} value="berane">Berane</option>
+                                                                <option {{ $car_filter->pick_up_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">Bijelo Polje</option>
+                                                                <option {{ $car_filter->pick_up_location == 'kolasin' ? "selected" : "" }} value="kolasin">Kolašin</option>
+                                                                <option {{ $car_filter->pick_up_location == 'mojkovac' ? "selected" : "" }}  value="mojkovac">Mojkovac</option>
+                                                                <option {{ $car_filter->pick_up_location == 'zabljak' ? "selected" : "" }}  value="zabljak">Žabljak</option>
 
                                                             </select>
                                                             <span class="form-control-icon"><i
@@ -420,9 +428,9 @@
                                                             <select name="update-pick-off-location" id="update-pick-off-location"
                                                                     class="form-control" title="{{ __('Drop off location is required') }}" data-toggle="tooltip" >
 
-                                                                <option {{ $car_filter->pick_off_location == 'tivat aerodrom' ? "selected" : "" }}  value="tivat aerodrom">Tivat Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">Tivat {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_off_location == 'tivat' ? "selected" : "" }}  value="tivat">Tivat</option>
-                                                                <option {{ $car_filter->pick_off_location == 'podgorica aerodrom' ? "selected" : "" }}  value="podgorica aerodrom">Podgorica Aerodrom</option>
+                                                                <option {{ $car_filter->pick_off_location == 'podgorica ' . __("Airport")  ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">Podgorica {{ __("Airport") }}</option>
                                                                 <option {{ $car_filter->pick_off_location == 'podgorica' ? "selected" : "" }}  value="podgorica">Podgorica</option>
                                                                 <option {{ $car_filter->pick_off_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
                                                                 <option {{ $car_filter->pick_off_location == 'bar' ? "selected" : "" }}  value="bar">Bar</option>
@@ -430,8 +438,16 @@
                                                                 <option {{ $car_filter->pick_off_location == 'petrovac' ? "selected" : "" }}  value="petrovac">Petrovac</option>
                                                                 <option {{ $car_filter->pick_off_location == 'budva' ? "selected" : "" }}  value="budva">Budva</option>
                                                                 <option {{ $car_filter->pick_off_location == 'kotor' ? "selected" : "" }}  value="kotor">Kotor</option>
-                                                                <option {{ $car_filter->pick_off_location == 'herceg novi' ? "selected" : "" }}  value="herceg novi">Herceg Novi</option>
-                                                                <option {{ $car_filter->pick_off_location == 'niksic' ? "selected" : "" }}  value="niksic">Niksic</option>
+                                                                <option {{ $car_filter->pick_off_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">Dubrovnik</option>
+                                                                <option {{ $car_filter->pick_off_location == 'cetinje' ? "selected" : "" }}  value="cetinje">Cetinje</option>
+                                                                <option {{ $car_filter->pick_off_location == 'niksic' ? "selected" : "" }}  value="niksic">Nikšic</option>
+                                                                <option {{ $car_filter->pick_off_location == 'pljevlja' ? "selected" : "" }}  value="pljevlja">Pljevlja</option>
+                                                                <option {{ $car_filter->pick_off_location == 'berane' ? "selected" : "" }} value="berane">Berane</option>
+                                                                <option {{ $car_filter->pick_off_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">Bijelo Polje</option>
+                                                                <option {{ $car_filter->pick_off_location == 'kolasin' ? "selected" : "" }} value="kolasin">Kolašin</option>
+                                                                <option {{ $car_filter->pick_off_location == 'mojkovac' ? "selected" : "" }}  value="mojkovac">Mojkovac</option>
+                                                                <option {{ $car_filter->pick_off_location == 'zabljak' ? "selected" : "" }}  value="zabljak">Žabljak</option>
+
                                                             </select>
                                                             <span class="form-control-icon"><i
                                                                     class="fa fa-location-arrow"></i></span>
@@ -560,11 +576,11 @@
                                 {{ __('Pick up price') }}:
                                 @if( str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi' ||
                                         $car_filter->pick_up_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica aerodrom' ||
+                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica ' .  __("Airport")  ||
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-up-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom')
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat ' .  __("Airport") )
                                     <input type="hidden" id="pick-up-price" value="0">
                                     Free
                                 @elseif(  $car_filter->pick_up_location == 'budva')
@@ -601,11 +617,11 @@
                                 {{ __('Drop off price') }}:
                                 @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' ||
                                         $car_filter->pick_off_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
+                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica ' .  __("Airport") ||
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-off-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat aerodrom')
+                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat ' .  __("Airport") )
                                     <input type="hidden" id="pick-off-price" value="0">
                                     Free
                                 @elseif(  $car_filter->pick_off_location == 'budva')
@@ -618,7 +634,7 @@
                                     <input type="hidden" id="pick-off-price" value="100">
                                     100 &euro;
                                 @else
-                                    <input type="hidden" id="pick-uoff-price" value="70">
+                                    <input type="hidden" id="pick-off-price" value="70">
                                     70 &euro;
                                 @endif
                             </div>
@@ -735,8 +751,13 @@
                 const pick_off_date = $("input[name='pick-off-date']").val()
                 const pick_off_time = $("input[name='pick-off-time']").val()
 
-                const pick_up_price = $('#pick-up-price').val()
-                const pick_off_price = $('#pick-off-price').val()
+                const pick_up_price = parseInt($('#pick-up-price').val())
+                const pick_off_price = parseInt($('#pick-off-price').val())
+
+                console.log(pick_up_price)
+                console.log(pick_off_price)
+                console.log(typeof pick_up_price)
+                console.log(typeof pick_off_price)
 
                 const total = $('#total-amount').val()
 
@@ -808,8 +829,8 @@
                         total += parseInt($('#full-insurance-value').val() * numOfDays)
                     } else if ( $(this).attr("name") === 'basic_insurance') {
                         carExtras[$(this).attr("name")] = '<p class="basic-insurance-info">includes damage responsibility up to <span> ' +
-                            $('#participation-damage-value').val() +'</span> and deposit <span>' +
-                            $('#deposit-value').val() + '</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
+                            $('#participation-damage-value').val() +'&euro;</span> and deposit <span>' +
+                            $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
 
                         total += parseInt($('#deposit-value').val())
                     } else if ( $(this).attr("name") === 'border_crossing') {
