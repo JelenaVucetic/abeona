@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Storage;
+
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Http\Services\CarService;
 use App\Models\Car;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -25,6 +26,8 @@ class ImageController extends Controller
 
     public function destroy(Image $image)
     {
-        return $image->delete();
+        Storage::disk("public")->delete($image->path);
+        $image->delete();
+        return response()->json(null, 202);
     }
 }

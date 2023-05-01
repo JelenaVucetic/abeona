@@ -109,6 +109,8 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
+        $car->fill($request->all());
+        $car->save();
         return response()->json($car);
     }
 

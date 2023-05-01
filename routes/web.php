@@ -6,6 +6,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PriceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -24,6 +25,8 @@ require __DIR__ . '/auth.php';
 
 Route::resource('cars', CarController::class);
 Route::resource('bookings', BookingController::class);
+Route::put('price/{price}', [PriceController::class, 'update']);
+Route::delete('price/{price}', [PriceController::class, 'delete']);
 
 Route::put('bookings/confirm/{booking}', [BookingController::class, 'confirm']);
 

@@ -15,6 +15,8 @@ class Car extends CustomModel
      * @var array
      */
     protected $with = ['images', 'prices'];
+    
+    protected $guarded = ['images','prices'];
 
     /**
      *
