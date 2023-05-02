@@ -70,24 +70,45 @@
                                            class="facebook"><i class="fa fa-facebook"></i></a></li>
                                     <li><a target="_blank" href="https://www.instagram.com/abeonarentacar/"
                                            class="instagram"><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                                <div class="dropdown" style="text-transform: uppercase">
-                                    <a rel="alternate"
-                                       hreflang="{{ Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() }}"
-                                       href="{{ LaravelLocalization::getLocalizedURL(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale(), null, [], true) }}">
-                                        {{Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()}}
-                                    </a>
+                                    <li>
+                                        <a style="font-weight: 600;    margin-right: 10px;
+    margin-left: 5px;text-transform: uppercase; color: #f8981d"
+                                           rel="alternate"
+                                           hreflang="{{ Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() }}"
+                                           href="{{ LaravelLocalization::getLocalizedURL(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale(), null, [], true) }}">
+                                            {{Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()}}
+                                        </a>
+                                    </li>
+
                                     @foreach(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                         @if(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() != $localeCode)
-                                            <div class="dropdown-options">
-                                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                            <li>
+                                                <a rel="alternate" hreflang="{{ $localeCode }}" style="font-weight: 600;  text-transform: uppercase"
                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                     {{$localeCode}}
                                                 </a>
-                                            </div>
+                                            </li>
                                         @endif
                                     @endforeach
-                                </div>
+
+                                </ul>
+                                {{--  <div class="dropdown" style="text-transform: uppercase">
+                                      <a rel="alternate"
+                                         hreflang="{{ Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() }}"
+                                         href="{{ LaravelLocalization::getLocalizedURL(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale(), null, [], true) }}">
+                                          {{Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()}}
+                                      </a>
+                                      @foreach(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                          @if(Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() != $localeCode)
+                                              <div class="dropdown-options">
+                                                  <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                     href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                      {{$localeCode}}
+                                                  </a>
+                                              </div>
+                                          @endif
+                                      @endforeach
+                                  </div>--}}
                             </li>
                         </ul>
                         <!-- /navigation menu -->
