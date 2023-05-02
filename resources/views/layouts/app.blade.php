@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/animate/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/swiper/css/swiper.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css')}}">
-
+    <link rel="stylesheet" href="{{ asset('assets/phone-validation/css/intlTelInput.css') }}">
     <!-- Theme CSS -->
     <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet">
 
