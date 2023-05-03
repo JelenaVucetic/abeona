@@ -1273,6 +1273,18 @@ function updater() {
 
     $( ".datepicker-update" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
 
+    $(document).ready(function() {
+        $('#pick-up-time').datetimepicker({
+            format: 'HH:mm'
+        });
+
+        $('#test').click(function (e) {
+            e.preventDefault();
+            $('#pick-up-time').datetimepicker('show');
+
+        });
+    });
+
     $('.drop-of-calendar-icon').click(function (e) {
         $('.drop-of-date-calendar').datepicker("show");
         e.preventDefault();
@@ -1283,20 +1295,11 @@ function updater() {
         e.preventDefault();
     });
 
-    $(function () {
-        $('#pick-up-time').datetimepicker({
-            format: 'HH:mm ',
-            keepOpen: false,
-            showClose: true
-        });
-
-    });
-
-    $('.datepicker').datepicker({
+  /*  $('.datepicker').datepicker({
         onSelect: function(dateText, inst) {
             $('#pick-up-time').datetimepicker("show");
         }
-    });
+    });*/
 
     $(function () {
         $('#pick-off-time').datetimepicker({

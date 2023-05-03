@@ -9777,6 +9777,10 @@ body.full-screen-map .wrapper.closed {
     body.full-screen-map .wrapper.closed {
         margin-left: -320px;
     }
+
+    .media-link {
+        pointer-events: none;
+    }
 }
 
 @media (max-width: 991px) {
