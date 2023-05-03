@@ -87,13 +87,13 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-up-date">{{ __('Pick Up Date') }}</label>
-                                                            <input type="text" class="form-control datepicker"
+                                                            <input type="text" class="form-control datepicker pick-up-date-calendar"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
                                                                    title="{{ __('The pick-up date is required and must be before the drop-off date.') }}" data-toggle="tooltip"
                                                                    placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon">
-                                                                <i class="fa fa-calendar"></i></span>
+                                                                <i class="fa fa-calendar pick-up-calendar-icon"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -101,7 +101,7 @@
                                                             <label for="pick-up-time">{{ __('Pick Up Time') }}</label>
                                                             <div class='input-group date' id='pick-up-time'>
                                                                 <input type='text'
-                                                                       value="20:00"
+                                                                       value="12:00"
                                                                        id='pick-up-time-input'
                                                                        title="{{ __('Pick up time is required') }}" data-toggle="tooltip"
                                                                        name="pick-up-time" class="form-control" />
@@ -119,12 +119,12 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-off-date">{{ __('Drop Off Date') }}</label>
-                                                            <input type="text" class="form-control datepicker"
+                                                            <input type="text" class="form-control datepicker drop-of-date-calendar"
                                                                    name="pick-off-date"
                                                                    title="{{ __("Drop off date is required") }}" data-toggle="tooltip"
                                                                    id="pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
-                                                                    class="fa fa-calendar"></i></span>
+                                                                    class="fa fa-calendar drop-of-calendar-icon"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -132,7 +132,7 @@
                                                             <label for="pick-off-time">{{ __('Drop Off Time') }}</label>
                                                             <div class='input-group date' id='pick-off-time'>
                                                                 <input type='text'
-                                                                       value="20:00"
+                                                                       value="12:00"
                                                                        id="pick-off-time-input"
                                                                        title="{{ __('Drop off time is required') }}" data-toggle="tooltip"
                                                                        name="pick-off-time" class="form-control" />

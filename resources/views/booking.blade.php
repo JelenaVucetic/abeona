@@ -879,7 +879,7 @@
                         </div>
                     </div>
                     <div class="container">
-                        <h5 class="widget-title-sub">{{ __('Extras & Frees') }}</h5>
+                        <h5 class="widget-title-sub" style="margin-bottom: 0px">{{ __('Extras & Frees') }}</h5>
                         <div class="list">
                             <ul class="append" style="padding-top:10px">
                             </ul>
@@ -926,8 +926,7 @@
             showFlags: true,
             utilsScript: ""
         });
-    </script>
-    <script>
+
         $(document).ready(function () {
             $('#update-reservation-details').click(function (e) {
                 e.preventDefault();
@@ -1086,11 +1085,10 @@
                         carExtras[$(this).attr("name")] = $('#full-insurance-value').val() * numOfDays + "&euro;"
                         total += parseInt($('#full-insurance-value').val() * numOfDays)
                     } else if ($(this).attr("name") === 'basic_insurance') {
-                        carExtras[$(this).attr("name")] = '<p class="basic-insurance-info">includes damage responsibility up to <span> ' +
-                            $('#participation-damage-value').val() + '&euro;</span> and deposit <span>' +
-                            $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies.</p> '
+                        carExtras[$(this).attr("name")] = ' <span class="basic-insurance-info">includes damage responsibility up to ' +
+                            '<span class="fee-value"> ' + $('#participation-damage-value').val() + '&euro;</span> and deposit' +
+                            ' <span class="fee-value">' + $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies. </span>'
 
-                        total += parseInt($('#deposit-value').val())
                     } else if ($(this).attr("name") === 'border_crossing') {
                         carExtras[$(this).attr("name")] = 20 + '&euro;';
                         total += parseInt(20)
@@ -1110,14 +1108,15 @@
                     // }
 
                     $(".append").append(
-                        '<li class="fee-list">' +
-                        '<p  class="fee-name">' + feeName + '</p> <span  class="fee-value">' + value + '</span>' +
+                        '<li class="fee-list">' + feeName + '<span  class="fee-value"> ' + value + '</span>' +
                         '</li>');
 
                 });
 
                 $(".total-price").append(
-                    '<input type="hidden" id="total-amount" value="' + total + '">Total: <span class="total"> ' + total + '&euro; </span>'
+                    '<input type="hidden" id="total-amount" value="' + total + '">' +
+                    '<div> Total: <span class="total"> ' + total + '&euro; </span> </div>' +
+                    '<div>Deposit: <span class="total"> ' + $('#deposit-value').val() + '&euro;</span> </div>'
                 );
 
                 $('input.customer-info').map(function () {

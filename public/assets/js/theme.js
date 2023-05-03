@@ -1267,15 +1267,21 @@ function updater() {
     //owlCarouselSelector.trigger('refresh');
     //owlCarouselSelector.trigger('refresh.owl.carousel');
 
-    // $('.datepicker').datepicker({
-    //     format: 'dd/mm/yyyy',
-    // }).datepicker("setDate",'now');
 
     $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
     $( ".datepicker" ).datepicker('setDate', 'today');
 
     $( ".datepicker-update" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
 
+    $('.drop-of-calendar-icon').click(function (e) {
+        $('.drop-of-date-calendar').datepicker("show");
+        e.preventDefault();
+    });
+
+    $('.pick-up-calendar-icon').click(function (e) {
+        $('.pick-up-date-calendar').datepicker("show");
+        e.preventDefault();
+    });
 
     $(function () {
         $('#pick-up-time').datetimepicker({
@@ -1283,7 +1289,15 @@ function updater() {
             keepOpen: false,
             showClose: true
         });
+
     });
+
+    $('.datepicker').datepicker({
+        onSelect: function(dateText, inst) {
+            $('#pick-up-time').datetimepicker("show");
+        }
+    });
+
     $(function () {
         $('#pick-off-time').datetimepicker({
             format: 'HH:mm'
@@ -1299,6 +1313,7 @@ function updater() {
             format: 'HH:mm'
         });
     });
+
 
 }
 
