@@ -47,7 +47,7 @@
 @endsection
 @section('js')
     <script>
-        $('.rent-car').click(function(e) {
+        $('.rent-it').click(function(e) {
             e.preventDefault();
 
             const car =  $(this).data('id');
