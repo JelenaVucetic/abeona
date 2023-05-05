@@ -33,7 +33,10 @@ class SendBookingConfirmedEmail
     public function handle(BookingConfirmed $event)
     {
         Log::info(json_encode($event->booking));
-        $user = User::factory()->make(['email'=> $event->booking->email]);
+        $user = User::factory()->make([
+            'name' => 'abeona',
+            'email' => $event->booking->email
+        ]);
         Mail::to($user)->queue(new BookingConfirmedMail($event->booking));
     }
 }
