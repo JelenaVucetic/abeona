@@ -87,31 +87,31 @@
                                         <input id="second-driver" name="second_driver" type="checkbox"
                                                class="car-extras">
                                         <label for="second_driver">{{ __('Second Driver') }}<span
-                                                class="pull-right">{{ __('Free') }}</span></label>
+                                                class="pull-right">0 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="unlimited-mileage" name="unlimited_mileage" type="checkbox"
                                                class="car-extras">
                                         <label for="unlimited_mileage">{{ __('Unlimited Mileage') }}<span
-                                                class="pull-right">{{ __('Free') }}</span></label>
+                                                class="pull-right">0 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-small" name="baby_seat_small" type="checkbox"
                                                class="car-extras">
                                         <label for="baby_seat_small">{{ __('Child seat (up to 1 years old)') }}<span
-                                                class="pull-right">{{ __('Free') }}</span></label>
+                                                class="pull-right">0 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-big" name="baby_seat_big" type="checkbox"
                                                class="car-extras">
                                         <label for="baby_seat_big">{{ __('Child seat') }} <span
-                                                class="pull-right">{{ __('Free') }}</span></label>
+                                                class="pull-right">0 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="baby-seat-booster" name="baby_seat_booster" type="checkbox"
                                                class="car-extras">
                                         <label for="baby_seat_booster">{{ __('Child seat - booster') }} <span
-                                                class="pull-right">{{ __('Free') }}</span></label>
+                                                class="pull-right">0 &euro; /{{ __('Total') }}</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger">
                                         <input id="border-crossing" name="border_crossing" type="checkbox"
@@ -815,9 +815,9 @@
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-up-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat ' .  __("Airport") )
-                                    <input type="hidden" id="pick-up-price" value="0">
-                                    Free
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' )
+                                <input type="hidden" id="pick-up-price" value="0">
+                                    0 &euro;
                                 @elseif(  $car_filter->pick_up_location == 'budva')
                                     <input type="hidden" id="pick-up-price" value="20">
                                     20 &euro;
@@ -859,9 +859,9 @@
                                         $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-off-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_off_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_off_location) == 'tivat ' .  __("Airport") )
-                                    <input type="hidden" id="pick-off-price" value="0">
-                                    Free
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' )
+                                <input type="hidden" id="pick-off-price" value="0">
+                                    0 &euro;
                                 @elseif(  $car_filter->pick_off_location == 'budva')
                                     <input type="hidden" id="pick-off-price" value="20">
                                     20 &euro;
@@ -1075,6 +1075,7 @@
 
                 const pickUpPrice = $('#pick-up-price').val()
                 const pickoffPrice = $('#pick-off-price').val()
+                let deposit = '';
 
                 let total = parseInt($('#car-total-price').val()) + parseInt(pickUpPrice) + parseInt(pickoffPrice)
                 let numOfDays = parseInt($('#car-total-days').val())
@@ -1089,11 +1090,12 @@
                             '<span class="fee-value"> ' + $('#participation-damage-value').val() + '&euro;</span> and deposit' +
                             ' <span class="fee-value">' + $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies. </span>'
 
+                        deposit = '<div>Deposit: <span class="total"> ' + $('#deposit-value').val() + '&euro;</span> </div>'
                     } else if ($(this).attr("name") === 'border_crossing') {
                         carExtras[$(this).attr("name")] = 20 + '&euro;';
                         total += parseInt(20)
                     } else {
-                        carExtras[$(this).attr("name")] = 'Free'
+                        carExtras[$(this).attr("name")] = '0 &euro;'
                     }
 
                 });
@@ -1115,8 +1117,7 @@
 
                 $(".total-price").append(
                     '<input type="hidden" id="total-amount" value="' + total + '">' +
-                    '<div> Total: <span class="total"> ' + total + '&euro; </span> </div>' +
-                    '<div>Deposit: <span class="total"> ' + $('#deposit-value').val() + '&euro;</span> </div>'
+                    '<div> Total: <span class="total"> ' + total + '&euro; </span> </div>' + deposit
                 );
 
                 $('input.customer-info').map(function () {
