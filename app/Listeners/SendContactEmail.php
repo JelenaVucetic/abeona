@@ -28,8 +28,10 @@ class SendContactEmail
      */
     public function handle(ContactStored $event)
     {
-        Log::info(json_encode($event->contact->email));
-        $user = User::factory()->make(['email'=> $event->contact->email]);
+        $user = User::factory()->make([
+            'name' => 'abeona',
+            'email' => 'abeonarentacar@gmail.com'
+        ]);
         Log::info($event->contact);
         Mail::to($user)->queue(new ContactMail($event->contact));
     }

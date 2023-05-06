@@ -31,7 +31,10 @@ class SendBookingEmail
     public function handle(BookingStored $event)
     {
         Log::info(json_encode($event->booking));
-        $user = User::factory()->make(['email'=> $event->booking->email]);
+        $user = User::factory()->make([
+            'name' => 'abeona',
+            'email'=> $event->booking->email
+        ]);
         Mail::to($user)->queue(new BookingMail($event->booking));
     }
 }
