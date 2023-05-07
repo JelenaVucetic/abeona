@@ -13,6 +13,14 @@
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Car</th>
+                <th scope="col">Car price</th>
+                <th scope="col">Second Driver</th>
+                <th scope="col">Unlimited Mileage</th>
+                <th scope="col">Border Crossing</th>
+                <th scope="col">Baby seat small</th>
+                <th scope="col">Baby seat big</th>
+                <th scope="col">Baby seat Booster</th>
+                <th scope="col">Insurance</th>
                 <th scope="col">Total Price</th>
                 <th scope="col">Pick Up</th>
                 <th scope="col">Drop Off</th>
@@ -28,6 +36,26 @@
                 <td>{{ $booking->email }}</td>
                 <td>{{ $booking->phone_number }}</td>
                 <td>{{ $booking->car->name }}</td>
+                <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->unlimited_mileage ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->border_crossing ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->baby_seat_small ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->baby_seat_big ? 'Yes' : 'No' }}</td>
+                <td>{{ $booking->baby_seat_booster ? 'Yes' : 'No' }}</td>
+                @if( $booking->basic_insurance)
+                    <td>
+                        Basic: includes damage responsibility up to {{ $booking->car->participation_damage }}
+                            and deposit {{ $booking->car->deposit }}
+                    </td>
+                @endif
+                @if( $booking->full_insurance)
+                    <td>Full: {{ $booking->car->full_insurance  }} per day
+                    </td>
+                @endif
+
+                <td>{{ $booking->basic_insurance  ? 'Yes' : 'No'}}</td>
+                <td>{{ $booking->full_insurance  ? 'Yes' : 'No'}}</td>
                 <td>{{ $booking->total }}</td>
                 <td>{{ $booking->pick_up_location }} {{ $booking->pick_up_date }} {{ $booking->pick_up_time }}</td>
                 <td>{{ $booking->pick_off_location }} {{ $booking->pick_off_date }} {{ $booking->pick_off_time }}</td>
