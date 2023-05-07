@@ -130,7 +130,7 @@
                                                value="{{ 12 + 12 }}"
                                                type="checkbox" checked=""
                                                class="car-extras insurance-check">
-                                        <label for="basic_insurance">{{ __('Basic Rent a Car Insures') }} <span
+                                        <label for="basic_insurance">{{ __('Basic Insurance') }} <span
                                                 class="pull-right">Included</span></label>
                                     </div>
                                     <div class="checkbox checkbox-danger conditional-display">
@@ -163,7 +163,7 @@
                                                data-toggle="tooltip"
                                                type="checkbox"
                                                class="car-extras insurance-check">
-                                        <label for="full_insurance">{{ __('Full Insures') }}
+                                        <label for="full_insurance">{{ __('Full Insurance') }}
                                             <i class="fa fa-info-circle deposit-info" style="padding-left: 5px"
                                                data-toggle="tooltip" title="Deposit is included"></i>
                                             <span class="pull-right">
