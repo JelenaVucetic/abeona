@@ -163,7 +163,7 @@
                                                data-toggle="tooltip"
                                                type="checkbox"
                                                class="car-extras insurance-check">
-                                        <label for="full_insurance">{{ __('Ful Rent a Car Insures') }}
+                                        <label for="full_insurance">{{ __('Full Insures') }}
                                             <i class="fa fa-info-circle deposit-info" style="padding-left: 5px"
                                                data-toggle="tooltip" title="Deposit is included"></i>
                                             <span class="pull-right">
