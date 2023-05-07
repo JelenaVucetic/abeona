@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container-fluid">
-        <div class="table-responsive-md">
-            <table class="table" style="min-height: 450px">
+        <div class="table-responsive">
+            <table class="table">
             <h2>List of reservations</h2>
             <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Created at</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
@@ -30,12 +30,13 @@
             <tbody>
             @foreach( $bookings as $booking)
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{date('d-m-Y H:m', strtotime($booking->created_at)) }}</th>
                 <td>{{ $booking->first_name }}</td>
                 <td>{{ $booking->last_name }}</td>
                 <td>{{ $booking->email }}</td>
                 <td>{{ $booking->phone_number }}</td>
                 <td>{{ $booking->car->name }}</td>
+                <td>{{ $booking->car->price }}</td>
                 <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->unlimited_mileage ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
