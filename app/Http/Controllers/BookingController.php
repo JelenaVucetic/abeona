@@ -44,7 +44,7 @@ class BookingController extends Controller
             $request->all()
         );
 
-        BookingStored::dispatch($booking);
+        // BookingStored::dispatch($booking);
 
         return $booking;
     }
