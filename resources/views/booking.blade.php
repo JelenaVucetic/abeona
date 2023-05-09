@@ -680,7 +680,7 @@
                                                         <div class="form-group has-icon has-label">
                                                             <label
                                                                 for="update-pick-up-date">{{ __('Pick Up Date') }}</label>
-                                                            <input type="text" class="form-control datepicker-update"
+                                                            <input type="text" class="form-control datepicker-update1"
                                                                    name="update-pick-up-date"
                                                                    id="update-pick-up-date"
                                                                    title="Pick up date is required"
@@ -688,7 +688,7 @@
                                                                    value="{{ $car_filter->pick_up_date }}"
                                                                    placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
-                                                                    class="fa fa-calendar"></i></span>
+                                                                    class="fa fa-calendar update-pick-up-calendar-icon"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">
@@ -716,14 +716,14 @@
                                                         <div class="form-group has-icon has-label">
                                                             <label
                                                                 for="update-pick-off-date">{{ __('Drop Off Date') }}</label>
-                                                            <input type="text" class="form-control datepicker-update"
+                                                            <input type="text" class="form-control datepicker-update2"
                                                                    name="update-pick-off-date"
                                                                    title="{{ __("Drop off date is required") }}"
                                                                    data-toggle="tooltip"
                                                                    value="{{ $car_filter->pick_off_date }}"
                                                                    id="update-pick-off-date" placeholder="dd/mm/yyyy">
                                                             <span class="form-control-icon"><i
-                                                                    class="fa fa-calendar"></i></span>
+                                                                    class="fa fa-calendar update-drop-of-calendar-icon"></i></span>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-5">

@@ -1267,21 +1267,46 @@ function updater() {
     //owlCarouselSelector.trigger('refresh');
     //owlCarouselSelector.trigger('refresh.owl.carousel');
 
+    $(function() {
+        // Initialize datepicker1
+        $(".datepicker1").datepicker({
+            dateFormat: "dd/mm/yy",
+            minDate: '0d',
+            onSelect: function(selectedDate) {
+                // Update minDate and maxDate of datepicker2
+                $(".datepicker2").datepicker("option", "minDate", selectedDate);
+            }
+        });
 
-    $( ".datepicker" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
-    $( ".datepicker" ).datepicker('setDate', 'today');
+        // Initialize datepicker2
+        $(".datepicker2").datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+    });
 
-    $( ".datepicker-update" ).datepicker({ dateFormat: 'dd/mm/yy',  minDate: '0d' });
+    $( ".datepicker1" ).datepicker('setDate', 'today');
+    $( ".datepicker2" ).datepicker('setDate', 'today');
+
+    $(function() {
+        // Initialize datepicker1
+        $(".datepicker-update1").datepicker({
+            dateFormat: "dd/mm/yy",
+            minDate: '0d',
+            onSelect: function(selectedDate) {
+                // Update minDate and maxDate of datepicker2
+                $(".datepicker-update2").datepicker("option", "minDate", selectedDate);
+            }
+        });
+
+        // Initialize datepicker2
+        $(".datepicker-update2").datepicker({
+            dateFormat: "dd/mm/yy"
+        });
+    });
 
     $(document).ready(function() {
         $('#pick-up-time').datetimepicker({
             format: 'HH:mm'
-        });
-
-        $('#test').click(function (e) {
-            e.preventDefault();
-            $('#pick-up-time').datetimepicker('show');
-
         });
     });
 
@@ -1292,6 +1317,16 @@ function updater() {
 
     $('.pick-up-calendar-icon').click(function (e) {
         $('.pick-up-date-calendar').datepicker("show");
+        e.preventDefault();
+    });
+
+    $('.update-drop-of-calendar-icon').click(function (e) {
+        $('.datepicker-update2').datepicker("show");
+        e.preventDefault();
+    });
+
+    $('.update-pick-up-calendar-icon').click(function (e) {
+        $('.datepicker-update1').datepicker("show");
         e.preventDefault();
     });
 

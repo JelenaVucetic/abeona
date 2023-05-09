@@ -87,7 +87,7 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-up-date">{{ __('Pick Up Date') }}</label>
-                                                            <input type="text" class="form-control datepicker pick-up-date-calendar"
+                                                            <input type="text" class="form-control datepicker1 pick-up-date-calendar"
                                                                    name="pick-up-date"
                                                                    id="pick-up-date"
                                                                    title="{{ __('The pick-up date is required and must be before the drop-off date.') }}"
@@ -120,7 +120,7 @@
                                                     <div class="col-sm-7">
                                                         <div class="form-group has-icon has-label">
                                                             <label for="pick-off-date">{{ __('Drop Off Date') }}</label>
-                                                            <input type="text" class="form-control datepicker drop-of-date-calendar"
+                                                            <input type="text" class="form-control datepicker2 drop-of-date-calendar"
                                                                    name="pick-off-date"
                                                                    title="{{ __("Drop off date is required") }}" data-toggle="tooltip"
                                                                    id="pick-off-date" placeholder="dd/mm/yyyy">
