@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 9.50.2.
+ * Generated for Laravel 9.51.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -7628,6 +7628,7 @@
      * @method static \Illuminate\Http\Client\PendingRequest withDigestAuth(string $username, string $password)
      * @method static \Illuminate\Http\Client\PendingRequest withToken(string $token, string $type = 'Bearer')
      * @method static \Illuminate\Http\Client\PendingRequest withUserAgent(string $userAgent)
+     * @method static \Illuminate\Http\Client\PendingRequest withUrlParameters(array $parameters = [])
      * @method static \Illuminate\Http\Client\PendingRequest withCookies(array $cookies, string $domain)
      * @method static \Illuminate\Http\Client\PendingRequest maxRedirects(int $max)
      * @method static \Illuminate\Http\Client\PendingRequest withoutRedirecting()
@@ -17644,7 +17645,654 @@
      
 }
 
-        namespace Spatie\LaravelIgnition\Facades { 
+        namespace Clockwork\Support\Laravel { 
+            /**
+     * 
+     *
+     */ 
+        class Facade {
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function addDataSource($dataSource)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->addDataSource($dataSource);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveRequest()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->resolveRequest();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveAsCommand($name, $exitCode = null, $arguments = [], $options = [], $argumentsDefaults = [], $optionsDefaults = [], $output = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->resolveAsCommand($name, $exitCode, $arguments, $options, $argumentsDefaults, $optionsDefaults, $output);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveAsQueueJob($name, $description = null, $status = 'processed', $payload = [], $queue = null, $connection = null, $options = [])
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->resolveAsQueueJob($name, $description, $status, $payload, $queue, $connection, $options);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function resolveAsTest($name, $status = 'passed', $statusMessage = null, $asserts = [])
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->resolveAsTest($name, $status, $statusMessage, $asserts);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function extendRequest($request = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->extendRequest($request);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function storeRequest()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->storeRequest();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function reset()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->reset();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function request($request = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->request($request);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function log($level = null, $message = null, $context = [])
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->log($level, $message, $context);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function timeline()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->timeline();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function event($description, $data = [])
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->event($description, $data);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function shouldCollect($shouldCollect = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->shouldCollect($shouldCollect);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function shouldRecord($shouldRecord = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->shouldRecord($shouldRecord);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function dataSources($dataSources = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->dataSources($dataSources);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function storage($storage = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->storage($storage);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function authenticator($authenticator = null)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->authenticator($authenticator);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getDataSources()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->getDataSources();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getRequest()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->getRequest();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setRequest($request)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->setRequest($request);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getStorage()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->getStorage();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setStorage($storage)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->setStorage($storage);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getAuthenticator()
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->getAuthenticator();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setAuthenticator($authenticator)
+        {
+                        /** @var \Clockwork\Clockwork $instance */
+                        return $instance->setAuthenticator($authenticator);
+        }
+         
+    }
+     
+}
+
+    namespace Mcamara\LaravelLocalization\Facades { 
+            /**
+     * 
+     *
+     * @method static string localizeUrl(string $url = null, string|bool $locale = null)
+     * @method static string|false getLocalizedUrl(string|bool $locale = null, string|false $url = null, array $attributes = [], bool $forceDefaultLocation = false)
+     * @method static string|null getLocalesFromMapping(string|null $locale)
+     * @see \Mcamara\LaravelLocalization\LaravelLocalization
+     */ 
+        class LaravelLocalization {
+                    /**
+         * Set and return current locale.
+         *
+         * @param string $locale Locale to set the App to (optional)
+         * @return string Returns locale (if route has any) or null (if route does not have a locale)
+         * @static 
+         */ 
+        public static function setLocale($locale = null)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->setLocale($locale);
+        }
+                    /**
+         * Check if $locale is default locale and supposed to be hidden in url
+         *
+         * @param string $locale Locale to be checked
+         * @return boolean Returns true if above requirement are met, otherwise false
+         * @static 
+         */ 
+        public static function isHiddenDefault($locale)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->isHiddenDefault($locale);
+        }
+                    /**
+         * Set and return supported locales.
+         *
+         * @param array $locales Locales that the App supports
+         * @static 
+         */ 
+        public static function setSupportedLocales($locales)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->setSupportedLocales($locales);
+        }
+                    /**
+         * Returns an URL adapted to $locale or current locale.
+         *
+         * @param string $url URL to adapt. If not passed, the current url would be taken.
+         * @param string|bool $locale Locale to adapt, false to remove locale
+         * @throws UnsupportedLocaleException
+         * @return string URL translated
+         * @static 
+         */ 
+        public static function localizeURL($url = null, $locale = null)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->localizeURL($url, $locale);
+        }
+                    /**
+         * Returns an URL adapted to $locale.
+         *
+         * @param string|bool $locale Locale to adapt, false to remove locale
+         * @param string|false $url URL to adapt in the current language. If not passed, the current url would be taken.
+         * @param array $attributes Attributes to add to the route, if empty, the system would try to extract them from the url.
+         * @param bool $forceDefaultLocation Force to show default location even hideDefaultLocaleInURL set as TRUE
+         * @throws SupportedLocalesNotDefined
+         * @throws UnsupportedLocaleException
+         * @return string|false URL translated, False if url does not exist
+         * @static 
+         */ 
+        public static function getLocalizedURL($locale = null, $url = null, $attributes = [], $forceDefaultLocation = false)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getLocalizedURL($locale, $url, $attributes, $forceDefaultLocation);
+        }
+                    /**
+         * Returns an URL adapted to the route name and the locale given.
+         *
+         * @param string|bool $locale Locale to adapt
+         * @param string $transKeyName Translation key name of the url to adapt
+         * @param array $attributes Attributes for the route (only needed if transKeyName needs them)
+         * @param bool $forceDefaultLocation Force to show default location even hideDefaultLocaleInURL set as TRUE
+         * @throws SupportedLocalesNotDefined
+         * @throws UnsupportedLocaleException
+         * @return string|false URL translated
+         * @static 
+         */ 
+        public static function getURLFromRouteNameTranslated($locale, $transKeyName, $attributes = [], $forceDefaultLocation = false)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getURLFromRouteNameTranslated($locale, $transKeyName, $attributes, $forceDefaultLocation);
+        }
+                    /**
+         * It returns an URL without locale (if it has it)
+         * Convenience function wrapping getLocalizedURL(false).
+         *
+         * @param string|false $url URL to clean, if false, current url would be taken
+         * @return string URL with no locale in path
+         * @static 
+         */ 
+        public static function getNonLocalizedURL($url = null)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getNonLocalizedURL($url);
+        }
+                    /**
+         * Returns default locale.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getDefaultLocale()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getDefaultLocale();
+        }
+                    /**
+         * Return locales mapping.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getLocalesMapping()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getLocalesMapping();
+        }
+                    /**
+         * Returns a locale from the mapping.
+         *
+         * @param string|null $locale
+         * @return string|null 
+         * @static 
+         */ 
+        public static function getLocaleFromMapping($locale)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getLocaleFromMapping($locale);
+        }
+                    /**
+         * Returns inversed locale from the mapping.
+         *
+         * @param string|null $locale
+         * @return string|null 
+         * @static 
+         */ 
+        public static function getInversedLocaleFromMapping($locale)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getInversedLocaleFromMapping($locale);
+        }
+                    /**
+         * Return an array of all supported Locales.
+         *
+         * @throws SupportedLocalesNotDefined
+         * @return array 
+         * @static 
+         */ 
+        public static function getSupportedLocales()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getSupportedLocales();
+        }
+                    /**
+         * Return an array of all supported Locales but in the order the user
+         * has specified in the config file. Useful for the language selector.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getLocalesOrder()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getLocalesOrder();
+        }
+                    /**
+         * Returns current locale name.
+         *
+         * @return string current locale name
+         * @static 
+         */ 
+        public static function getCurrentLocaleName()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleName();
+        }
+                    /**
+         * Returns current locale native name.
+         *
+         * @return string current locale native name
+         * @static 
+         */ 
+        public static function getCurrentLocaleNative()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleNative();
+        }
+                    /**
+         * Returns current locale direction.
+         *
+         * @return string current locale direction
+         * @static 
+         */ 
+        public static function getCurrentLocaleDirection()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleDirection();
+        }
+                    /**
+         * Returns current locale script.
+         *
+         * @return string current locale script
+         * @static 
+         */ 
+        public static function getCurrentLocaleScript()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleScript();
+        }
+                    /**
+         * Returns current language's native reading.
+         *
+         * @return string current language's native reading
+         * @static 
+         */ 
+        public static function getCurrentLocaleNativeReading()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleNativeReading();
+        }
+                    /**
+         * Returns current language.
+         *
+         * @return string current language
+         * @static 
+         */ 
+        public static function getCurrentLocale()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocale();
+        }
+                    /**
+         * Returns current regional.
+         *
+         * @return string current regional
+         * @static 
+         */ 
+        public static function getCurrentLocaleRegional()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getCurrentLocaleRegional();
+        }
+                    /**
+         * Returns supported languages language key.
+         *
+         * @return array keys of supported languages
+         * @static 
+         */ 
+        public static function getSupportedLanguagesKeys()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getSupportedLanguagesKeys();
+        }
+                    /**
+         * Check if Locale exists on the supported locales array.
+         *
+         * @param string|bool $locale string|bool Locale to be checked
+         * @throws SupportedLocalesNotDefined
+         * @return bool is the locale supported?
+         * @static 
+         */ 
+        public static function checkLocaleInSupportedLocales($locale)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->checkLocaleInSupportedLocales($locale);
+        }
+                    /**
+         * Set current route name.
+         *
+         * @param string $routeName current route name
+         * @static 
+         */ 
+        public static function setRouteName($routeName)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->setRouteName($routeName);
+        }
+                    /**
+         * Translate routes and save them to the translated routes array (used in the localize route filter).
+         *
+         * @param string $routeName Key of the translated string
+         * @return string Translated string
+         * @static 
+         */ 
+        public static function transRoute($routeName)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->transRoute($routeName);
+        }
+                    /**
+         * Returns the translation key for a given path.
+         *
+         * @param string $path Path to get the key translated
+         * @return string|false Key for translation, false if not exist
+         * @static 
+         */ 
+        public static function getRouteNameFromAPath($path)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getRouteNameFromAPath($path);
+        }
+                    /**
+         * Returns the config repository for this instance.
+         *
+         * @return \Illuminate\Config\Repository Configuration repository
+         * @static 
+         */ 
+        public static function getConfigRepository()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getConfigRepository();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function hideUrlAndAcceptHeader()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->hideUrlAndAcceptHeader();
+        }
+                    /**
+         * Returns the translation key for a given path.
+         *
+         * @return bool Returns value of hideDefaultLocaleInURL in config.
+         * @static 
+         */ 
+        public static function hideDefaultLocaleInURL()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->hideDefaultLocaleInURL();
+        }
+                    /**
+         * Create an url from the uri.
+         *
+         * @param string $uri Uri
+         * @return string Url for the given uri
+         * @static 
+         */ 
+        public static function createUrlFromUri($uri)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->createUrlFromUri($uri);
+        }
+                    /**
+         * Sets the base url for the site.
+         *
+         * @param string $url Base url for the site
+         * @static 
+         */ 
+        public static function setBaseUrl($url)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->setBaseUrl($url);
+        }
+                    /**
+         * Returns serialized translated routes for caching purposes.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getSerializedTranslatedRoutes()
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->getSerializedTranslatedRoutes();
+        }
+                    /**
+         * Sets the translated routes list.
+         * 
+         * Only useful from a cached routes context.
+         *
+         * @param string $serializedRoutes
+         * @static 
+         */ 
+        public static function setSerializedTranslatedRoutes($serializedRoutes)
+        {
+                        /** @var \Mcamara\LaravelLocalization\LaravelLocalization $instance */
+                        return $instance->setSerializedTranslatedRoutes($serializedRoutes);
+        }
+         
+    }
+     
+}
+
+    namespace Spatie\LaravelIgnition\Facades { 
             /**
      * 
      *
@@ -21897,6 +22545,8 @@ namespace  {
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
             class Vite extends \Illuminate\Support\Facades\Vite {}
+            class Clockwork extends \Clockwork\Support\Laravel\Facade {}
+            class LaravelLocalization extends \Mcamara\LaravelLocalization\Facades\LaravelLocalization {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
      
 }

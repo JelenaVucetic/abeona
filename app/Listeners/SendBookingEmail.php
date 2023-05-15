@@ -33,7 +33,7 @@ class SendBookingEmail
         Log::info(json_encode($event->booking));
         $user = User::factory()->make([
             'name' => 'abeona',
-            'email'=> $event->booking->email
+            'email'=> 'abeonarentacar@gmail.com'
         ]);
         Mail::to($user)->queue(new BookingMail($event->booking));
     }
