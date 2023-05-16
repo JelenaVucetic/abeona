@@ -43,7 +43,7 @@ class BookingController extends Controller
             $request->all()
         );
 
-        //BookingStored::dispatch($booking);
+        BookingStored::dispatch($booking);
 
         return $booking;
     }
@@ -95,7 +95,7 @@ class BookingController extends Controller
 
     public function confirm(Booking $booking)
     {
-        // BookingConfirmed::dispatch($booking);
+        BookingConfirmed::dispatch($booking);
 
         return $booking->update(['confirmed' => true]);
     }
