@@ -1088,7 +1088,7 @@
                     } else if ($(this).attr("name") === 'basic_insurance') {
                         carExtras[$(this).attr("name")] = ' <span class="basic-insurance-info">includes damage responsibility up to ' +
                             '<span class="fee-value"> ' + $('#participation-damage-value').val() + '&euro;</span> and deposit' +
-                            ' <span class="fee-value">' + $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cache. We accept all currencies. </span>'
+                            ' <span class="fee-value">' + $('#deposit-value').val() + '&euro;</span> <br> Please make sure your deposit is in cash. We accept all currencies. </span>'
 
                         deposit = '<div>Deposit: <span class="total"> ' + $('#deposit-value').val() + '&euro;</span> </div>'
                     } else if ($(this).attr("name") === 'border_crossing') {

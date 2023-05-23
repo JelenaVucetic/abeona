@@ -307,7 +307,7 @@
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     Vehicle: {{ $booking->car->name }}&nbsp;</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                    Vehicle price: {{ $booking->car_price }}&nbsp;</p>
+                                                                    Vehicle price: {{ $booking->car_price }}&nbsp;&euro;</p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
                                                                     <br></p>
                                                                 <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
@@ -355,7 +355,7 @@
                                                                     @if( $booking->full_insurance)
                                                                         <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;Margin-bottom:15px;margin-left:0;color:#2D3142;font-size:18px">
                                                                             <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Imprima, Arial, sans-serif;line-height:27px;color:#2D3142;font-size:18px">
-                                                                                {{ __('Full Insurance') }} {{ $booking->car->full_insurance  }} per day
+                                                                                {{ __('Full Insurance') }} {{ $booking->car->full_insurance  }} &euro; per day
                                                                             </p>
                                                                         </li>
                                                                     @endif

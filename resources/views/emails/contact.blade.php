@@ -12,7 +12,7 @@
 <p>Sender email: {{ $contact->email }}</p>
 <br>
 <br>
-    {{$contact->message}}
+    <p>{{$contact->message}}</p>
 </body>
 </html>
 

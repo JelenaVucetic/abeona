@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="table-responsive">
-            <table class="table">
+    <div class="container-fluid" style="margin-top: 30px;">
+        <div class="table-responsive" style="transform: rotateX(180deg);overflow-x: auto;">
+            <table class="table" style="transform: rotateX(180deg);">
             <h2>List of reservations</h2>
             <thead>
             <tr>
                 <th scope="col">Created at</th>
+                <th scope="col">Approve</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
@@ -24,22 +25,27 @@
                 <th scope="col">Total Price</th>
                 <th scope="col">Pick Up</th>
                 <th scope="col">Drop Off</th>
-                <th scope="col">Approve</th>
             </tr>
             </thead>
             <tbody>
             @foreach( $bookings as $booking)
             <tr>
                 <th scope="row">{{date('d-m-Y H:m', strtotime($booking->created_at)) }}</th>
+                <td>
+                    @if( $booking->confirmed)
+                        <button  class="btn btn-primary disabled">Approved</button>
+                    @else
+                        <button data-id="{{ $booking->id }}" class="btn btn-primary approve-reservation">Approve</button>
+                    @endif
+                </td>
                 <td>{{ $booking->first_name }}</td>
                 <td>{{ $booking->last_name }}</td>
                 <td>{{ $booking->email }}</td>
                 <td>{{ $booking->phone_number }}</td>
                 <td>{{ $booking->car->name }}</td>
-                <td>{{ $booking->car->price }}</td>
+                <td>{{ $booking->car_price }}</td>
                 <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->unlimited_mileage ? 'Yes' : 'No' }}</td>
-                <td>{{ $booking->second_driver ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->border_crossing ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->baby_seat_small ? 'Yes' : 'No' }}</td>
                 <td>{{ $booking->baby_seat_big ? 'Yes' : 'No' }}</td>
@@ -55,18 +61,10 @@
                     </td>
                 @endif
 
-                <td>{{ $booking->basic_insurance  ? 'Yes' : 'No'}}</td>
-                <td>{{ $booking->full_insurance  ? 'Yes' : 'No'}}</td>
                 <td>{{ $booking->total }}</td>
                 <td>{{ $booking->pick_up_location }} {{ $booking->pick_up_date }} {{ $booking->pick_up_time }}</td>
                 <td>{{ $booking->pick_off_location }} {{ $booking->pick_off_date }} {{ $booking->pick_off_time }}</td>
-                <td>
-                    @if( $booking->confirmed)
-                        <button  class="btn btn-primary disabled">Approved</button>
-                    @else
-                        <button data-id="{{ $booking->id }}" class="btn btn-primary approve-reservation">Approve</button>
-                    @endif
-                </td>
+
             </tr>
             @endforeach
             </tbody>
