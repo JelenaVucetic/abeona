@@ -111,6 +111,7 @@ class CarController extends Controller
     {
         $car->fill($request->all());
         $car->save();
+        $car = $car->fresh();
         return response()->json($car);
     }
 
