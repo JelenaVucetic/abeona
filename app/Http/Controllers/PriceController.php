@@ -10,6 +10,7 @@ class PriceController extends Controller
     public function update(Request $request, Price $price)
     {
         $price->fill($request->all());
+        $price = $price->fresh();
         return response()->json($price);
     }
 
