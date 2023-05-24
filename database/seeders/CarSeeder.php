@@ -18,7 +18,11 @@ class CarSeeder extends Seeder
     public function run()
     {
         Car::factory()
-            ->has(Image::factory()->count(1))
+            ->has(Image::factory()->count(3)->sequence(
+                ['type' => 'main'],
+                ['type' => 'secondary'],
+                ['type' => 'secondary']
+            ))
             ->has(Price::factory()->count(4)->sequence(
                 ['season' => Season::Winter],
                 ['season' => Season::Spring],
