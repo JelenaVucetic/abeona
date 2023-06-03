@@ -66,7 +66,7 @@ class CarController extends Controller
             $carRequest->input('prices')
         );
 
-        return $car->fresh();
+        return redirect()->back()->withErrors('Validation failed. Please check the form inputs.')->withInput();
     }
 
     /**

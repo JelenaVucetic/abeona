@@ -11,6 +11,15 @@
 
                    <div class="container">
                        <h2 style="margin-left: 10px;margin-bottom: 10px;">Car details</h2>
+                       @if ($errors->any())
+                       <div class="alert alert-danger">
+                           <ul>
+                               @foreach ($errors->all() as $error)
+                                   <li>{{ $error }}</li>
+                               @endforeach
+                           </ul>
+                       </div>
+                        @endif
                        <div class="form-row">
                            <div class="form-group col-md-4">
                                <label for="inputName">Car Name</label>
