@@ -34,21 +34,19 @@
                                 <li class="{{ (strpos(Route::currentRouteName(), 'car-images.index') == 0) ? 'active' : '' }}">
                                     <a href="{{ route('car-images.index') }}">Car Images</a>
                                 </li>
-
                                 <li>
                                     <!-- Authentication -->
                                     <form method="POST" action="{{ route('logout', app()->getLocale()) }}"
-                                          style="padding: 27px 10px;">
+                                    >
                                         @csrf
 
-                                        <x-dropdown-link :href="route('logout')"
-                                                         onclick="event.preventDefault();
+                                        <a :href="route('logout')"
+                                           onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
+                                            {{ __('LOG OUT') }}
+                                        </a>
                                     </form>
                                 </li>
-
                             @else
                                 <li class="{{ Route::currentRouteName() == 'welcome' ? 'active' : '' }}">
                                     <a href="{{ route('welcome') }}">{{ __('Home') }}</a>

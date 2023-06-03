@@ -10280,3 +10280,12 @@ input[type=number]::-webkit-outer-spin-button {
 .fee-value {
     color: #f8981d;
 }
+
+.sf-menu.nav > li > form > a, .sf-menu ul li > form > a {
+    padding: 28px 15px 28px 15px;
+}
+
+.is-sticky .sf-menu.nav > li > form > a {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
