@@ -50,7 +50,6 @@ class PagesController extends Controller
             $differenceInDays += 1;
         }
 
-        $selectedSeason = getCurrentSeason($startTime);
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 
         // rename
@@ -67,14 +66,7 @@ class PagesController extends Controller
 
         // ==>
         $cars = Car::all()->map(function ($car) use ($seasonDays, $numberOfDaysString, $differenceInDays) {
-            /*  $price = collect($car->prices)
-                ->where('season', $selectedSeason)
-                ->first();
-
-            $car->pricePerDay = $price[$numberOfDaysString];
-            $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
-            $car->totalDays = $differenceInDays; */
-
+        
             $totalPrice = 0;
             foreach ($seasonDays as $season => $days) {
                 $price = collect($car->prices)
