@@ -8,7 +8,7 @@
     </div>
     <div class="caption text-center">
         <h4 class="caption-title"><a href="#">{{ $car->name }}</a></h4>
-        <div class="caption-text">{{ __('Start from price a day', ['price' => $car->pricePerDay ]) }}</div>
+        <div class="caption-text">{{ __('Start from price a day', ['price' => number_format($car->pricePerDay, 2) + 0 ]) }}</div>
         <div class="buttons">
             <button class="btn btn-theme rent-it" data-id="{{ $car->id }}">
                 {{ __('Rent It') }}

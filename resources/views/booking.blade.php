@@ -15,36 +15,46 @@
                                 <div class="owl-carousel img-carousel">
                                     <div class="item">
                                         <a style="pointer-events: none"
-                                           href="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}"
-                                           data-gal="prettyPhoto"><img class="img-responsive"
-                                                                       src="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}"
-                                                                       alt=""/></a>
+                                           href="{{ getImagePath(collect(($car->images)->where('type', 'main')->first())['path']) }}"
+                                           data-gal="prettyPhoto">
+                                            <img class="img-responsive"
+                                                 src="{{ getImagePath(collect(($car->images)->where('type', 'main')->first())['path']) }}"
+                                                 alt=""/>
+                                        </a>
                                     </div>
                                     @foreach($car->images as $image)
                                         @if( $image->type != 'main')
                                             <div class="item">
                                                 <a style="pointer-events: none"
-                                                   href="{{ env("APP_IMAGE_PATH") }}/storage/{{ $image["path"] }}"
-                                                   data-gal="prettyPhoto"><img class="img-responsive"
-                                                                               src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $image["path"] }}"
-                                                                               alt=""/></a>
+                                                   href="{{ getImagePath($image["path"]) }}"
+                                                   data-gal="prettyPhoto">
+                                                    <img class="img-responsive"
+                                                         src="{{ getImagePath($image["path"]) }}"
+                                                         alt=""/>
+                                                </a>
                                             </div>
                                         @endif
                                     @endforeach
                                 </div>
                                 <div class="row car-thumbnails">
-                                    <div class="col-xs-2 col-sm-2 col-md-2"><a href="#"
-                                                                               onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);"><img
-                                                style="width: 100%;"
-                                                src="{{ env("APP_IMAGE_PATH") }}/storage/{{collect(($car->images)->where('type', 'main')->first())['path']}}"
-                                                alt=""/></a></div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2">
+                                        <a href="#"
+                                           onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [0,300]);">
+                                            <img style="width: 100%;"
+                                                 src="{{ getImagePath(collect(($car->images)->where('type', 'main')->first())['path']) }}"
+                                                 alt=""/>
+                                        </a>
+                                    </div>
                                     @foreach($car->images as $key => $image)
                                         @if( $image->type != 'main')
-                                            <div class="col-xs-2 col-sm-2 col-md-2"><a href="#"
-                                                                                       onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [{{$key + 1}},300]);"><img
-                                                        style="width: 100%;"
-                                                        src="{{ env("APP_IMAGE_PATH") }}/storage/{{ $image["path"] }}"
-                                                        alt=""/></a></div>
+                                            <div class="col-xs-2 col-sm-2 col-md-2">
+                                                <a href="#"
+                                                   onclick="jQuery('.img-carousel').trigger('to.owl.carousel', [{{$key + 1}},300]);">
+                                                    <img style="width: 100%;"
+                                                         src="{{ getImagePath($image["path"] ) }}"
+                                                         alt=""/>
+                                                </a>
+                                            </div>
                                         @endif
                                     @endforeach
                                 </div>
@@ -55,7 +65,7 @@
                                         <input type="hidden" id="car-total-price" value="{{ $car->totalPrice }}">
                                         <input type="hidden" id="car-total-days" value="{{ $car->totalDays }}">
                                         <strong>{{ $car->totalPrice }}</strong>
-                                        <span>{{ __('$/for number of day(s)', ['number' => $car->totalDays ]) }}</span>
+                                        <span>{{ __('$/for number day(s)', ['number' => $car->totalDays ]) }}</span>
                                     </div>
 
                                     <div class="list">
@@ -809,22 +819,22 @@
                             </div>
                             <div>
                                 {{ __('Pick up price') }}:
-                                @if( str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi' ||
-                                        $car_filter->pick_up_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica ' .  __("Airport")  ||
-                                        $car_filter->pick_up_location == 'cetinje')
+                                @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' || $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-up-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' )
-                                <input type="hidden" id="pick-up-price" value="0">
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||
+                                            str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||
+                                            str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' ||
+                                            $car_filter->pick_off_location == 'podgorica' ||
+                                            str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
+                                            str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica Airport' ||
+                                            $car_filter->pick_off_location == 'budva')
+                                    <input type="hidden" id="pick-up-price" value="0">
                                     0 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'budva')
-                                    <input type="hidden" id="pick-up-price" value="20">
-                                    20 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'ulcinj')
+                                @elseif(  $car_filter->pick_off_location == 'ulcinj')
                                     <input type="hidden" id="pick-up-price" value="50">
                                     50 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'dubrovnik')
+                                @elseif(  $car_filter->pick_off_location == 'dubrovnik')
                                     <input type="hidden" id="pick-up-price" value="100">
                                     100 &euro;
                                 @else
@@ -853,18 +863,18 @@
                             </div>
                             <div>
                                 {{ __('Drop off price') }}:
-                                @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' ||
-                                        $car_filter->pick_off_location == 'podgorica' ||
-                                        str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica ' .  __("Airport") ||
-                                        $car_filter->pick_up_location == 'cetinje')
+                                @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' || $car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-off-price" value="30">
                                     30 &euro;
-                                @elseif(  $car_filter->pick_up_location == 'tivat' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||  str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' )
-                                <input type="hidden" id="pick-off-price" value="0">
+                                @elseif(  $car_filter->pick_up_location == 'tivat' ||
+                                            str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat aerodrom' ||
+                                            str_replace( '%20',' ',$car_filter->pick_up_location) == 'tivat Airport' ||
+                                            $car_filter->pick_off_location == 'podgorica' ||
+                                            str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
+                                            str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica Airport' ||
+                                            $car_filter->pick_off_location == 'budva')
+                                    <input type="hidden" id="pick-off-price" value="0">
                                     0 &euro;
-                                @elseif(  $car_filter->pick_off_location == 'budva')
-                                    <input type="hidden" id="pick-off-price" value="20">
-                                    20 &euro;
                                 @elseif(  $car_filter->pick_off_location == 'ulcinj')
                                     <input type="hidden" id="pick-off-price" value="50">
                                     50 &euro;
@@ -894,7 +904,7 @@
                 </div>
                 <div class="modal-footer">
                     <button id="confirm-booking" data-id="{{ $car->id }}"
-                            class="btn btn-theme pull-right btn-reservation-now">{{ __('Confirm') }}</button>
+                            class="btn btn-theme pull-right btn-reservation-now g-recaptcha">{{ __('Confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -903,6 +913,7 @@
 
 
 @section('js')
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env("RECAPTCHA_KEY") }}"></script>
     <script src="{{ asset('assets/phone-validation/js/intlTelInput-jquery.js') }}"></script>
     <script>
         $("#phone-number").intlTelInput({
@@ -921,7 +932,7 @@
             nationalMode: true,
             onlyCountries: [],
             placeholderNumberType: "MOBILE",
-            preferredCountries: ["fr","gb", "de","il", "tr"],
+            preferredCountries: ["fr", "gb", "de", "il", "tr"],
             separateDialCode: true,
             showFlags: true,
             utilsScript: ""
@@ -987,8 +998,6 @@
 
             $('#confirm-booking').click(function (e) {
                 e.preventDefault();
-
-
                 const car = $(this).data('id');
                 const car_price = $('#car-total-price').val();
                 const second_driver = ($('#second-driver').is(':checked')) ? 1 : 0;
@@ -1165,9 +1174,9 @@
                     return false;
                 }
 
-                phone.on( "focus", function() {
+                phone.on("focus", function () {
                     $('.phone-error').css("display", "none")
-                } );
+                });
 
                 if (!filter.test(phone_number)) {
                     $('.phone-error').css("display", "block")
@@ -1182,14 +1191,6 @@
                     clear();
                     return false;
                 }
-
-                /* if ($('#accept').filter(':checked').length < 1){
-                     $('#accept').tooltip({placement: 'top', trigger: 'manual'}).tooltip('show');
-                     $('#accept').focus();
-                     clear();
-                     return false;
-                 }
- */
 
                 $('#reservationModal').modal('show')
             })

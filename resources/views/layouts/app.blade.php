@@ -97,7 +97,8 @@
 <!-- JS Page Level -->
 <script src="{{ asset('assets/js/theme-ajax-mail.js') }}"></script>
 <script src="{{ asset('assets/js/theme.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&key={{env("MAP_API_KEY")}}"></script>
+
 @yield('js')
 
 </body>

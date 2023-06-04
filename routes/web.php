@@ -25,8 +25,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 require __DIR__ . '/auth.php';
 // Route::get("ping", [CarController::class, "ping"]);
 Route::resource('bookings', BookingController::class);
-Route::put('price/{price}', [PriceController::class, 'update']);
-Route::delete('price/{price}', [PriceController::class, 'delete']);
 
 Route::post('contacts', [ContactController::class, 'store']);
 Route::get('contacts', [ContactController::class, 'index']);
@@ -45,6 +43,9 @@ Route::group([
 });
 
 Route::middleware('auth')->group(function () {
+    Route::put('price/{price}', [PriceController::class, 'update']);
+    Route::delete('price/{price}', [PriceController::class, 'delete']);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

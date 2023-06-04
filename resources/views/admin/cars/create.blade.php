@@ -325,6 +325,16 @@
             contentType: false,
             success: function (data) {
                 window.location.href = "/cars"
+            },
+            error: function(data){
+                var errors = data.responseJSON.errors;
+                console.log(errors);
+                // Render the errors with js ...
+
+                $.each(errors, function (key, value) {
+                    console.log('key',key)
+                    console.log('value',value)
+                });
             }
         })
     });
