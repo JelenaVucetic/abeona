@@ -61,20 +61,20 @@ function getSeason($date) {
         if (in_array($month, $months)) {
             switch ($season) {
                 case 'spring':
-                    if ($month == 3 && $day < 20) return 'winter';
-                    if ($month == 6 && $day >= 21) return 'summer';
+                    if ($month == 3 && $day < 15) return 'winter';
+                    if ($month == 6 && $day >= 15) return 'summer';
                     return $season;
                 case 'summer':
-                    if ($month == 6 && $day < 21) return 'spring';
-                    if ($month == 9 && $day >= 22) return 'autumn';
+                    if ($month == 6 && $day < 16) return 'spring';
+                    if ($month == 9 && $day >= 15) return 'autumn';
                     return $season;
                 case 'autumn':
-                    if ($month == 9 && $day < 22) return 'summer';
-                    if ($month == 12 && $day >= 21) return 'winter';
+                    if ($month == 9 && $day < 16) return 'summer';
+                    if ($month == 11 && $day >= 15) return 'winter';
                     return $season;
                 case 'winter':
-                    if ($month == 12 && $day < 21) return 'autumn';
-                    if ($month == 3 && $day >= 20) return 'spring';
+                    if ($month == 11 && $day < 16) return 'autumn';
+                    if ($month == 3 && $day >= 15) return 'spring';
                     return $season;
             }
         }
