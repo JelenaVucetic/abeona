@@ -21,8 +21,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
-require __DIR__ . '/auth.php';
 
+require __DIR__ . '/auth.php';
+// Route::get("ping", [CarController::class, "ping"]);
 Route::resource('bookings', BookingController::class);
 Route::put('price/{price}', [PriceController::class, 'update']);
 Route::delete('price/{price}', [PriceController::class, 'delete']);
@@ -32,8 +33,8 @@ Route::get('contacts', [ContactController::class, 'index']);
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect' ]], function()
-{
+    'middleware' => ['localeSessionRedirect']
+], function () {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', [PagesController::class, 'index'])->name('welcome');
     Route::get('/about-us', [PagesController::class, 'about'])->name('about-us');
@@ -65,5 +66,3 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/car-images/find', [CarController::class, 'find'])->name('car-images.find');
 });
-
-

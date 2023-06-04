@@ -62,15 +62,32 @@ class PagesController extends Controller
             "pick_up_time" => $request->input('pick_up_time'),
             "pick_off_time" => $request->input('pick_off_time'),
         );
+
+        $seasonDays = calculateSeasonDays($startTime, $endTime);
+
         // ==>
-        $cars = Car::all()->map(function ($car) use ($selectedSeason, $numberOfDaysString, $differenceInDays) {
-            $price = collect($car->prices)
+        $cars = Car::all()->map(function ($car) use ($seasonDays, $numberOfDaysString, $differenceInDays) {
+            /*  $price = collect($car->prices)
                 ->where('season', $selectedSeason)
                 ->first();
 
             $car->pricePerDay = $price[$numberOfDaysString];
             $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
+            $car->totalDays = $differenceInDays; */
+
+            $totalPrice = 0;
+            foreach ($seasonDays as $season => $days) {
+                $price = collect($car->prices)
+                    ->where('season', $season)
+                    ->first();
+                $pricePerDay = $price[$numberOfDaysString];
+                $totalPrice += $pricePerDay * $days;
+            }
+
+            $car->pricePerDay = $totalPrice / $differenceInDays;
+            $car->totalPrice = $totalPrice;
             $car->totalDays = $differenceInDays;
+
             return $car;
         })->sortBy("pricePerDay");
 
@@ -89,7 +106,7 @@ class PagesController extends Controller
             $car->pricePerDay = $price['default'];
             return $car;
         })
-        ->sortBy("pricePerDay");
+            ->sortBy("pricePerDay");
 
         return view('about-us', ['cars' => $cars]);
     }

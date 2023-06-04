@@ -13,7 +13,7 @@ class CarService
         return Car::create(
             array_merge(
                 $carRequest,
-                array("user_id" => 1)
+                array("user_id" =>  Auth::id())
             )
         );
     }

@@ -24,7 +24,6 @@ class StoreCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'car.user_id' => 'required|numeric',
             'car.name' => 'required|string',
             'car.year' => 'required|numeric',
             'car.motor' => 'required|string',

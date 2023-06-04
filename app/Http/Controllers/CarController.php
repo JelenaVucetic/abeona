@@ -158,7 +158,7 @@ class CarController extends Controller
             $differenceInDays += 1;
         }
 
-        $selectedSeason = getCurrentSeason($startTime);
+        // $selectedSeason = getCurrentSeason($startTime);
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 
         // rename
@@ -173,14 +173,32 @@ class CarController extends Controller
         // ==>
 
         // mb extract
-        $price = collect($car->prices)
-            ->where('season', $selectedSeason)
-            ->first();
+        $seasonDays = calculateSeasonDays($startTime, $endTime);
 
-        $car->pricePerDay = $price[$numberOfDaysString];
-        $car->totalPrice = $price[$numberOfDaysString] * $differenceInDays;
+        $totalPrice = 0;
+        foreach ($seasonDays as $season => $days) {
+            $price = collect($car->prices)
+                ->where('season', $season)
+                ->first();
+            $pricePerDay = $price[$numberOfDaysString];
+            $totalPrice += $pricePerDay * $days;
+        }
+
+        $car->pricePerDay = $totalPrice / $differenceInDays;
+        $car->totalPrice = $totalPrice;
         $car->totalDays = $differenceInDays;
-
+        // ==>
         return view('booking', ['car' => $car, 'car_filter' => $car_filter]);
     }
+
+    /* public function ping()
+    {
+        $start = Carbon::now()->addDays(0);
+        $end = Carbon::now()->addDays(+30);
+
+        var_dump($start->format('d/m/Y'));
+        var_dump($end->format('d/m/Y'));
+
+        dd(calculateSeasonDays($start, $end));
+    } */
 }
