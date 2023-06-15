@@ -789,7 +789,7 @@
 
                         <div class="price" style="padding-left: 20px">
                             <strong style="font-size: 22px">{{ $car->totalPrice }}</strong>
-                            <span>{{ __('$/for number of day(s)', ['number' => $car->totalDays]) }}</span>
+                            <span>{{ __('$/for number day(s)', ['number' => $car->totalDays]) }}</span>
                         </div>
                     </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"
