@@ -501,7 +501,6 @@
                                         <form id="find-car" action="#">
                                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="car_id" id="car_id" value="{{ $car->id }}">
-
                                             <div class="row row-inputs">
                                                 <div class="container-fluid">
                                                     <div class="col-sm-12">
@@ -511,15 +510,16 @@
                                                                     class="form-control"
                                                                     title="Pick up location is required"
                                                                     data-toggle="tooltip">
+
                                                                 <option
-                                                                    {{ $car_filter->pick_up_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">
+                                                                    {{ urldecode($car_filter->pick_up_location) == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">
                                                                     Tivat {{ __("Airport") }}</option>
                                                                 <option
                                                                     {{ $car_filter->pick_up_location == 'tivat' ? "selected" : "" }}  value="tivat">
                                                                     Tivat
                                                                 </option>
                                                                 <option
-                                                                    {{ $car_filter->pick_up_location == 'podgorica ' . __("Airport") ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">
+                                                                    {{ urldecode($car_filter->pick_up_location) == 'podgorica ' . __("Airport") ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">
                                                                     Podgorica {{ __("Airport") }}</option>
                                                                 <option
                                                                     {{ $car_filter->pick_up_location == 'podgorica' ? "selected" : "" }}  value="podgorica">
@@ -602,14 +602,14 @@
                                                                     data-toggle="tooltip">
 
                                                                 <option
-                                                                    {{ $car_filter->pick_off_location == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">
+                                                                    {{ urldecode($car_filter->pick_off_location) == 'tivat ' . __("Airport") ? "selected" : "" }}  value="tivat {{ __("Airport") }}">
                                                                     Tivat {{ __("Airport") }}</option>
                                                                 <option
                                                                     {{ $car_filter->pick_off_location == 'tivat' ? "selected" : "" }}  value="tivat">
                                                                     Tivat
                                                                 </option>
                                                                 <option
-                                                                    {{ $car_filter->pick_off_location == 'podgorica ' . __("Airport")  ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">
+                                                                    {{ urldecode($car_filter->pick_off_location) == 'podgorica ' . __("Airport")  ? "selected" : "" }}  value="podgorica {{ __("Airport") }}">
                                                                     Podgorica {{ __("Airport") }}</option>
                                                                 <option
                                                                     {{ $car_filter->pick_off_location == 'podgorica' ? "selected" : "" }}  value="podgorica">
