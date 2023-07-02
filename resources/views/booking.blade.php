@@ -819,7 +819,7 @@
                             </div>
                             <div>
                                 {{ __('Pick up price') }}:
-                                @if( str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi' || $car_filter->pick_up_location == 'cetinje')
+                                @if($car_filter->pick_up_location == 'cetinje')
                                     <input type="hidden" id="pick-up-price" value="30">
                                     30 &euro;
                                 @elseif(  $car_filter->pick_up_location == 'tivat' ||
@@ -828,7 +828,8 @@
                                             $car_filter->pick_off_location == 'podgorica' ||
                                             str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica aerodrom' ||
                                             str_replace( '%20',' ',$car_filter->pick_up_location) == 'podgorica Airport' ||
-                                            $car_filter->pick_up_location == 'budva')
+                                            $car_filter->pick_up_location == 'budva' || str_replace('%20', ' ',$car_filter->pick_up_location) == 'herceg novi'
+                                             ||  $car_filter->pick_up_location == 'kotor')
                                     <input type="hidden" id="pick-up-price" value="0">
                                     0 &euro;
                                 @elseif(  $car_filter->pick_up_location == 'ulcinj')
@@ -863,7 +864,7 @@
                             </div>
                             <div>
                                 {{ __('Drop off price') }}:
-                                @if( str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi' || $car_filter->pick_off_location == 'cetinje')
+                                @if($car_filter->pick_off_location == 'cetinje')
                                     <input type="hidden" id="pick-off-price" value="30">
                                     30 &euro;
                                 @elseif(  $car_filter->pick_off_location == 'tivat' ||
@@ -872,7 +873,8 @@
                                             $car_filter->pick_off_location == 'podgorica' ||
                                             str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica aerodrom' ||
                                             str_replace( '%20',' ',$car_filter->pick_off_location) == 'podgorica Airport' ||
-                                            $car_filter->pick_off_location == 'budva')
+                                            $car_filter->pick_off_location == 'budva' || str_replace('%20', ' ',$car_filter->pick_off_location) == 'herceg novi'
+                                            || $car_filter->pick_off_location == 'kotor')
                                     <input type="hidden" id="pick-off-price" value="0">
                                     0 &euro;
                                 @elseif(  $car_filter->pick_off_location == 'ulcinj')
