@@ -8,7 +8,9 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        $bookings = Booking::all()->sortByDesc("created_at");
+        $bookings =  Booking::withTrashed()
+            ->orderByDesc("created_at")
+            ->get();
         return view('admin.reservations.index', ['bookings' => $bookings]);
     }
 }
