@@ -1565,7 +1565,7 @@ input[type=checkbox] {
 }
 
 .sticky-wrapper:not(.is-sticky) {
-    height: auto !important;
+    /*height: auto !important;*/
 }
 
 .header {

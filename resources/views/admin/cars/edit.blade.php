@@ -390,8 +390,8 @@
                                      alt=""/>
                                 <div style="margin-left: 20px">
                                     <p>Image type: {{ $image->type }}</p>
-                                    <button id="delete-image" data-image-id="{{ $image->id }}"
-                                            data-car-id="{{ $car->id }}" class="btn btn-danger">Delete
+                                    <button data-image-id="{{ $image->id }}"
+                                            data-car-id="{{ $car->id }}" class="delete-image btn btn-danger">Delete
                                     </button>
                                 </div>
                             </div>
@@ -437,7 +437,7 @@
         jQuery(document).ready(function () {
             ImgUploadOnEdit();
         });
-        $('#delete-image').click(function (e) {
+        $('.delete-image').click(function (e) {
             e.preventDefault();
             const image = $(this).data('image-id');
             const car = $(this).data('car-id');
