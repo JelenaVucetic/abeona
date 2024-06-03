@@ -289,7 +289,7 @@
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="media-body">
                                     <input name="pick-up-location" class="reservation-info" disabled
-                                           value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
+                                           value="{{ ucwords(str_replace('%20', ' ', $car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
                             <h5 class="widget-title-sub">{{ __('Drop Off Location') }}</h5>
@@ -306,7 +306,7 @@
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="media-body">
                                     <input name="pick-off-location" class="reservation-info" disabled
-                                           value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_off_location)) }}">
+                                           value="{{ ucwords(str_replace('%20', ' ', $car_filter->pick_off_location)) }}">
                                 </div>
                             </div>
                             <div class="button">
@@ -550,6 +550,10 @@
                                                                     Kotor
                                                                 </option>
                                                                 <option
+                                                                    {{str_replace( '%20',' ',$car_filter->pick_up_location) == 'herceg novi' ? "selected" : "" }}  value="herceg novi">
+                                                                    Herceg Novi
+                                                                </option>
+                                                                <option
                                                                     {{ $car_filter->pick_up_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">
                                                                     Dubrovnik
                                                                 </option>
@@ -570,7 +574,7 @@
                                                                     Berane
                                                                 </option>
                                                                 <option
-                                                                    {{ $car_filter->pick_up_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">
+                                                                    {{str_replace( '%20',' ',$car_filter->pick_up_location) == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">
                                                                     Bijelo Polje
                                                                 </option>
                                                                 <option
@@ -640,6 +644,10 @@
                                                                     Kotor
                                                                 </option>
                                                                 <option
+                                                                    {{ str_replace( '%20',' ',$car_filter->pick_off_location) == 'herceg novi' ? "selected" : "" }}  value="herceg novi">
+                                                                    Herceg Novi
+                                                                </option>
+                                                                <option
                                                                     {{ $car_filter->pick_off_location == 'dubrovnik' ? "selected" : "" }} value="dubrovnik">
                                                                     Dubrovnik
                                                                 </option>
@@ -660,7 +668,7 @@
                                                                     Berane
                                                                 </option>
                                                                 <option
-                                                                    {{ $car_filter->pick_off_location == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">
+                                                                    {{ str_replace( '%20',' ',$car_filter->pick_off_location) == 'bijelo polje' ? "selected" : "" }}  value="bijelo polje">
                                                                     Bijelo Polje
                                                                 </option>
                                                                 <option
@@ -814,7 +822,7 @@
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="" style="width: fit-content;">
                                     <input name="pick-up-location" class="reservation-info" disabled
-                                           value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_up_location)) }}">
+                                           value="{{ ucwords(str_replace('%20', ' ', $car_filter->pick_up_location)) }}">
                                 </div>
                             </div>
                             <div>
@@ -859,7 +867,7 @@
                                 <span class="media-object pull-left"><i class="fa fa-location-arrow"></i></span>
                                 <div class="" style="width: fit-content;">
                                     <input name="pick-off-location" class="reservation-info" disabled
-                                           value="{{ str_replace('%20', ' ', ucfirst($car_filter->pick_off_location)) }}">
+                                           value="{{ ucwords(str_replace('%20', ' ', $car_filter->pick_off_location)) }}">
                                 </div>
                             </div>
                             <div>
