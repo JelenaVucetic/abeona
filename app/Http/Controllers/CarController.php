@@ -146,6 +146,11 @@ class CarController extends Controller
         $endTimeString = $request->input("pick_off_date") . $request->input("pick_off_time");
         $endTime = Carbon::createFromFormat('d/m/Y H:i', $endTimeString);
 
+        \Log::info('Pick Up Date: ' . $request->input("pick_up_date"));
+        \Log::info('Pick Up Time: ' . $request->input("pick_up_time"));
+        \Log::info('Start Time String: ' . $startTimeString);
+        \Log::info('Start Time: ' . $startTime);
+
 
         $differenceInDays = $startTime->diffInDays($endTime);
         $differenceInHours = $startTime->diffInHours($endTime);

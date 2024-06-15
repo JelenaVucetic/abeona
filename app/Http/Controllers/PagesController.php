@@ -38,6 +38,11 @@ class PagesController extends Controller
         $endTime = Carbon::createFromFormat('d/m/Y H:i', $endTimeString);
 
 
+        \Log::info('Pick Up Date: ' . $request->input("pick_up_date"));
+        \Log::info('Pick Up Time: ' . $request->input("pick_up_time"));
+        \Log::info('Start Time String: ' . $startTimeString);
+        \Log::info('Start Time: ' . $startTime);
+
         $differenceInDays = $startTime->diffInDays($endTime);
         $differenceInHours = $startTime->diffInHours($endTime);
 
@@ -66,7 +71,7 @@ class PagesController extends Controller
 
         // ==>
         $cars = Car::all()->map(function ($car) use ($seasonDays, $numberOfDaysString, $differenceInDays) {
-        
+
             $totalPrice = 0;
             foreach ($seasonDays as $season => $days) {
                 $price = collect($car->prices)
