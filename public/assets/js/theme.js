@@ -1280,7 +1280,8 @@ function updater() {
 
         // Initialize datepicker2
         $(".datepicker2").datepicker({
-            dateFormat: "dd/mm/yy"
+            dateFormat: "dd/mm/yy",
+            minDate: '1d',
         });
     });
 
@@ -1330,7 +1331,7 @@ function updater() {
         e.preventDefault();
     });
 
-  /*  $('.datepicker').datepicker({
+  /*  $('.datepicker').datepicker({git o
         onSelect: function(dateText, inst) {
             $('#pick-up-time').datetimepicker("show");
         }
