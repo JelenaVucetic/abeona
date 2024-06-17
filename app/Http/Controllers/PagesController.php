@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\DateTimeHelper;
 use App\Models\Car;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 
 class PagesController extends Controller
@@ -43,17 +41,9 @@ class PagesController extends Controller
         \Log::info('Start Time String: ' . $startTimeString);
         \Log::info('Start Time: ' . $startTime);
 
-        $differenceInDays = $startTime->diffInDays($endTime);
+
         $differenceInHours = $startTime->diffInHours($endTime);
-
-
-        if ($differenceInDays == 0) {
-            $differenceInDays += 1;
-        }
-
-        if ($differenceInHours % 24 > 0) {
-            $differenceInDays += 1;
-        }
+        $differenceInDays = (int)ceil($differenceInHours / 24);
 
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 

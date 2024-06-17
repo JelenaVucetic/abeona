@@ -129,9 +129,6 @@ class CarController extends Controller
     public function find(Request $request)
     {
         $input = $request->all();
-
-        Log::info($input);
-
         return response()->json($input);
         // return view('fleet');
     }
@@ -145,25 +142,10 @@ class CarController extends Controller
 
         $endTimeString = $request->input("pick_off_date") . $request->input("pick_off_time");
         $endTime = Carbon::createFromFormat('d/m/Y H:i', $endTimeString);
-
-        \Log::info('Pick Up Date: ' . $request->input("pick_up_date"));
-        \Log::info('Pick Up Time: ' . $request->input("pick_up_time"));
-        \Log::info('Start Time String: ' . $startTimeString);
-        \Log::info('Start Time: ' . $startTime);
-
-
-        $differenceInDays = $startTime->diffInDays($endTime);
+//        dump($startTime->toDateTimeLocalString(), $endTime->toDateTimeLocalString());
         $differenceInHours = $startTime->diffInHours($endTime);
-
-        if ($differenceInDays == 0) {
-            $differenceInDays += 1;
-        }
-
-        if ($differenceInHours % 24 > 0) {
-            $differenceInDays += 1;
-        }
-
-        // $selectedSeason = getCurrentSeason($startTime);
+//        dump($differenceInHours);
+        $differenceInDays = (int)ceil($differenceInHours / 24);
         $numberOfDaysString = getStringFromNumberOfDays($differenceInDays);
 
         // rename
@@ -179,8 +161,8 @@ class CarController extends Controller
 
         // mb extract
         $seasonDays = calculateSeasonDays($startTime, $endTime);
-
         $totalPrice = 0;
+
         foreach ($seasonDays as $season => $days) {
             $price = collect($car->prices)
                 ->where('season', $season)
@@ -192,18 +174,9 @@ class CarController extends Controller
         $car->pricePerDay = $totalPrice / $differenceInDays;
         $car->totalPrice = $totalPrice;
         $car->totalDays = $differenceInDays;
-        // ==>
+
         return view('booking', ['car' => $car, 'car_filter' => $car_filter]);
     }
 
-    /* public function ping()
-    {
-        $start = Carbon::now()->addDays(0);
-        $end = Carbon::now()->addDays(+30);
 
-        var_dump($start->format('d/m/Y'));
-        var_dump($end->format('d/m/Y'));
-
-        dd(calculateSeasonDays($start, $end));
-    } */
 }

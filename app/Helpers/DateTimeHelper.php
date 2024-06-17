@@ -38,8 +38,12 @@ function calculateSeasonDays($startDate, $endDate)
     $end = Carbon::parse($endDate);
     $seasons = ['spring' => 0, 'summer' => 0, 'autumn' => 0, 'winter' => 0];
 
-    for ($date = $start; $date->lte($end); $date->addDay()) {
-        $season = getSeason($date);
+    $totalHours = $start->diffInHours($end);
+    $totalDays = ceil($totalHours / 24);  // Calculate the number of days to charge
+
+    for ($i = 0; $i < $totalDays; $i++) {
+        $currentDate = $start->copy()->addDays($i);
+        $season = getSeason($currentDate);
         $seasons[$season]++;
     }
 
