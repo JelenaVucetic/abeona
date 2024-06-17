@@ -16,7 +16,7 @@ class ContactController extends Controller
 
     public function store(ContactRequest $contactRequest) {
         $contact = Contact::create(
-            $contactRequest->all()
+            $contactRequest->validated()
         );
 
         ContactStored::dispatch($contact);
